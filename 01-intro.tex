@@ -1,5 +1,5 @@
 % \documentclass[12pt, handout]{beamer}
-\documentclass[11pt, aspectratio=169]{beamer}
+\documentclass[12pt, aspectratio=169]{beamer}
 
 \input{header}
 
@@ -36,8 +36,9 @@
     \begin{frame}{Evolution of C}
         \begin{itemize}
             \item In 1978, Dennis Ritchie and Brian Kernighan released the book titled ``The C Programming Language"
-            \item C was standardized by ANSI in 1989 and by ISO later in 1990, this is known as both C89 and C90
+            \item C was standardized by ANSI (known as C89) in 1989, this was adopted by ISO later in 1990 (known as C90)
             \item The latest version of the standard is C23
+            \item Since 2000, consistently ranked top four in the \href{https://en.wikipedia.org/wiki/TIOBE_index}{TIOBE index}
         \end{itemize}
     \end{frame}
 
@@ -55,14 +56,125 @@
         \end{itemize}
 	\end{frame}
 
-        \begin{frame}{Basic Features (cont.)}
+    \begin{frame}{Basic Features (cont.)}
+        \begin{itemize}
+            \item Compiles to native machine code -- runs very fast
+            \item Statically typed, supports user defined data types
+            \item Compund data types -- structs and unions
+            \item Standard library as well as third party libraries
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Shortcomings}
+        \begin{itemize}
+            \item Not object oriented
+            \item Lacks exceptions
+            \item No garbage collection
+            \item Can be unsafe if not careful
             \begin{itemize}
-                \item Compiled language, very fast
-                \item Statically typed
-                \item Not object oriented
-                \item No garbage collection
+                \item No range-checking
+                \item Limited type checking at compile time
+                \item No type checking at runtime
             \end{itemize}
-        \end{frame}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Use Cases}
+        \begin{itemize}
+            \item Operating systems, such as Linux
+            \item Many software
+            \begin{itemize}
+                \item Database: PostgreSQL, SQLite, MySQL
+                \item VLC Player
+                \item Apache web server, Nginx
+            \end{itemize}
+            \item Embedded systems (microcontrollers)
+            \item Other higher level programming languages
+            \begin{itemize}
+                \item CPython
+                \item Ruby
+                \item PHP
+                \item JVM (Java, Kotlin etc.)
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+
+    \section{Getting Started with C}
+
+    \begin{frame}{Ingredients}
+        \begin{itemize}
+            \item C source file (plain text file with .c extension)
+            \item Compiler (ideally, also a debugger)
+            \item Text editor
+            \item Terminal (aka Command Prompt on Windows)
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Compilers and Debuggers}
+        \begin{itemize}
+            \item Compiler turns the C code into machine code
+            \item Debugger helps in debugging a compiled program
+            \item Most popular C compilers include
+            \begin{itemize}
+                \item GNU C Compiler and GNU Debuger (GCC and GDB)
+                \item Clang
+                \item Microsoft Visual C Compiler (MSVC)
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Ingredients (cont.)}
+        To make life easier, use an IDE (integrated development environment), it combines:
+        \begin{itemize}
+            \item Source editing
+            \item Invoking compiler
+            \item Debugging
+            \item Version control interface
+        \end{itemize}
+
+        Most modern IDEs also provide ``intellisense" as well as perform static analysis on source codes.
+    \end{frame}
+
+    \begin{frame}{Environrment Setup on Windows}
+        \begin{itemize}
+            \item Easiest option: download \href{https://www.codeblocks.org/downloads/binaries/}{CodeBlocks} with MinGW which includes GCC and GDB
+            \item Microsoft Visual Studio with MSVC (much bigger download size)
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Installing Only GCC on Windows}
+        In order to use an IDE that does not bundle a compiler, one needs to install the compiler separately. Three options:
+        \begin{itemize}
+            \item Download \href{https://www.mingw-w64.org/}{MinGW-W64} using \href{https://www.msys2.org/}{MSYS2}
+            \item Download MinGW-W64 standalone from \href{https://winlibs.com/}{WinLibs}
+            \item Installing via \href{https://www.cygwin.com/}{Cygwin}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Environment Setup on Linux}
+        \begin{itemize}
+            \item Install the \texttt{gcc} package using the package manager
+            \item Then install the \texttt{codeblocks} package or any other suitable IDE
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Environment Setup on MacOS}
+        \begin{itemize}
+            \item Install XCode, comes with the Clang compiler
+            \item Can be installed from the App Store
+            \item If only the compilers are wanted, then run the follwing in the terminal: \texttt{xcode-select~--install}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Crossplatform IDEs and Code Editors}
+        \begin{itemize}
+            \item Codeblocks
+            \item Visual Studio Code (requires seperate C extension)
+            \item Clion (free for non-commercial use only, student license available)
+            \item Eclipse IDE
+        \end{itemize}
+    \end{frame}
 
     \section*{Thank you.}
 
