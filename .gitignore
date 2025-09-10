@@ -8,3 +8,4 @@
 *.toc
 *.xdv
 _minted/*
+code-examples/*.exe
