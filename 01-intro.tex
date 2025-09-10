@@ -130,7 +130,7 @@
             \item Source editing
             \item Invoking compiler
             \item Debugging
-            \item Version control interface
+            \item Version control system (VCM), for example git or subversion
         \end{itemize}
 
         Most modern IDEs also provide ``intellisense" as well as perform static analysis on source codes.
@@ -170,10 +170,25 @@
     \begin{frame}{Crossplatform IDEs and Code Editors}
         \begin{itemize}
             \item Codeblocks
-            \item Visual Studio Code (requires seperate C extension)
-            \item Clion (free for non-commercial use only, student license available)
+            \item Visual Studio Code (requires seperate extension for C/C++)
+            \item Clion (free for non-commercial use only)
             \item Eclipse IDE
         \end{itemize}
+    \end{frame}
+
+    \section{Our First C Program}
+
+    \begin{frame}{Hello World in C}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!6,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont,
+            % firstline=37,
+            % lastline=54,
+            % firstnumber=1
+        ]{c}{code-examples/01_hello-world.c}
     \end{frame}
 
     \section*{Thank you.}
