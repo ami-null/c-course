@@ -110,7 +110,7 @@
             \item Terminal or the command line
         \end{itemize}
 
-        Familiarity with the command line (PowerShell, BASH etc.) is highly recommended.
+        Familiarity with the command line (PowerShell, BASH etc.) and environment variables (for example, PATH) is highly recommended.
     \end{frame}
 
     \begin{frame}{Compilers and Debuggers}
@@ -148,10 +148,13 @@
     \begin{frame}{Installing Only GCC on Windows}
         In order to use an IDE that does not bundle a compiler, one needs to install the compiler separately. Three options:
         \begin{itemize}
+            \item Installing via \href{https://www.cygwin.com/}{Cygwin}
             \item Download \href{https://www.mingw-w64.org/}{MinGW-W64} using \href{https://www.msys2.org/}{MSYS2}
             \item Download MinGW-W64 standalone from \href{https://winlibs.com/}{WinLibs}
-            \item Installing via \href{https://www.cygwin.com/}{Cygwin}
+            \item Install WinLibs MinGW-W64 via WinGet by running: \texttt{winget~install BrechtSanders.WinLibs.POSIX.UCRT}
         \end{itemize}
+
+        Installing via WinGet updates the PATH environment variable automatically.
     \end{frame}
 
     \begin{frame}{Environment Setup on Linux}
