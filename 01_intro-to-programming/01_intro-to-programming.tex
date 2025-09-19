@@ -1,0 +1,211 @@
+% \documentclass[12pt, handout]{beamer}
+\documentclass[12pt, aspectratio=169]{beamer}
+
+\input{../header}
+
+
+\title{Introduction to Programming}
+\author{Md. Aminul Islam Shazid}
+\date{}
+
+
+\begin{document}
+    {
+		\setbeamertemplate{footline}{}    % NO FOOTLINE FOR THESE TWO FRAMES
+		\addtocounter{framenumber}{-2}    % not counting the title page and the outline in frame numbers
+
+		\begin{frame}
+			\titlepage
+		\end{frame}
+
+		\begin{frame}{Outline}
+			\tableofcontents[subsectionstyle=hide]
+		\end{frame}
+	}
+
+    \begin{frame}{What is Programming?}
+        \begin{itemize}
+            \item Process of giving instructions to a computer
+            \item Computers follow step-by-step instructions precisely
+            \item A program is a sequence of instructions that accomplishes a task
+            \item Algorithms (logic) vs Programs (implemented in code)
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{History \& Evolution of Programming Languages}
+        \begin{itemize}
+            \item 1940s: Machine code (binary)
+            \item 1950s: Assembly language (mnemonics)
+            \item 1960s--70s: Structured languages (C, Pascal)
+            \item 1990s: Object-oriented (Java, C++)
+            \item 2000s--Now: Multi-paradigm, scripting (Python, JavaScript)
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Flow of Program Development}
+        \begin{enumerate}
+            \item Define the problem
+            \item Design algorithm
+            \item Write pseudocode or flowchart
+            \item Translate into source code
+            \item Compile and run
+            \item Debug and test
+            \item Update and maintain
+        \end{enumerate}
+    \end{frame}
+
+
+    \begin{frame}{Pseudocode}
+        \begin{itemize}
+            \item Informal description of a program’s logic.
+            \item Bridges the gap between human thought and actual code.
+            \item Example:
+            \begin{itemize}
+                \item Start
+                \item Input: integer a, integer b
+                \item Let c = a + b
+                \item Print c
+                \item End
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Program Structure}
+        \begin{itemize}
+            \item Typical structure of a program:
+            \begin{itemize}
+                \item Input (data from user or file)
+                \item Processing (calculations, logic)
+                \item Output (display results)
+            \end{itemize}
+            \item Uses variables, control flow (if/loops), and functions
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Levels of Programming Languages}
+        \begin{itemize}
+            \item Machine code (binary: 0s and 1s)
+            \begin{itemize}
+                \item The lowest-level representation of a program
+                \item Directly executed by the CPU
+            \end{itemize}
+            
+            \item Assembly language (x86 assembly, ARM assembly)
+            \begin{itemize}
+                \item Low-level language using mnemonics instead of binary
+                \item Easier for humans to read than machine code
+            \end{itemize}
+
+            \item Higher-level languages (C, Python, Java etc.)
+            \begin{itemize} 
+                \item Abstract away hardware details
+                \item Easier to write, read, and maintain
+            \end{itemize}
+
+            \item Domain-specific languages (DSL)
+            \begin{itemize}
+                \item Designed for a particular purpose or domain
+                \item Examples: SQL for databases, HTML for web, R for data science
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Compiled vs Interpreted}
+        \begin{itemize}
+            \item \textbf{Compiled}: C, C++, Rust etc.
+            \begin{itemize}
+                \item Source code compiled into machine code by a compiler producing an execuatble file
+                \item Faster execution
+                \item Platform-specific
+            \end{itemize}
+            \item \textbf{Interpreted:} Python, Javascript etc.
+            \begin{itemize}
+                \item Code executed line by line by an interpreter
+                \item No separate compilation step
+                \item Easier to test and debug, but slower
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Why So Many Languages?}
+        \begin{itemize}
+            \item Different goals:
+            \begin{itemize}
+                \item Performance: C, C++
+                \item Safety and reliability: Go, Rust
+                \item Ease of use and productivity: Python
+                \item Domain focus: SQL, R
+            \end{itemize}
+            \item No single language is best for all problems.
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Programming Paradigms}
+        \begin{itemize}
+            \item \textbf{Procedural:} Step-by-step instructions (C)
+            \item \textbf{Object-Oriented:} Organize into classes/objects (Java, Python)
+            \item \textbf{Functional:} Emphasis on \emph{pure} functions, immutability (Haskell, Lisp)
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Open Source vs Proprietary}
+        \begin{itemize}
+            \item \textbf{Open Source:} Free to use, modify, share (Python, GCC)
+            \item \textbf{Proprietary:} Owned, restricted licenses (MATLAB)
+            \item Ecosystem and libraries often drive language adoption
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Performance vs Productivity}
+        \begin{itemize}
+            \item \textbf{Performance:} How fast a program runs (C, C++)
+            \item \textbf{Productivity:} How quickly developers can write programs (Python, Ruby)
+            \item Trade-off: High performance vs faster development
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Portable Languages}
+        \begin{itemize}
+            \item Code can run on multiple platforms with little/no modification
+            \item Example: Java -- Write Once, Run Anywhere
+            \item Achieved via virtual machines or interpreters
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Development Tools: Editors \& IDEs}
+        \begin{itemize}
+            \item \textbf{Text Editors:} lightweight coding (Notepad++, Sublime)
+            \item \textbf{IDEs:} full-featured, include debugging, auto-completion (VS Code, PyCharm)
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Development Tools: Debugging, Profiling, VCS}
+        \begin{itemize}
+            \item \textbf{Debugger:} Step through code, inspect variables
+            \item \textbf{Profiler:} Find performance bottlenecks
+            \item \textbf{Version Control System, VCS:} Track changes, collaborate (Git)
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Terminal and Command Line Interface (CLI)}
+        \begin{itemize}
+            \item \textbf{Terminal:} Text-based interface to interact with the OS
+            \item \textbf{CLI:} Execute commands directly by typing them
+            \item Used for compiling, running, and managing projects
+            \item Common tools: \texttt{gcc}, \texttt{gdb}, \texttt{python}, \texttt{git}
+        \end{itemize}
+    \end{frame}
+\end{document}
