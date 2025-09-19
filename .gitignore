@@ -5,6 +5,7 @@
 *.nav
 *.snm
 *.synctex.gz
+*.synctex
 *.toc
 *.xdv
 _minted/*
