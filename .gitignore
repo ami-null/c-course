@@ -10,5 +10,5 @@
 *.toc
 *.xdv
 _minted/*
-*/_minted/*
+*/_minted/
 code-examples/*.exe
