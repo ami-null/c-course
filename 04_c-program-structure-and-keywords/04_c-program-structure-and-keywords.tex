@@ -208,6 +208,23 @@ if(condition){
     \end{frame}
 
 
+    \begin{frame}[fragile]{Pointer and Address-of Operators}
+        \begin{itemize}
+            \item \texttt{\textit{datatype *varname}}: declares a pointer
+            \item \texttt{\textit{*varname}}: dereferences a pointer to access the value
+            \item \texttt{\textit{\&varname}}: gives the memory address of a variable
+            \item Example:
+        \end{itemize}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!6,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/04_02_pointer.c}
+    \end{frame}
+
+
     \begin{frame}{Storage Classes}
         \begin{itemize}
             \item \texttt{auto}: default local variable storage
