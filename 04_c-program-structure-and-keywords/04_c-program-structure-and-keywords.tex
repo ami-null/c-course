@@ -1,0 +1,255 @@
+% \documentclass[12pt, handout]{beamer}
+\documentclass[12pt, aspectratio=169]{beamer}
+
+\input{../header}
+
+
+\title{Introduction to the C Language}
+\author{Md. Aminul Islam Shazid}
+\date{}
+
+
+\begin{document}
+    {
+		\setbeamertemplate{footline}{}    % NO FOOTLINE FOR THESE TWO FRAMES
+		\addtocounter{framenumber}{-2}    % not counting the title page and the outline in frame numbers
+
+		\begin{frame}
+			\titlepage
+		\end{frame}
+
+		\begin{frame}{Outline}
+            \vfill
+			\tableofcontents[subsectionstyle=hide]
+            \vfill
+		\end{frame}
+	}
+
+    \section{Hello World}
+
+    \begin{frame}{Hello World in C}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!6,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont,
+            % firstline=1,
+            % lastline=6,
+            % firstnumber=1
+        ]{c}{../code-examples/01_hello-world.c}
+    \end{frame}
+
+
+    \begin{frame}{Greetings in C}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!6,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/04_01_greetings.c}
+    \end{frame}
+
+
+    \section{Program Structure}
+
+    \begin{frame}{Preprocessor Macros}
+    \begin{itemize}
+        \item \texttt{\#include}: include header files
+        \item \texttt{\#define}: define constants/macros
+        \item Conditional macros: \texttt{\#if}, \texttt{\#ifdef}, \texttt{\#ifndef}, \texttt{\#else}, \texttt{\#elif}, \texttt{\#endif}: compile conditionally
+        \item \texttt{\#undef}: remove macro definitions
+    \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{The \texttt{main} Function}
+        \begin{itemize}
+            \item Entry point of C programs
+            \item Return type (\texttt{int}) indicates exit status
+            \item Function name: \texttt{main}
+            \item Parentheses for parameters (empty for now)
+            \item Curly braces \{\} define the body
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Defining Variables}
+        \begin{itemize}
+            \item Syntax: \texttt{type variable\_name;}
+            \item Must end with semicolon \texttt{;}
+            \item Variables must be declared before use
+            \item Can assign values at declaration
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Semicolons and Statements}
+        \begin{itemize}
+            \item Semicolon ends a statement
+            \item Multiple statements form the body of functions
+            \item Common source of beginner errors
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Calling Functions}
+        \begin{itemize}
+            \item Syntax: \texttt{functionName(arguments);}
+            \item Parentheses hold arguments (can be empty)
+            \item Must match function definition/prototype
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Return Values}
+        \begin{itemize}
+            \item Functions can return a value to the caller
+            \item Syntax: \texttt{return expression;}
+            \item In \texttt{main()}, \texttt{return 0;} indicates successful execution
+            \item Non-zero return values often indicate an error
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Brackets in C}
+        \begin{itemize}
+            \item Parentheses \texttt{()}: grouping expressions and function calls
+            \item Curly braces \texttt{\{\}}: define a block of code
+            \item Square brackets \texttt{[]}: array indexing
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Comments}
+        \begin{itemize}
+            \item Single-line: \texttt{// comment}
+            \item Multi-line:
+        \end{itemize}
+        \begin{verbatim}
+/* this is
+a multiline comment */
+        \end{verbatim}
+    \end{frame}
+
+
+    \begin{frame}{Escape Sequences}
+        \begin{itemize}
+            \item \texttt{\textbackslash n}: newline
+            \item \texttt{\textbackslash t}: tab
+            \item \texttt{\textbackslash\textbackslash}: backslash
+            \item \texttt{\textbackslash"}: double quote
+            \item \texttt{\textbackslash'}: single quote
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Whitespace and Indentation}
+        \begin{itemize}
+            \item Whitespace is ignored (except in strings)
+            \item Indentation improves readability
+            \item Use a single tab or four spaces for one level of indentation
+            \item Example:
+        \end{itemize}
+        \begin{verbatim}
+if(condition){
+    statement;
+}
+        \end{verbatim}
+    \end{frame}
+
+
+    \begin{frame}{Coding Conventions}
+        \begin{itemize}
+            \item Meaningful variable names
+            \item Consistent indentation
+            \item Opening brace \texttt{\{} on the same line as keyword
+            \item Use comments for clarity
+        \end{itemize}
+    \end{frame}
+
+
+    \section{Keywords in C}
+
+    \begin{frame}{Data Types and Values}
+        \begin{itemize}
+            \item \texttt{int}: integer type
+            \item \texttt{float}: single precision floating-point
+            \item \texttt{double}: double precision floating-point
+            \item \texttt{char}: single character
+            \item \texttt{void}: no return value / no data
+            \item \texttt{signed}, \texttt{unsigned}: signed/unsigned integers
+            \item \texttt{short}, \texttt{long}: specify integer size
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Control Flow}
+        \begin{itemize}
+            \item \texttt{if}, \texttt{else}: conditional branching
+            \item \texttt{switch}, \texttt{case}, \texttt{default}: multi-way branching
+            \item \texttt{for}, \texttt{while}, \texttt{do}: loops
+            \item \texttt{break}: exit loop or switch
+            \item \texttt{continue}: skip current iteration
+            \item \texttt{goto}: jump to label (use sparingly)
+            \item \texttt{return}: exit function, optionally returning value
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Structuring}
+        \begin{itemize}
+            \item \texttt{struct}: group related variables
+            \item \texttt{union}: store different types in same memory
+            \item \texttt{enum}: named integer constants
+            \item \texttt{typedef}: define a type alias
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Storage Classes}
+        \begin{itemize}
+            \item \texttt{auto}: default local variable storage
+            \item \texttt{register}: hint to store variable in CPU register
+            \item \texttt{static}: preserve value between function calls
+            \item \texttt{extern}: variable defined elsewhere
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Memory and Miscellaneous}
+        \begin{itemize}
+            \item \texttt{const}: read-only variable
+            \item \texttt{volatile}: variable may change unexpectedly
+            \item \texttt{restrict}: pointer optimization hint
+            \item \texttt{inline}: suggest inline function expansion
+            \item \texttt{\_Atomic}: atomic variable access
+            \item \texttt{\_Thread\_local}: thread-local storage
+            \item \texttt{\_Noreturn}: function does not return
+            \item \texttt{sizeof}: size of object or type
+            \item \texttt{\_Alignas}, \texttt{\_Alignof}: memory alignment
+            \item \texttt{\_Generic}: type-generic selection (C11)
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Preprocessor Keywords}
+        \begin{itemize}
+            \item \texttt{\#define}: define macro or constant
+            \item \texttt{\#include}: include header file
+            \item \texttt{\#if}: conditional compilation
+            \item \texttt{\#ifdef}: compile if macro defined
+            \item \texttt{\#ifndef}: compile if macro not defined
+            \item \texttt{\#else}, \texttt{\#elif}: alternative conditions
+            \item \texttt{\#endif}: end conditional
+            \item \texttt{\#undef}: undefine macro
+            \item \texttt{\#line}: set line number for compiler messages
+            \item \texttt{\#error}: generate compilation error
+            \item \texttt{\#pragma}: compiler-specific instruction
+        \end{itemize}
+    \end{frame}
+
+    \section*{Questions?}
+
+\end{document}
