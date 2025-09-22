@@ -11,4 +11,5 @@
 *.xdv
 _minted/*
 */_minted/
+.vscode/
 code-examples/*.exe
