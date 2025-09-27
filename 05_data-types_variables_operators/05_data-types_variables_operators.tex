@@ -1,0 +1,255 @@
+% \documentclass[12pt, handout]{beamer}
+\documentclass[12pt, aspectratio=169]{beamer}
+
+\input{../header}
+
+
+\title{Data Types, Variables, and Operators in C}
+\author{Md. Aminul Islam Shazid}
+\date{}
+
+
+\begin{document}
+    {
+		\setbeamertemplate{footline}{}    % NO FOOTLINE FOR THESE TWO FRAMES
+		\addtocounter{framenumber}{-2}    % not counting the title page and the outline in frame numbers
+
+		\begin{frame}
+			\titlepage
+		\end{frame}
+
+		\begin{frame}{Outline}
+            \vfill
+			\tableofcontents[subsectionstyle=hide]
+            \vfill
+		\end{frame}
+	}
+
+    \section{Data Types and Variables}
+
+    \begin{frame}{Basic Data Types in C}
+        \begin{itemize}
+            \item \textbf{int}: whole numbers (typically 4 bytes). \\
+                \textit{Usage:} integer data, counters, loop indices.
+            \item \textbf{float}: single-precision decimals (\~{}6 digits). \\
+                \textit{Usage:} decimal data.
+            \item \textbf{double}: double-precision decimals (\~{}15 digits). \\
+                \textit{Usage:} precise calculations, finance.
+            \item \textbf{char}: single character (1 byte, ASCII). \\
+                \textit{Usage:} characters, text handling.
+            \item \textbf{void}: represents no value. \\
+                \textit{Usage:} function return type, pointers.
+            \item \textbf{short, long, unsigned}: integer variants. \\
+                \textit{Usage:} memory optimization, large values.
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Variable Sizes and Precision}
+        \begin{itemize}
+            \item \textbf{Sizes vary by system/compiler}, but common values:
+                \begin{itemize}
+                    \item \texttt{char}: 1 byte
+                    \item \texttt{short}: 2 bytes
+                    \item \texttt{int}: 4 bytes
+                    \item \texttt{long}: 4 or 8 bytes
+                    \item \texttt{float}: 4 bytes (about 6 decimal digits)
+                    \item \texttt{double}: 8 bytes (about 15 decimal digits)
+                \end{itemize}
+            \item Use \texttt{sizeof()} operator to check actual size.
+            \item Precision: \texttt{float} (single) vs. \texttt{double} (double precision).
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Variable Definition and Declaration}
+        \begin{itemize}
+            \item Syntax:\texttt{type variable\_name;}
+            \item Initialization:\texttt{int x = 10;}
+            \item Scope:
+                \begin{itemize}
+                    \item Local: inside a function.
+                    \item Global: outside all functions.
+                \end{itemize}
+            \item Constants:
+                \begin{itemize}
+                    \item \texttt{const int MAX = 100;}
+                    \item \texttt{\#define PI 3.14}
+                \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Variable Naming Rules in C}
+        \begin{itemize}
+            \item Must begin with a letter or underscore (\_).
+            \item Can contain letters, digits, and underscores.
+            \item Case-sensitive: \texttt{value} and \texttt{Value} are different.
+            \item Cannot be a reserved keyword (\texttt{int}, \texttt{return}, etc.).
+            \item Should be meaningful for readability (e.g., \texttt{total}, not \texttt{x1}).
+        \end{itemize}
+    \end{frame}
+
+
+    \section{Operators}
+
+    \begin{frame}{Operators in C}
+        \begin{itemize}
+            \item \textbf{Arithmetic:} \texttt{+}, \texttt{-}, \texttt{*}, \texttt{/}, \texttt{\%} \\
+                Perform basic mathematical operations.
+            \item \textbf{Relational:} \texttt{<}, \texttt{<=}, \texttt{>}, \texttt{>=}, \texttt{==}, \texttt{!=} \\
+                Compare two values, result is either true (1) or false (0).
+            \item \textbf{Logical:} \texttt{\&\&}, \texttt{||}, \texttt{!} \\
+                Combine conditions: \texttt{\&\&} (AND), \texttt{||} (OR), \texttt{!} (NOT).
+            \item \textbf{Assignment:} \texttt{=}, \texttt{+=}, \texttt{-=}, \texttt{*=}, \texttt{/=} \\
+                Store values in variables or update them with shorthand forms.
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Prefix vs Postfix Operators}
+        \begin{itemize}
+            \item \textbf{Increment / Decrement operators:} \texttt{++}, \texttt{--}
+            \item \textbf{Prefix form} (\texttt{++x}, \texttt{--x})
+                \begin{itemize}
+                    \item Variable is updated first, then used in the expression.
+                    \item Example: 
+                        \begin{itemize}
+                            \item \texttt{int x = 5;}
+                            \item \texttt{int y = ++x;} \hfill (\texttt{x=6}, \texttt{y=6})
+                        \end{itemize}
+                \end{itemize}
+            \item \textbf{Postfix form} (\texttt{x++}, \texttt{x--})
+                \begin{itemize}
+                    \item Variable is used first, then updated.
+                    \item Example: 
+                        \begin{itemize}
+                            \item \texttt{int x = 5;}
+                            \item \texttt{int y = x++;} \hfill (\texttt{x=6}, \texttt{y=5})
+                        \end{itemize}
+                \end{itemize}
+            \item Rule of thumb: prefix = ``increment before use", postfix = ``increment after use".
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Truth Tables for Logical Operators}
+        \begin{columns}
+
+        \column{0.33\textwidth}
+            \textbf{AND (\&\&)} \vspace{1em}
+
+            \begin{tabular}{ccc}
+                A & B & A \&\& B \\
+                \hline
+                0 & 0 & 0 \\
+                0 & 1 & 0 \\
+                1 & 0 & 0 \\
+                1 & 1 & 1 \\
+            \end{tabular}
+
+        \column{0.33\textwidth}
+            \textbf{OR (||)} \vspace{1em}
+
+            \begin{tabular}{ccc}
+                A & B & A || B \\
+                \hline
+                0 & 0 & 0 \\
+                0 & 1 & 1 \\
+                1 & 0 & 1 \\
+                1 & 1 & 1 \\
+            \end{tabular}
+
+        \column{0.33\textwidth}
+            \textbf{NOT (!)} \vspace{1em}
+
+            \begin{tabular}{cc}
+                A & !A \\
+                \hline
+                0 & 1 \\
+                1 & 0 \\
+            \end{tabular}
+
+        \end{columns}
+    \end{frame}
+
+
+    \begin{frame}{Order of Evaluation and Precedence}
+        Operators in C follow a precedence hierarchy.\\
+
+        Examples (highest to lowest):
+            \begin{itemize}
+                \item \texttt{()}: Parentheses
+                \item \texttt{*}, \texttt{/}, \texttt{\%}: Multiplication, Division, Modulus
+                \item \texttt{+}, \texttt{-}: Addition, Subtraction
+                \item \texttt{<}, \texttt{>}, \texttt{<=}, \texttt{>=}: Relational
+                \item \texttt{==}, \texttt{!=}: Equality
+                \item \texttt{\&\&}: Logical AND
+                \item \texttt{||}: Logical OR
+                \item \texttt{=}: Assignment (lowest)
+            \end{itemize}
+        Use parentheses \texttt{()} to make evaluation explicit.\\
+
+        Example: \texttt{int x = 2 + 3 * 4;} → result is 14, not 20.
+    \end{frame}
+
+
+    \section{Input, Output (IO)}
+
+    \begin{frame}{Formatted Output: printf()}
+        \begin{itemize}
+            \item Used to display output to the screen.
+            \item General form: \texttt{printf("format string", values);}
+            \item Format specifiers:
+                \begin{itemize}
+                    \item \texttt{\%d} → integer
+                    \item \texttt{\%f} → float/double
+                    \item \texttt{\%c} → char
+                    \item \texttt{\%s} → string
+                \end{itemize}
+            \item Example: \texttt{printf("Sum = \%d", x);}
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Formatted Input: scanf()}
+        \begin{itemize}
+            \item Used to take input from the user.
+            \item General form: \texttt{scanf("format string", \&variables);}
+            \item Format specifiers are the same as for \texttt{printf}.
+            \item Example: \texttt{scanf("\%d", \&x);}
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Why use \& in scanf()?}
+        \begin{itemize}
+            \item \texttt{scanf()} needs the \textbf{address of a variable} to store the input value.
+            \item The operator \texttt{\&} (“address-of”) provides that memory location.
+            \item Example:
+                \begin{itemize}
+                    \item \texttt{int x;}
+                    \item \texttt{scanf("\%d", \&x);}  % correct
+                    \item Without \texttt{\&}, the program will not know where to put the value.
+                \end{itemize}
+            \item \textbf{Exception:} For strings (\texttt{\%s}), the variable itself is already an address, so no \texttt{\&} is needed.
+        \end{itemize}
+    \end{frame}
+
+
+    \section{Exercise}
+
+    \begin{frame}{Exercise}
+        \begin{itemize}
+            \item Write a C program that demonstrates the basic arithmetic operations.
+            \item Write a C program that divides an 5 (integer) by 2 (integer), 5.0 (float) by 2 (integer), and 5 (integer) by 2.0 (float).
+            \item Write a C program that demonstrates the use of the modulo (\%) operator.
+            \item Predict the output:  \\
+                \texttt{int x = 5; printf("\%d", x++);}  \\
+                \texttt{int y = 5; printf("\%d", ++y);}
+        \end{itemize}
+    \end{frame}
+
+    \section*{Questions?}
+
+\end{document}
