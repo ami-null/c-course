@@ -64,8 +64,9 @@
 
     \begin{frame}{Variable Definition and Declaration}
         \begin{itemize}
-            \item Syntax:\texttt{type variable\_name;}
-            \item Initialization:\texttt{int x = 10;}
+            \item Syntax: \texttt{data\_type variable\_name;}
+            \item Initialization: \texttt{int x = 10;}
+            \item Can also do: \texttt{int x; x = 10;}
             \item Scope:
                 \begin{itemize}
                     \item Local: inside a function.
@@ -76,6 +77,25 @@
                     \item \texttt{const int MAX = 100;}
                     \item \texttt{\#define PI 3.14}
                 \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Type Casting in C}
+        \begin{itemize}
+            \item \textbf{Type casting} converts a variable from one data type to another
+            \item \textbf{Implicit casting (type promotion):}
+                \begin{itemize}
+                    \item Done automatically by the compiler.
+                    \item Example: \texttt{int x = 5; double y = x;} \hfill \emph{(x promoted to double)}
+                \end{itemize}
+            \item \textbf{Explicit casting:}
+                \begin{itemize}
+                    \item Done by the programmer using cast operator.
+                    \item Syntax: \texttt{(type) expression}
+                    \item Example: \texttt{double a = 5.7; int b = (int)a;} \hfill \emph{(b = 5)}
+                \end{itemize}
+            \item Use casting carefully: may cause data loss (e.g., truncation).
         \end{itemize}
     \end{frame}
 
@@ -116,7 +136,7 @@
                     \item Example: 
                         \begin{itemize}
                             \item \texttt{int x = 5;}
-                            \item \texttt{int y = ++x;} \hfill (\texttt{x=6}, \texttt{y=6})
+                            \item \texttt{int y = ++x;} \hfill \emph{()\texttt{x=6}, \texttt{y=6})}
                         \end{itemize}
                 \end{itemize}
             \item \textbf{Postfix form} (\texttt{x++}, \texttt{x--})
@@ -125,7 +145,7 @@
                     \item Example: 
                         \begin{itemize}
                             \item \texttt{int x = 5;}
-                            \item \texttt{int y = x++;} \hfill (\texttt{x=6}, \texttt{y=5})
+                            \item \texttt{int y = x++;} \hfill \emph{(\texttt{x=6}, \texttt{y=5})}
                         \end{itemize}
                 \end{itemize}
             \item Rule of thumb: prefix = ``increment before use", postfix = ``increment after use".
