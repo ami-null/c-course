@@ -128,7 +128,7 @@
             \node (check_n) [decision, below of=init_res, yshift=-1cm] {n$>$1?};
             \node (upd_res) [process, left of=check_n, xshift=-3cm] {result = result × n};
             \node (upd_n) [process, left of=upd_res, xshift=-2.5cm] {n = n -1};
-            \node (output) [io, right of=check_n, xshift=2.5cm] {Output n};
+            \node (output) [io, right of=check_n, xshift=2.5cm] {Output result};
             \node (stop) [startstop, below of=output, yshift=-1cm] {Stop};
 
             \draw [arrow] (start) -- (input);
@@ -172,7 +172,7 @@ While n>1:
     result = result * n
     n = n - 1
 EndWhile
-Output n
+Output result
         \end{verbatim}
     \end{frame}
 
