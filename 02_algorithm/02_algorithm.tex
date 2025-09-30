@@ -103,7 +103,7 @@
     %             \node (start) [startstop] {Start};
     %             \node (command) [process, below of=start, yshift=-1cm] {Perform commands};
     %             \node (cond) [decision, below of=command, yshift=-1cm] {Condition};
-    %             \node (stop) [startstop, below of=decision, yshift=-2cm] {Stop};
+    %             \node (stop) [startstop, below of=cond, yshift=-2cm] {Stop};
 
     %             \draw [arrow] (start) -- (command);
     %             \draw [arrow] (command) -- (cond);
