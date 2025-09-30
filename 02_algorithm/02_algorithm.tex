@@ -37,6 +37,110 @@
     \end{frame}
 
 
+    \section{Control Structures}
+
+    \begin{frame}{Control Flow and Structure of a Program}
+        \begin{itemize}
+            \item Need to be familiar with control structure to be able to write algorithms
+            \item Control flow or control structure can be divided into a few types:
+            \begin{itemize}
+                \item Sequence: step by step execution of commands from top to bottom
+                \item Selection: exceuting a codeblock if certain conditions are met (if-else statement)
+                \item Iteration: repeatedly executing a codeblock while a certain condition is true, stop the loop if the codition is no longer true
+            \end{itemize}
+            \item Every program can be built using the three structures
+        \end{itemize}
+
+        \vspace{1em}
+
+        Additionally, functions (collection of commands) with zero or more inputs can be defined.
+    \end{frame}
+
+
+    \begin{frame}{Sequence}
+        \begin{itemize}
+            \item Default mode of execution: step by step
+            \item Example: Read number, calculate square, print result
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Selection}
+        \begin{itemize}
+            \item \textbf{IF}: execute a block if condition is true
+            \item \textbf{IF-ELSE}: choose between two alternatives
+            \item \textbf{ELSE IF ladder}: multiple conditions
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Iteration}
+        \begin{itemize}
+            \item \textbf{FOR loop} – fixed number of iterations (repeatedly execute commands for a fixed number of times)
+            \item \textbf{WHILE loop} – repeatedly execute while condition is true
+            \item \textbf{DO-WHILE loop} – run the commands at least once, then repeat if condition holds
+        \end{itemize}
+    \end{frame}
+
+
+    % \begin{frame}{While vs Do-While}
+    %     \begin{columns}
+    %     \begin{column}{0.5\textwidth}
+    %         \begin{tikzpicture}
+    %             \node (start) [startstop] {Start};
+    %             \node (cond) [decision, below of=start, yshift=-1cm] {Condition};
+    %             \node (command) [process, below of=cond, yshift=-1cm] {Perform commands};
+    %             \node (stop) [startstop, below of=command, yshift=-1cm] {Stop};
+
+    %             \draw [arrow] (start) -- (cond);
+    %             \draw [arrow] (cond) -- (command) node[midway, right] {True};
+    %             \draw [arrow] (command.west) -- ++(-1, 0) |- (cond);
+    %             \draw [arrow] (cond.east) -- node[midway, above] {False} ++(1.5, 0) |- (stop);
+    %         \end{tikzpicture}
+    %     \end{column}
+    %     \begin{column}{0.5\textwidth}
+    %         \begin{tikzpicture}
+    %             \node (start) [startstop] {Start};
+    %             \node (command) [process, below of=start, yshift=-1cm] {Perform commands};
+    %             \node (cond) [decision, below of=command, yshift=-1cm] {Condition};
+    %             \node (stop) [startstop, below of=decision, yshift=-2cm] {Stop};
+
+    %             \draw [arrow] (start) -- (command);
+    %             \draw [arrow] (command) -- (cond);
+    %             \draw [arrow] (cond.east) -- ++(1.5, 0) node[midway, above] {True} |- (command.east);
+    %             \draw [arrow] (cond) -- (stop) node[midway, right] {False};
+    %         \end{tikzpicture}
+    %     \end{column}
+    %     \end{columns}
+    % \end{frame}
+
+
+    \begin{frame}{Break and Continue}
+        \begin{itemize}
+            \item \textbf{BREAK}: exit the nearest loop immediately (\texttt{exit} in Fortran)
+            \item \textbf{CONTINUE}: skip rest of current iteration, proceed to next (\texttt{cycle} in Fortran)
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Functions}
+        \begin{itemize}
+            \item Collection of commands that perform a specific task
+            \item Usually given a name
+            \item Can have zero or more inputs
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Recursion}
+        \begin{itemize}
+            \item Function calling itself to solve smaller subproblems
+            \item Example: factorial, Fibonacci
+            \item Must have a base case to terminate
+        \end{itemize}
+    \end{frame}
+
+
     \section{Algorithms}
 
 
@@ -205,84 +309,9 @@ End
     \end{frame}
 
 
-    \section{Control Structures}
+    \begin{frame}[fragile]{Example Pseudocode: Factorial of a Number using Recursion}
+        A recursive function (function that calls itself) named \verb|Factorial()| is defined that takes a single input:\\
 
-    \begin{frame}{Sequence}
-        \begin{itemize}
-            \item Default mode of execution: step by step
-            \item Example: Read number, calculate square, print result
-        \end{itemize}
-    \end{frame}
-
-
-    \begin{frame}{Selection}
-        \begin{itemize}
-            \item \textbf{IF}: execute a block if condition is true
-            \item \textbf{IF–ELSE}: choose between two alternatives
-            \item \textbf{ELSE IF ladder}: multiple conditions
-        \end{itemize}
-    \end{frame}
-
-
-    \begin{frame}{Iteration}
-        \begin{itemize}
-            \item \textbf{FOR loop} – fixed number of iterations (repeatedly execute commands for a fixed number of times)
-            \item \textbf{WHILE loop} – repeatedly execute while condition is true
-            \item \textbf{DO–WHILE loop} – run the commands at least once, then repeat if condition holds
-        \end{itemize}
-    \end{frame}
-
-
-    \begin{frame}{While vs Do-While}
-        \begin{columns}
-        \begin{column}{0.5\textwidth}
-            \begin{tikzpicture}
-                \node (start) [startstop] {Start};
-                \node (cond) [decision, below of=start, yshift=-1cm] {Condition};
-                \node (command) [process, below of=cond, yshift=-1cm] {Perform commands};
-                \node (stop) [startstop, below of=command, yshift=-1cm] {Stop};
-
-                \draw [arrow] (start) -- (cond);
-                \draw [arrow] (cond) -- (command) node[midway, right] {True};
-                \draw [arrow] (command.west) -- ++(-1, 0) |- (cond);
-                \draw [arrow] (cond.east) -- node[midway, above] {False} ++(1.5, 0) |- (stop);
-            \end{tikzpicture}
-        \end{column}
-        \begin{column}{0.5\textwidth}
-            \begin{tikzpicture}
-                \node (start) [startstop] {Start};
-                \node (command) [process, below of=start, yshift=-1cm] {Perform commands};
-                \node (cond) [decision, below of=command, yshift=-1cm] {Condition};
-                \node (stop) [startstop, below of=decision, yshift=-2cm] {Stop};
-
-                \draw [arrow] (start) -- (command);
-                \draw [arrow] (command) -- (cond);
-                \draw [arrow] (cond.east) -- ++(1.5, 0) node[midway, above] {True} |- (command.east);
-                \draw [arrow] (cond) -- (stop) node[midway, right] {False};
-            \end{tikzpicture}
-        \end{column}
-        \end{columns}
-    \end{frame}
-
-
-    \begin{frame}{Break and Continue}
-        \begin{itemize}
-            \item \textbf{BREAK}: exit the nearest loop immediately (\texttt{exit} in Fortran)
-            \item \textbf{CONTINUE}: skip rest of current iteration, proceed to next (\texttt{cycle} in Fortran)
-        \end{itemize}
-    \end{frame}
-
-
-    \begin{frame}{Recursion}
-        \begin{itemize}
-            \item Function calling itself to solve smaller subproblems
-            \item Example: factorial, Fibonacci
-            \item Must have a base case to terminate
-        \end{itemize}
-    \end{frame}
-
-
-    \begin{frame}[fragile]{Recursion Example: Factorial of a Number}
         \begin{verbatim}
 Function Factorial(n):
     If (n==0):
