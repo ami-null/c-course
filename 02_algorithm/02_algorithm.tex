@@ -229,7 +229,7 @@
             \begin{tikzpicture}
                 \node (startstop) [startstop] {Start/stop};
                 \node (process) [process, right of=startstop, xshift=2.5cm] {Process};
-                \node (decision) [decision, below of=startstop, yshift=-2cm] {Decision};
+                \node (cond) [decision, below of=startstop, yshift=-2cm] {Decision};
                 \node (io) [io, below of=process, xshift=.35cm, yshift=-2cm] {Input/output};
                 \draw [arrow] (0,-5) -- (4,-5) node[midway, above] {Sequence};
             \end{tikzpicture}
