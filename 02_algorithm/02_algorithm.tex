@@ -73,13 +73,17 @@
         \begin{itemize}
             \item Input an integer, n
             \item Set result = 1
-            \item While n is larger than 1:
+            \item While n is larger than 1, repeat the following:
             \begin{itemize}
                 \item result = result × n
                 \item n = n - 1
             \end{itemize}
             \item Output the result
         \end{itemize}
+
+        Note: In the third bullet point, ``While'' is a looping construct.
+        
+        The statements under the ``While'' key-word are executed repeatedly as long as the condition (n is larger than 1) is true.
     \end{frame}
 
 
@@ -166,6 +170,7 @@
 
     \begin{frame}[fragile]{Example pseudocode: Factorial of a Number}
         \begin{verbatim}
+Start
 Input n
 Set result = 1
 While n>1:
@@ -173,6 +178,7 @@ While n>1:
     n = n - 1
 EndWhile
 Output result
+End
         \end{verbatim}
     \end{frame}
 
@@ -198,9 +204,9 @@ Output result
 
     \begin{frame}{Iteration}
         \begin{itemize}
-            \item \textbf{FOR loop} – fixed number of iterations
-            \item \textbf{WHILE loop} – repeat while condition is true
-            \item \textbf{DO–WHILE loop} – run at least once, then repeat if condition holds
+            \item \textbf{FOR loop} – fixed number of iterations (repeatedly execute commands for a fixed number of times)
+            \item \textbf{WHILE loop} – repeatedly execute while condition is true
+            \item \textbf{DO–WHILE loop} – run the commands at least once, then repeat if condition holds
         \end{itemize}
     \end{frame}
 
@@ -311,10 +317,10 @@ EndFunction
         \item Set sum = 0, i = 1
         \item While i <= n:
             \begin{itemize}
-                \item If i is even, add i to Sum, else do nothing
+                \item If i is even, add i to sum, else do nothing
                 \item Add 1 to i
             \end{itemize}
-        \item Print sum.
+        \item Print sum
     \end{enumerate}
     \end{frame}
 
@@ -348,6 +354,7 @@ EndFunction
 
     \begin{frame}[fragile]{Pseudocode}
         \begin{verbatim}
+Start
 Input n
 sum = 0
 i = 1
@@ -358,6 +365,7 @@ While (i <= n):
     i = i + 1
 EndWhile
 Output sum
+End
         \end{verbatim}
     \end{frame}
 
