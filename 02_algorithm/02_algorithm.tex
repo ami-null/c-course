@@ -69,8 +69,17 @@
     \end{frame}
 
 
+    \begin{frame}{Example Algorithm: Finding the Area of a Triangle}
+        \begin{enumerate}
+            \item Input base, $b$ and height, $h$
+            \item Let area, $a = bh/2$
+            \item Output $a$
+        \end{enumerate}
+    \end{frame}
+
+
     \begin{frame}{Example Algorithm: Factorial of a Number}
-        \begin{itemize}
+        \begin{enumerate}
             \item Input an integer, n
             \item Set result = 1
             \item While n is larger than 1, repeat the following:
@@ -79,9 +88,11 @@
                 \item n = n - 1
             \end{itemize}
             \item Output the result
-        \end{itemize}
+        \end{enumerate}
+        
+        \vspace{1em}
 
-        Note: In the third bullet point, ``While'' is a looping construct.
+        Note: In step 3, ``While'' is a looping construct.\\
         
         The statements under the ``While'' key-word are executed repeatedly as long as the condition (n is larger than 1) is true.
     \end{frame}
@@ -165,6 +176,17 @@
             \item Keywords like IF, WHILE, FOR
             \item Use natural language mixed with structured logic
         \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Example pseudocode: Area of a Triangle}
+        \begin{verbatim}
+Start
+Input base, height
+Set area = base * height / 2
+Output area
+End
+        \end{verbatim}    
     \end{frame}
 
 
@@ -270,6 +292,8 @@ Function Factorial(n):
     EndIf
 EndFunction
         \end{verbatim}
+
+        Note: ``a==b" checks whether a is equal to b, returns True if they are equal, otherwise, returns False.
     \end{frame}
 
 
@@ -370,11 +394,41 @@ End
     \end{frame}
 
 
+    \begin{frame}[fragile]{Example: Find whether a number is even or odd}
+        \begin{verbatim}
+Start
+Input num
+If (num mod 2 == 0):
+    Output Even
+Else
+    Output Odd
+End
+        \end{verbatim}
+
+        Note: In the above, $x \, \mathrm{mod} \, y$ returns the remainder when $x$ is divided by $y$.
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Example: Solution of quadratic equation}
+        The equation is given as: $ax^2 + bx + c = 0$
+        \begin{verbatim}
+Start
+Input a, b, c
+x1 = (-b + sqrt(b^2 - 4ac)) / 2a
+x2 = (-b - sqrt(b^2 - 4ac)) / 2a
+Output x1, x2
+End
+        \end{verbatim}
+
+        Note: In the above, \verb|sqrt(p)| returns the square root of p.
+    \end{frame}
+
+
     \section{Exercises}
 
     \begin{frame}{Exercises}
     \begin{enumerate}
-        \item Design a algorithm and flow chart to find the largest of the three numbers
+        \item Design an algorithm and flow chart to find the largest of the three numbers
         \item Develop pseudocode for computing the sum of the digits of a given integer
         \item Write an algorithm and pseudocode to check whether a number is prime
     \end{enumerate}
