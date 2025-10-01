@@ -29,18 +29,18 @@
 
     \begin{frame}{Basic Data Types in C}
         \begin{itemize}
-            \item \textbf{int}: whole numbers (typically 4 bytes). \\
-                \textit{Usage:} integer data, counters, loop indices.
-            \item \textbf{float}: single-precision decimals (\~{}6 digits). \\
-                \textit{Usage:} decimal data.
-            \item \textbf{double}: double-precision decimals (\~{}15 digits). \\
-                \textit{Usage:} precise calculations, finance.
-            \item \textbf{char}: single character (1 byte, ASCII). \\
-                \textit{Usage:} characters, text handling.
-            \item \textbf{void}: represents no value. \\
-                \textit{Usage:} function return type, pointers.
-            \item \textbf{short, long, unsigned}: integer variants. \\
-                \textit{Usage:} memory optimization, large values.
+            \item \textbf{int}: whole numbers (typically 4 bytes) \\
+                \textit{Usage:} integer data, counters, loop indices
+            \item \textbf{float}: single-precision decimals (\~{}6 digits) \\
+                \textit{Usage:} decimal data
+            \item \textbf{double}: double-precision decimals (\~{}15 digits) \\
+                \textit{Usage:} precise calculations, finance
+            \item \textbf{char}: single character (1 byte, ASCII) \\
+                \textit{Usage:} characters, text handling
+            \item \textbf{void}: represents no value \\
+                \textit{Usage:} function return type, pointers
+            \item \textbf{short, long, unsigned}: integer variants \\
+                \textit{Usage:} memory optimization, large values
         \end{itemize}
     \end{frame}
 
@@ -56,8 +56,8 @@
                     \item \texttt{float}: 4 bytes (about 6 decimal digits)
                     \item \texttt{double}: 8 bytes (about 15 decimal digits)
                 \end{itemize}
-            \item Use \texttt{sizeof()} operator to check actual size.
-            \item Precision: \texttt{float} (single) vs. \texttt{double} (double precision).
+            \item Use \texttt{sizeof()} operator to check actual size
+            \item Precision: \texttt{float} (single) vs. \texttt{double} (double precision)
         \end{itemize}
     \end{frame}
 
@@ -69,8 +69,8 @@
             \item Can also do: \texttt{int x; x = 10;}
             \item Scope:
                 \begin{itemize}
-                    \item Local: inside a function.
-                    \item Global: outside all functions.
+                    \item Local: inside a function
+                    \item Global: outside all functions
                 \end{itemize}
             \item Constants:
                 \begin{itemize}
@@ -86,27 +86,27 @@
             \item \textbf{Type casting} converts a variable from one data type to another
             \item \textbf{Implicit casting (type promotion):}
                 \begin{itemize}
-                    \item Done automatically by the compiler.
+                    \item Done automatically by the compiler
                     \item Example: \texttt{int x = 5; double y = x;} \hfill \emph{(x promoted to double)}
                 \end{itemize}
             \item \textbf{Explicit casting:}
                 \begin{itemize}
-                    \item Done by the programmer using cast operator.
+                    \item Done by the programmer using cast operator
                     \item Syntax: \texttt{(type) expression}
                     \item Example: \texttt{double a = 5.7; int b = (int)a;} \hfill \emph{(b = 5)}
                 \end{itemize}
-            \item Use casting carefully: may cause data loss (e.g., truncation).
+            \item Use casting carefully: may cause data loss (e.g., truncation)
         \end{itemize}
     \end{frame}
 
 
     \begin{frame}{Variable Naming Rules in C}
         \begin{itemize}
-            \item Must begin with a letter or underscore (\_).
-            \item Can contain letters, digits, and underscores.
-            \item Case-sensitive: \texttt{value} and \texttt{Value} are different.
-            \item Cannot be a reserved keyword (\texttt{int}, \texttt{return}, etc.).
-            \item Should be meaningful for readability (e.g., \texttt{total}, not \texttt{x1}).
+            \item Must begin with a letter or underscore (\_)
+            \item Can contain letters, digits, and underscores
+            \item Case-sensitive: \texttt{value} and \texttt{Value} are different
+            \item Cannot be a reserved keyword (\texttt{int}, \texttt{return}, etc.)
+            \item Should be meaningful for readability (e.g., \texttt{total}, not \texttt{x1})
         \end{itemize}
     \end{frame}
 
@@ -116,13 +116,13 @@
     \begin{frame}{Operators in C}
         \begin{itemize}
             \item \textbf{Arithmetic:} \texttt{+}, \texttt{-}, \texttt{*}, \texttt{/}, \texttt{\%} \\
-                Perform basic mathematical operations.
+                Perform basic mathematical operations
             \item \textbf{Relational:} \texttt{<}, \texttt{<=}, \texttt{>}, \texttt{>=}, \texttt{==}, \texttt{!=} \\
-                Compare two values, result is either true (1) or false (0).
+                Compare two values, result is either true (1) or false (0)
             \item \textbf{Logical:} \texttt{\&\&}, \texttt{||}, \texttt{!} \\
-                Combine conditions: \texttt{\&\&} (AND), \texttt{||} (OR), \texttt{!} (NOT).
+                Combine conditions: \texttt{\&\&} (AND), \texttt{||} (OR), \texttt{!} (NOT)
             \item \textbf{Assignment:} \texttt{=}, \texttt{+=}, \texttt{-=}, \texttt{*=}, \texttt{/=} \\
-                Store values in variables or update them with shorthand forms.
+                Store values in variables or update them with shorthand forms
         \end{itemize}
     \end{frame}
 
@@ -132,7 +132,7 @@
             \item \textbf{Increment / Decrement operators:} \texttt{++}, \texttt{--}
             \item \textbf{Prefix form} (\texttt{++x}, \texttt{--x})
                 \begin{itemize}
-                    \item Variable is updated first, then used in the expression.
+                    \item Variable is updated first, then used in the expression
                     \item Example: 
                         \begin{itemize}
                             \item \texttt{int x = 5;}
@@ -141,7 +141,7 @@
                 \end{itemize}
             \item \textbf{Postfix form} (\texttt{x++}, \texttt{x--})
                 \begin{itemize}
-                    \item Variable is used first, then updated.
+                    \item Variable is used first, then updated
                     \item Example: 
                         \begin{itemize}
                             \item \texttt{int x = 5;}
@@ -218,7 +218,7 @@
 
     \begin{frame}{Formatted Output: printf()}
         \begin{itemize}
-            \item Used to display output to the screen.
+            \item Used to display output to the screen
             \item General form: \texttt{printf("format string", values);}
             \item Format specifiers:
                 \begin{itemize}
@@ -234,9 +234,9 @@
 
     \begin{frame}{Formatted Input: scanf()}
         \begin{itemize}
-            \item Used to take input from the user.
+            \item Used to take input from the user
             \item General form: \texttt{scanf("format string", \&variables);}
-            \item Format specifiers are the same as for \texttt{printf}.
+            \item Format specifiers are the same as for \texttt{printf}
             \item Example: \texttt{scanf("\%d", \&x);}
         \end{itemize}
     \end{frame}
@@ -244,15 +244,15 @@
 
     \begin{frame}{Why use the ampersand sign (\&) in scanf()?}
         \begin{itemize}
-            \item \texttt{scanf()} needs the \textbf{address of a variable} to store the input value.
-            \item The operator \texttt{\&} (“address-of”) provides that memory location.
+            \item \texttt{scanf()} needs the \textbf{address of a variable} to store the input value
+            \item The operator \texttt{\&} (“address-of”) provides that memory location
             \item Example:
                 \begin{itemize}
                     \item \texttt{int x;}
                     \item \texttt{scanf("\%d", \&x);}  % correct
-                    \item Without \texttt{\&}, the program will not know where to put the value.
+                    \item Without \texttt{\&}, the program will not know where to put the value
                 \end{itemize}
-            \item \textbf{Exception:} For strings (\texttt{\%s}), the variable itself is already an address, so no \texttt{\&} is needed.
+            \item \textbf{Exception:} For strings (\texttt{\%s}), the variable itself is already an address, so no \texttt{\&} is needed
         \end{itemize}
     \end{frame}
 
@@ -261,9 +261,9 @@
 
     \begin{frame}{Exercise}
         \begin{itemize}
-            \item Write a C program that demonstrates the basic arithmetic operations.
-            \item Write a C program that divides an 5 (integer) by 2 (integer), 5.0 (float) by 2 (integer), and 5 (integer) by 2.0 (float).
-            \item Write a C program that checks whether a user-given number is odd or even, you can use the modulo (\%) operator.
+            \item Write a C program that demonstrates the basic arithmetic operations
+            \item Write a C program that divides an 5 (integer) by 2 (integer), 5.0 (float) by 2 (integer), and 5 (integer) by 2.0 (float)
+            \item Write a C program that checks whether a user-given number is odd or even, you can use the modulo (\%) operator
             \item Guess is the outputs:  \\
                 \texttt{int x = 5; printf("\%d", x++);}  \\
                 \texttt{int y = 5; printf("\%d", ++y);}
