@@ -415,7 +415,7 @@ End
     \end{frame}
 
 
-    \begin{frame}[fragile]{Example: Find whether a number is even or odd}
+    \begin{frame}[fragile]{Example: Find Whether a Number is Even or Odd}
         \begin{verbatim}
 Start
 Input num
@@ -430,7 +430,7 @@ End
     \end{frame}
 
 
-    \begin{frame}[fragile]{Example: Solution of quadratic equation}
+    \begin{frame}[fragile]{Example: Solution of Quadratic Equation}
         The equation is given as: $ax^2 + bx + c = 0$
         \begin{verbatim}
 Start
@@ -442,6 +442,43 @@ End
         \end{verbatim}
 
         Note: In the above, \verb|sqrt(p)| returns the square root of p.
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Example: Quadratic Equation: Handling Edge-Case}
+        Sometimes a quadratic equation may not have real-valued solutions.
+        \begin{verbatim}
+Start
+Input a, b, c
+If (b^2 - 4ac) < 0:
+    Output: No real-valued soltions
+Else:
+    x1 = (-b + sqrt(b^2 - 4ac)) / 2a
+    x2 = (-b - sqrt(b^2 - 4ac)) / 2a
+    Output: x1, x2
+EndIf
+End
+        \end{verbatim}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Example: Quadratic Equation: Handling Edge-Case (cont.)}
+        Sometimes, there might be only one real-valued solution.
+        \begin{verbatim}
+Start
+Input a, b, c
+If (b^2 - 4ac) < 0:
+    Output: No real-valued soltions
+ElseIf (b^2 - 4ac) == 0:
+    x = -b / 2a
+    Output: x
+Else:
+    x1 = (-b + sqrt(b^2 - 4ac)) / 2a
+    x2 = (-b - sqrt(b^2 - 4ac)) / 2a
+    Output: x1, x2
+EndIf
+End
+        \end{verbatim}
     \end{frame}
 
 
