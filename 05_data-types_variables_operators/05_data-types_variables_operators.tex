@@ -31,9 +31,9 @@
         \begin{itemize}
             \item \textbf{int}: whole numbers (typically 4 bytes) \\
                 \textit{Usage:} integer data, counters, loop indices
-            \item \textbf{float}: single-precision decimals (\~{}6 digits) \\
+            \item \textbf{float}: single-precision decimals \\
                 \textit{Usage:} decimal data
-            \item \textbf{double}: double-precision decimals (\~{}15 digits) \\
+            \item \textbf{double}: double-precision decimals\\
                 \textit{Usage:} precise calculations, finance
             \item \textbf{char}: single character (1 byte, ASCII) \\
                 \textit{Usage:} characters, text handling
@@ -58,6 +58,19 @@
                 \end{itemize}
             \item Use \texttt{sizeof()} operator to check actual size
             \item Precision: \texttt{float} (single) vs. \texttt{double} (double precision)
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Signed vs Unsigned Integers}
+        \begin{itemize}
+            \item \textbf{Signed integers} can store both positive and negative values
+            \item \textbf{Unsigned integers} can store only non-negative values
+            \item \textbf{Range difference:} For the same number of bytes, unsigned types can store roughly twice the positive range. 
+                \textit{Example (32-bit):}\\
+                \texttt{int: -2,147,483,648 to 2,147,483,647}\\
+                \texttt{unsigned int: 0 to 4,294,967,295}
+            \item \textbf{When to use unsigned:} When negative values are impossible or meaningless, e.g., array indices, sizes, counters, or bitwise operations
         \end{itemize}
     \end{frame}
 
