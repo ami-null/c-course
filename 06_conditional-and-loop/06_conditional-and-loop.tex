@@ -1,0 +1,306 @@
+\documentclass[12pt, aspectratio=169]{beamer}
+
+\input{../header}
+\input{../header_tikz}
+
+\title{Conditional Execution and Loops in C}
+\author{}
+\date{}
+
+\begin{document}
+
+    {
+		\setbeamertemplate{footline}{}    % NO FOOTLINE FOR THESE TWO FRAMES
+		\addtocounter{framenumber}{-2}    % not counting the title page and the outline in frame numbers
+
+		\begin{frame}
+			\titlepage
+		\end{frame}
+
+		\begin{frame}{Outline}
+            \vfill
+			\tableofcontents[subsectionstyle=hide]
+            \vfill
+		\end{frame}
+	}
+
+    \section{Conditional Execution}
+
+    \begin{frame}{Conditional Execution in C}
+        \begin{itemize}
+            \item \textbf{Conditional execution} allows a program to take different actions based on certain conditions.
+            \item Conditions are expressed using \texttt{if}, \texttt{else}, and \texttt{else if} statements.
+            \item Condition expressions must evaluate to \texttt{true (non-zero)} or \texttt{false (zero)}.
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{\texttt{if} Statement}
+        \textbf{Syntax:}
+        \begin{verbatim}
+if(condition){
+    // statements
+}
+        \end{verbatim}
+
+        \textbf{Example:}
+        \begin{verbatim}
+int x = 10;
+if (x > 0) {
+    printf("Positive number\n");
+}
+        \end{verbatim}
+
+    \end{frame}
+
+
+    \begin{frame}[fragile]{\texttt{if-else} Statement}
+        \begin{verbatim}
+if(condition){
+    // commands to execute if true
+} else{
+    // commands to execute if false
+}
+        \end{verbatim}
+
+    \end{frame}
+
+
+    \begin{frame}[fragile]{\texttt{if-else} Example}
+        \begin{verbatim}
+int age = 18;
+
+if(age >= 18){
+    printf("Eligible to vote\n");
+} else{
+    printf("Not eligible to vote\n");
+}
+        \end{verbatim}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{\texttt{else if} Ladder}
+        \begin{verbatim}
+if(condition1){
+    ...
+} else if(condition2) {
+    ...
+} else{
+    ...
+}
+        \end{verbatim}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{\texttt{else if} Ladder Example}
+        \begin{verbatim}
+int marks = 75;
+
+if(marks >= 90){
+    printf("Grade A\n");
+} else if(marks >= 75){
+    printf("Grade B\n");
+} else{
+    printf("Grade C\n");
+}
+        \end{verbatim}
+    \end{frame}
+
+
+    \section{Loop}
+
+    \begin{frame}{Loops in C}
+        \begin{itemize}
+            \item Loops are used to execute a block of code repeatedly.
+            \item Types of loops in C:
+            \begin{itemize}
+                \item \texttt{for} loop: when number of iterations is known.
+                \item \texttt{while} loop: when condition is checked before each iteration.
+                \item \texttt{do-while} loop: condition checked \textit{after} executing loop body.
+            \end{itemize}
+        \end{itemize}
+
+        In do-while loop, the body of the loop is always executed at least once.
+    \end{frame}
+
+
+    \begin{frame}[fragile]{\texttt{for} Loop}
+\begin{verbatim}
+for(initialization; condition; update){
+    // statements
+}
+        \end{verbatim}
+
+        The elements (initialization, condition and update) inside the for keyword, can be ommitted. For example,
+        \begin{itemize}
+            \item Initialization can be performed before the \texttt{for} keyword
+            \item Condition and update can moved inside the loop body
+            \item \texttt{for(;;)\{...\}} creates an infinite loop
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{\texttt{for} Loop Example}
+        \begin{verbatim}
+for(int i = 1; i <= 5; i++){
+    printf("%d ", i);
+}
+        \end{verbatim}
+    \end{frame}
+
+
+        \begin{frame}[fragile]{\texttt{for} Loop Example (cont.)}
+        \begin{verbatim}
+int i = 1;
+
+for(;;){
+    if(i > 5){
+        break;
+    }
+    printf("%d", i);
+    i++;
+}
+        \end{verbatim}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{\texttt{while} Loop}
+        \textbf{Syntax:}
+        \begin{verbatim}
+while (condition) {
+    // statements
+}
+        \end{verbatim}
+
+        \textbf{Example:}
+        \begin{verbatim}
+int i = 1;
+while(i <= 5){
+    printf("%d ", i);
+    i++;
+}
+        \end{verbatim}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{\texttt{do-while} Loop}
+        \textbf{Syntax:}
+        \begin{verbatim}
+do{
+    // statements
+} while(condition);    // don't forget this semicolon
+        \end{verbatim}
+
+        \textbf{Example:}
+        \begin{verbatim}
+int i = 1;
+do{
+    printf("%d ", i);
+    i++;
+} while(i <= 5);
+        \end{verbatim}
+    \end{frame}
+
+
+    \begin{frame}{\texttt{while} vs \texttt{do-while} Loop}
+        \begin{itemize}
+            \item \texttt{while}: condition checked \textit{before} loop body.
+            \item \texttt{do-while}: condition checked \textit{after}, so loop runs at least once.
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Flowchart: While vs Do-While}
+        \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{tikzpicture}
+                \node (start) [startstop] {Start};
+                \node (cond) [decision, below of=start, yshift=-1cm] {Condition};
+                \node (command) [process, below of=cond, yshift=-1cm] {Perform commands};
+                \node (stop) [startstop, below of=command, yshift=-1cm] {Stop};
+
+                \draw [arrow] (start) -- (cond);
+                \draw [arrow] (cond) -- (command) node[midway, right] {True};
+                \draw [arrow] (command.west) -- ++(-1, 0) |- (cond);
+                \draw [arrow] (cond.east) -- node[midway, above] {False} ++(1.5, 0) |- (stop);
+            \end{tikzpicture}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{tikzpicture}
+                \node (start) [startstop] {Start};
+                \node (command) [process, below of=start, yshift=-1cm] {Perform commands};
+                \node (cond) [decision, below of=command, yshift=-1cm] {Condition};
+                \node (stop) [startstop, below of=cond, yshift=-1cm] {Stop};
+
+                \draw [arrow] (start) -- (command);
+                \draw [arrow] (command) -- (cond);
+                \draw [arrow] (cond.east) -- ++(1.5, 0) node[midway, above] {True} |- (command.east);
+                \draw [arrow] (cond) -- (stop) node[midway, right] {False};
+            \end{tikzpicture}
+        \end{column}
+        \end{columns}
+    \end{frame}
+
+
+    \section{\texttt{break} and \texttt{continue}}
+
+    \begin{frame}{The \texttt{break} Statement}
+        \begin{itemize}
+            \item The break statement immediately terminates the loop or switch statement in which it is encountered
+            \item Control of the program then transfers to the statement immediately following the loop or switch
+            \item It is commonly used to exit a loop prematurely based on a certain condition
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{\texttt{break} Example}
+        \begin{verbatim}
+for(int i = 1; i <= 10; i++){
+    if(i == 5){
+        break;    // Exit the loop when i is 5
+    }
+    printf("%d ", i);
+}
+printf("\nLoop terminated.\n");
+        \end{verbatim}
+    \end{frame}
+
+
+    \begin{frame}{The \texttt{continue} Statement}
+        \begin{itemize}
+            \item The continue statement skips the remaining statements in the current iteration of a loop and proceeds to the next iteration
+            \item It is used when you want to bypass certain parts of the loop's body for specific conditions without exiting the entire loop
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{\texttt{continue} Example}
+        \begin{verbatim}
+for(int i = 1; i <= 5; i++){
+    if (i == 3){
+        continue;    // Skip printing when i is 3
+    }
+    printf("%d ", i);
+}
+printf("\nLoop finished.\n");
+        \end{verbatim}
+    \end{frame}
+
+
+    \section{The \texttt{switch} Statement}
+
+
+    \section{Exercise}
+
+    \begin{frame}{Exercise}
+        \begin{itemize}
+            \item Write a C program to check whether a number is positive or negative
+            \item Write a C program to check whether an integer is even or odd
+            \item Write a program to assign grades based on score ranges
+            \item Write a program to print the first n natural numbers using a \texttt{for} loop
+            \item Write a program to compute the sum of numbers from 1 to n using a \texttt{while} loop
+            \item Write a program to repeatedly take user input (integer) and print its square, until a negative number is entered
+        \end{itemize}
+    \end{frame}
+
+\end{document}
