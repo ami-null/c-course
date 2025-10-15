@@ -98,16 +98,15 @@ int b[]  = {1, 2, 3};    // size inferred: 3
     \section{Multidimensional Arrays}
 
 
-    \begin{frame}{What is a Multidimensional Array?}
+    \begin{frame}{Multidimensional Array}
         \begin{itemize}
-            \item A \textbf{2D array} is an array of arrays (like a table / matrix).
-            \item Indices are written as \texttt{arr[row][col]}.
+            \item An array with more than one dimension
             \item Real-life analogies:
                 \begin{itemize}
-                    \item 2D: matricx or spreadsheet (rows and columns)
+                    \item 2D: matricx or spreadsheet (rows and columns), indices are written as \texttt{arr[row][col]}
                     \item 3D: a stack of matrices
                 \end{itemize}
-            \item C supports arrays with any number of dimensions; common ones: 1D, 2D and 3D
+            \item C supports arrays with any number of dimensions
         \end{itemize}
     \end{frame}
 
@@ -132,59 +131,51 @@ int mat3[2][3] = {1,2,3,4,5,6};
         \end{itemize}
 
         \textbf{Example: print a 2x3 matrix}
-        \begin{verbatim}
-#include <stdio.h>
-
-int main() {
-    int mat[2][3] = {{1,2,3},{4,5,6}};
-    printf("%d\n", mat[1][2]); // prints 6
-    return 0;
-}
-        \end{verbatim}
-
-        \textbf{Sample Output:}
-        \begin{verbatim}
-6
-        \end{verbatim}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont,
+        ]{c}{../code-examples/07_04_accessing-2d-array-element.c}
     \end{frame}
+
 
     \begin{frame}[fragile]{Input and Print a 2D Array}
-        \begin{verbatim}
-#include <stdio.h>
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont,
+            firstline=1,
+            lastline=14,
+            firstnumber=1
+        ]{c}{../code-examples/07_05_2d-array-io.c}
 
-int main() {
-    int r = 2, c = 3, i, j, mat[2][3];
-    printf("Please input a 2 by 3 matrix:\n");
-    for (i = 0; i < r; i++)
-        for (j = 0; j < c; j++)
-            scanf("%d", &mat[i][j]);
-
-    printf("\nYou entered:\n");
-    for (i = 0; i < r; i++) {
-        for (j = 0; j < c; j++)
-            printf("%d ", mat[i][j]);
-        printf("\n");
-    }
-}
-        \end{verbatim}
-
-        \textbf{Sample I/O:}
-\begin{verbatim}
-Please input a 2 by 3 matrix:
-1 2 3
-4 5 6
-
-You entered:
-1 2 3
-4 5 6
-\end{verbatim}
+        \textit{Continued in next slide}
     \end{frame}
+
+
+    \begin{frame}[fragile]{Input and Print a 2D Array (cont.)}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont,
+            firstline=14,
+            lastline=24,
+            firstnumber=14
+        ]{c}{../code-examples/07_05_2d-array-io.c}
+    \end{frame}
+
 
     \begin{frame}{3D and Higher Dimensions}
         \begin{itemize}
-            \item A 3D array \texttt{int a[2][3][4];} can be thought of as 2 blocks, each block is a 3x4 matrix
-            \item Real-life: for example, \textbf{day × row × column} measurements (temperature map over multiple days)
-            \item Indexing: \texttt{a[day][row][col]}
+            \item A 3D array \texttt{int arr[2][3][4];} can be thought of as 2 blocks, each block is a 3x4 matrix
+            \item Real-life: for example, \textbf{block × row × column} measurements (temperature map over multiple days)
+            \item Indexing: \texttt{a[block][row][col]}
         \end{itemize}
     \end{frame}
 
@@ -194,49 +185,83 @@ You entered:
 
     \begin{frame}{What is a String in C?}
         \begin{itemize}
-            \item In C, a \textbf{string} is an array of \texttt{char} terminated by the null character \texttt{'\textbackslash0'}.
-            \item Example: \texttt{char s[] = "hello";} actually creates 6 chars: \texttt{'h','e','l','l','o','\textbackslash0'}.
-            \item Strings are manipulated through arrays and standard library functions in \texttt{<string.h>}.
-            \item You can access individual characters with \texttt{s[i]}.
+            \item In C, a \textbf{string} is an array of \texttt{char} terminated by the null character \texttt{'\textbackslash0'}
+            \item Example: \texttt{char s[] = "hello";} actually creates 6 chars: \texttt{'h','e','l','l','o','\textbackslash0'}
+            \item Strings are manipulated through arrays and standard library functions in \texttt{<string.h>}
+            \item You can access individual characters with \texttt{s[i]}
         \end{itemize}
     \end{frame}
 
     \begin{frame}[fragile]{Declare and Initialize Strings}
         \begin{verbatim}
 char s1[] = "Hello";
-char s2[10] = "Hi";      // remaining bytes unused (but available)
+char s2[10] = "Hi";      // remaining bytes unused
 char s3[6] = {'H','i','!','\0'}; // explicit
         \end{verbatim}
     \end{frame}
 
+
     \begin{frame}[fragile]{Reading Strings from User}
         \begin{itemize}
-            \item Avoid \texttt{gets()} (unsafe). Use \texttt{fgets()} or \texttt{scanf("\%s", ...)}.
-            \item \texttt{scanf("\%s", s);} reads until whitespace — does not read spaces.
-            \item \texttt{fgets(s, size, stdin);} reads a whole line (including spaces), but includes newline — may want to trim it.
+            \item Avoid \texttt{gets()} (unsafe). Use \texttt{fgets()} or \texttt{scanf("\%s", ...)}
+            \item \texttt{scanf("\%s", s);} reads until whitespace, does not read spaces
+            \item \texttt{fgets(s, size, stdin);} reads a whole line (including spaces)
+            \item However, the string from \texttt{fgets()} includes newline (\verb|\n|)
+            \item May want to trim this newline (trimming it, is often not required, depends on use case)
         \end{itemize}
-
-        \textbf{Example using fgets}
-        \begin{verbatim}
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char s[100];
-    printf("Enter a line: ");
-    fgets(s, sizeof(s), stdin);
-    // remove trailing newline
-    s[strcspn(s, "\n")] = '\0';
-    printf("You wrote: \%s\n", s);
-    return 0;
-}
-        \end{verbatim}
     \end{frame}
+
+
+    \begin{frame}{String Input Using \texttt{scanf()}}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/04_01_greetings.c}
+
+        Note that in \texttt{scanf()}, we provided \texttt{username} as the second argument and not \texttt{\&username}.
+        
+        This is because \texttt{username} itself holds the memory address of the character array.
+
+        Recall that the \texttt{\&var} returns the memory address of the variable named \texttt{var}.
+    \end{frame}
+
+
+    \begin{frame}{String Input Using \texttt{fgets()}}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/07_06_fgets-string.c}
+    \end{frame}
+
+
+    \begin{frame}{String Input Using \texttt{fgets()} (cont.)}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont,
+            firstline=9,
+            lastline=11,
+            firstnumber=9
+        ]{c}{../code-examples/07_06_fgets-string.c}
+
+        In the above code, \texttt{strcspn(s, "\textbackslash n")} searches for and returns the index of the newline character (\texttt{"\textbackslash n"}) in the string named \texttt{s}.\\
+
+        \texttt{s[strcspn(s, "\textbackslash n")] = '\textbackslash 0';} replaces the newline character with the null terminator character (\texttt{"\textbackslash 0}).
+    \end{frame}
+
 
     \begin{frame}[fragile]{Common String Functions (from <string.h>)}
         \begin{itemize}
             \item \texttt{strlen(s)} — length of string (not counting '\textbackslash0')
-            \item \texttt{strcmp(s1, s2)} — compare strings (0 if equal)
+            \item \texttt{strcmp(s1, s2)} — compare strings (returns 0 if equal)
             \item \texttt{strcpy(dest, src)} — copy string
             \item \texttt{strcat(dest, src)} — concatenate
         \end{itemize}

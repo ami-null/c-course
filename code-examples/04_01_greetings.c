@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int main(){
-    char name[20];
+    char username[20];
     printf("Enter your name: ");
-    scanf("%s", name);
-    printf("Good day to you, %s!", name);
+    scanf("%s", username);
+    printf("Good day to you, %s!", username);
 }
