@@ -1,0 +1,452 @@
+\documentclass[12pt, aspectratio=169]{beamer}
+
+\input{../header}
+
+\title{Arrays and Strings in C}
+\author{Md. Aminul Islam Shazid}
+\date{}
+
+\begin{document}
+
+    {
+		\setbeamertemplate{footline}{}    % NO FOOTLINE FOR THESE TWO FRAMES
+		\addtocounter{framenumber}{-2}    % not counting the title page and the outline in frame numbers
+
+		\begin{frame}
+			\titlepage
+		\end{frame}
+
+		\begin{frame}{Outline}
+            \vfill
+			\tableofcontents[subsectionstyle=hide]
+            \vfill
+		\end{frame}
+	}
+
+
+\section{Introduction to Arrays}
+
+
+    \begin{frame}{What is an Array?}
+        \begin{itemize}
+            \item An \textbf{array} is a collection of elements of the \emph{same} type stored in contiguous memory.
+            \item Each element is accessed by an \textbf{index} (zero-based in C, meaning that the first element is at index 0): \texttt{arr[0]}, \texttt{arr[1]}, \dots
+            \item Real-life analogy: a row of mailboxes, a list of student marks, or seats in a bus lined up.
+            \item Arrays let us group related values under one name.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]{1D Array: Declaration and Initialization}
+        \textbf{Declaration:}
+        \begin{verbatim}
+int arr[5];              // declares an array of 5 integers
+        \end{verbatim}
+
+        \textbf{Declaration and Initialization:}
+        \begin{verbatim}
+int a[5] = {10, 20, 30, 40, 50};
+int b[]  = {1, 2, 3};    // size inferred: 3
+        \end{verbatim}
+    \end{frame}
+
+    \begin{frame}[fragile]{Accessing Individual Elements}
+        \begin{itemize}
+            \item Use square brackets with index: \texttt{arr[index]}.
+            \item Example: \texttt{arr[2]} accesses the third element.
+        \end{itemize}
+
+        \textbf{Example: print elements}
+        \begin{verbatim}
+#include <stdio.h>
+
+int main() {
+    int a[5] = {10, 20, 30, 40, 50};
+    printf("%d\n", a[2]);   // prints 30
+    return 0;
+}
+        \end{verbatim}
+
+        \textbf{Sample Output:}
+        \begin{verbatim}
+30
+        \end{verbatim}
+    \end{frame}
+
+    \begin{frame}[fragile]{Take User Input Into an Array}
+        \begin{verbatim}
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    printf("How many numbers? ");
+    scanf("%d", &n);
+    int arr[100];    // assume max 100 for simplicity
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    // print them
+    for (i = 0; i < n; i++) {
+        printf("arr[%d] = %d\n", i, arr[i]);
+    }
+    return 0;
+}
+        \end{verbatim}
+
+        \textbf{Sample Input/Output:}
+        \begin{verbatim}
+How many numbers? 3
+10 20 30
+arr[0] = 10
+arr[1] = 20
+arr[2] = 30
+        \end{verbatim}
+    \end{frame}
+
+    \begin{frame}[fragile]{Summing the Elements of an Array}
+        \begin{verbatim}
+#include <stdio.h>
+
+int main() {
+    int n, i, sum = 0;
+    printf("n: ");
+    scanf("%d", &n);
+    int arr[100];
+    for (i = 0; i < n; i++){
+        scanf("%d", &arr[i]);
+    }
+
+    for (i = 0; i < n; i++){
+        sum += arr[i];
+    }
+    printf("Sum = %d\n", sum);
+}
+        \end{verbatim}
+
+        \textbf{Sample I/O:}
+        \begin{verbatim}
+n: 4
+5 7 3 10
+Sum = 25
+Average = 6.25
+        \end{verbatim}
+    \end{frame}
+
+
+    \section{Multidimensional Arrays}
+
+
+    \begin{frame}{What is a Multidimensional Array?}
+        \begin{itemize}
+            \item A \textbf{2D array} is an array of arrays (like a table / matrix).
+            \item Indices are written as \texttt{arr[row][col]}.
+            \item Real-life analogies:
+                \begin{itemize}
+                    \item 2D: matricx or spreadsheet (rows and columns)
+                    \item 3D: a stack of matrices
+                \end{itemize}
+            \item C supports arrays with any number of dimensions; common ones: 1D, 2D and 3D
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]{2D Array: Declaration and Initialization}
+        \begin{verbatim}
+int mat[3][4];               // 3 rows, 4 columns
+
+int mat2[2][3] = {
+    {1, 2, 3},
+    {4, 5, 6}
+};
+
+// or flattened initialization:
+int mat3[2][3] = {1,2,3,4,5,6};
+        \end{verbatim}
+    \end{frame}
+
+    \begin{frame}[fragile]{Accessing Values in 2D Arrays}
+        \begin{itemize}
+            \item Access element at row r, column c by \texttt{mat[r][c]}.
+            \item Example: \texttt{mat[1][2]} refers to second row, third column.
+        \end{itemize}
+
+        \textbf{Example: print a 2x3 matrix}
+        \begin{verbatim}
+#include <stdio.h>
+
+int main() {
+    int mat[2][3] = {{1,2,3},{4,5,6}};
+    printf("%d\n", mat[1][2]); // prints 6
+    return 0;
+}
+        \end{verbatim}
+
+        \textbf{Sample Output:}
+        \begin{verbatim}
+6
+        \end{verbatim}
+    \end{frame}
+
+    \begin{frame}[fragile]{Input and Print a 2D Array}
+        \begin{verbatim}
+#include <stdio.h>
+
+int main() {
+    int r = 2, c = 3, i, j, mat[2][3];
+    printf("Please input a 2 by 3 matrix:\n");
+    for (i = 0; i < r; i++)
+        for (j = 0; j < c; j++)
+            scanf("%d", &mat[i][j]);
+
+    printf("\nYou entered:\n");
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < c; j++)
+            printf("%d ", mat[i][j]);
+        printf("\n");
+    }
+}
+        \end{verbatim}
+
+        \textbf{Sample I/O:}
+\begin{verbatim}
+Please input a 2 by 3 matrix:
+1 2 3
+4 5 6
+
+You entered:
+1 2 3
+4 5 6
+\end{verbatim}
+    \end{frame}
+
+    \begin{frame}{3D and Higher Dimensions}
+        \begin{itemize}
+            \item A 3D array \texttt{int a[2][3][4];} can be thought of as 2 blocks, each block is a 3x4 matrix
+            \item Real-life: for example, \textbf{day × row × column} measurements (temperature map over multiple days)
+            \item Indexing: \texttt{a[day][row][col]}
+        \end{itemize}
+    \end{frame}
+
+
+    \section{Strings in C}
+
+
+    \begin{frame}{What is a String in C?}
+        \begin{itemize}
+            \item In C, a \textbf{string} is an array of \texttt{char} terminated by the null character \texttt{'\textbackslash0'}.
+            \item Example: \texttt{char s[] = "hello";} actually creates 6 chars: \texttt{'h','e','l','l','o','\textbackslash0'}.
+            \item Strings are manipulated through arrays and standard library functions in \texttt{<string.h>}.
+            \item You can access individual characters with \texttt{s[i]}.
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]{Declare and Initialize Strings}
+        \begin{verbatim}
+char s1[] = "Hello";
+char s2[10] = "Hi";      // remaining bytes unused (but available)
+char s3[6] = {'H','i','!','\0'}; // explicit
+        \end{verbatim}
+    \end{frame}
+
+    \begin{frame}[fragile]{Reading Strings from User}
+        \begin{itemize}
+            \item Avoid \texttt{gets()} (unsafe). Use \texttt{fgets()} or \texttt{scanf("\%s", ...)}.
+            \item \texttt{scanf("\%s", s);} reads until whitespace — does not read spaces.
+            \item \texttt{fgets(s, size, stdin);} reads a whole line (including spaces), but includes newline — may want to trim it.
+        \end{itemize}
+
+        \textbf{Example using fgets}
+        \begin{verbatim}
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char s[100];
+    printf("Enter a line: ");
+    fgets(s, sizeof(s), stdin);
+    // remove trailing newline
+    s[strcspn(s, "\n")] = '\0';
+    printf("You wrote: \%s\n", s);
+    return 0;
+}
+        \end{verbatim}
+    \end{frame}
+
+    \begin{frame}[fragile]{Common String Functions (from <string.h>)}
+        \begin{itemize}
+            \item \texttt{strlen(s)} — length of string (not counting '\textbackslash0')
+            \item \texttt{strcmp(s1, s2)} — compare strings (0 if equal)
+            \item \texttt{strcpy(dest, src)} — copy string
+            \item \texttt{strcat(dest, src)} — concatenate
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}[fragile]{Example: strcmp() and strcpy()}
+        \begin{verbatim}
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char a[20], b[20];
+    strcpy(a, "apple");
+    strcpy(b, "apple");
+    if (strcmp(a, b) == 0)
+        printf("Equal\n");
+    else
+        printf("Not equal\n");
+    return 0;
+}
+        \end{verbatim}
+
+        \textbf{Sample Output:}
+        \begin{verbatim}
+Equal
+        \end{verbatim}
+    \end{frame}
+
+    \begin{frame}[fragile]{Upper-case and Lower-case Conversion (Manual)}
+        \begin{verbatim}
+#include <stdio.h>
+#include <ctype.h>   // for toupper, tolower
+
+int main() {
+    char s[] = "Hello World!";
+    int i = 0;
+    // to upper
+    while (s[i]) {
+        s[i] = toupper((unsigned char)s[i]);
+        i++;
+    }
+    printf("\%s\n", s);  // HELLO WORLD!
+    return 0;
+}
+        \end{verbatim}
+
+        \textbf{Notes:} you can use \texttt{tolower()} similarly. If you prefer not to use \texttt{ctype.h}, you can convert by arithmetic on ASCII when appropriate.
+    \end{frame}
+
+    \begin{frame}[fragile]{Example: Concatenate Strings (strcat)}
+        \begin{verbatim}
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char a[50] = "Hello";
+    char b[] = " World";
+    strcat(a, b);
+    printf("\%s\n", a); // prints "Hello World"
+    return 0;
+}
+        \end{verbatim}
+
+        \textbf{Sample Output:}
+        \begin{verbatim}
+Hello World
+        \end{verbatim}
+    \end{frame}
+
+
+    \section{Examples}
+
+    \begin{frame}[fragile]{Example: Reverse an Array}
+        \begin{verbatim}
+#include <stdio.h>
+
+int main() {
+    int n = 5, i;
+    int a[] = {1,2,3,4,5};
+    for (i = 0; i < n/2; i++) {
+        int tmp = a[i];
+        a[i] = a[n-1-i];
+        a[n-1-i] = tmp;
+    }
+    for (i = 0; i < n; i++) printf("%d ", a[i]);
+    printf("\n");
+    return 0;
+}
+        \end{verbatim}
+
+        \textbf{Sample Output:}
+        \begin{verbatim}
+5 4 3 2 1
+        \end{verbatim}
+    \end{frame}
+
+    \begin{frame}[fragile]{Example: Count Vowels in a String}
+        \begin{verbatim}
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char s[100];
+    fgets(s, sizeof(s), stdin);
+    s[strcspn(s, "\n")] = '\0';
+    int i = 0, count = 0;
+    while (s[i]) {
+        char ch = tolower((unsigned char)s[i]);
+        if (ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'){
+            count++;
+        }
+        i++;
+    }
+    printf("Vowels = %d\n", count);
+    return 0;
+}
+        \end{verbatim}
+
+        \textbf{Sample I/O:}
+        \begin{verbatim}
+Hello World
+Vowels = 3
+        \end{verbatim}
+    \end{frame}
+
+
+    \section{Summary}
+
+
+    \begin{frame}{Summary}
+        \begin{itemize}
+            \item \textbf{Array:} contiguous collection of same-type elements, accessed by indices \texttt{arr[i]}.
+            \item \textbf{1D/2D/3D:} use \texttt{arr[i]}, \texttt{arr[i][j]}, \texttt{arr[i][j][k]} respectively.
+            \item \textbf{Strings:} arrays of \texttt{char} ending with \texttt{'\textbackslash0'}. Use \texttt{<string.h>} functions for convenience.
+            \item \textbf{Input:} \texttt{scanf} or \texttt{fgets} (preferred for whole lines).
+            \item \textbf{Memory:} array name often decays to pointer to the first element — but arrays are fixed-sized storage
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Array Variable and Memory}
+        \begin{itemize}
+            \item \textbf{Important note:} In many contexts the array name (e.g., \texttt{arr}) \emph{decays} to a pointer (details on pointers in upcoming lectures) to the first element. Example: when passed to a function
+            \item But \texttt{arr} itself is not a regular variable containing a value — you cannot reassign it (e.g., \texttt{arr = someOtherPointer;} is invalid)
+            \item Internally arrays point to contiguous chunk of memory starting at the first element
+        \end{itemize}
+    \end{frame}
+
+
+
+    \section{Exercises}
+
+
+    \begin{frame}{Exercises}
+        \begin{itemize}
+            \item Write a program to read \texttt{n} integers into an array and print them in reverse order.
+            \item Write a program to find the maximum and minimum values in an integer array.
+            \item Write a program to remove duplicate elements from a small integer array (keep first occurrences).
+            \item Write a program to multiply two 2x2 matrices and print the result.
+            \item Write a program to read a line of text and print its length (without using \texttt{strlen}).
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Exercises (cont.)}
+        \begin{itemize}
+            \item Write a program to check if a given string is a palindrome (ignore case and spaces).
+            \item Write a program to count frequency of each digit (0-9) in an array of integers.
+            \item Write a program to concatenate two strings without using \texttt{strcat}.
+            \item Write a program to rotate the elements of an array to the right by \texttt{k} positions.
+            \item Write a program to read a 3D array of size 2 × 2 × 2 and compute the sum of all elements.
+        \end{itemize}
+    \end{frame}
+
+
+\end{document}
