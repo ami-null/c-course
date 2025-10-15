@@ -263,7 +263,7 @@ char s3[6] = {'H','i','!','\0'}; // explicit
 
         In the above code, \texttt{strcspn(s, "\textbackslash n")} searches for and returns the index of the newline character (\texttt{"\textbackslash n"}) in the string named \texttt{s}.\\
 
-        \texttt{s[strcspn(s, "\textbackslash n")] = '\textbackslash 0';} replaces the newline character with the null terminator character (\texttt{"\textbackslash 0}).
+        \texttt{s[strcspn(s, "\textbackslash n")] = "\textbackslash 0";} replaces the newline character with the null terminator character (\texttt{"\textbackslash 0"}).
     \end{frame}
 
 
