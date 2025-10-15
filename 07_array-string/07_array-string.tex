@@ -49,7 +49,7 @@ int b[]  = {1, 2, 3};    // size inferred: 3
         \end{verbatim}
     \end{frame}
 
-    \begin{frame}[fragile]{Accessing Individual Elements}
+    \begin{frame}{Accessing Individual Elements}
         \begin{itemize}
             \item Use square brackets with index: \texttt{arr[index]}.
             \item Example: \texttt{arr[2]} accesses the third element.
@@ -66,14 +66,9 @@ int b[]  = {1, 2, 3};    // size inferred: 3
             % lastline=7,
             % firstnumber=1
         ]{c}{../code-examples/07_01_accessing-array-element.c}
-
-        \textbf{Sample Output:}
-        \begin{verbatim}
-30
-        \end{verbatim}
     \end{frame}
 
-    \begin{frame}[fragile]{Example: Take User Input Into an Array}
+    \begin{frame}{Example: Take User Input Into an Array}
         \inputminted[
             frame=none,
             bgcolor=gray!20,
@@ -84,7 +79,7 @@ int b[]  = {1, 2, 3};    // size inferred: 3
     \end{frame}
 
 
-    \begin{frame}[fragile]{Example: Summing the Elements of an Array}
+    \begin{frame}{Example: Summing the Elements of an Array}
         \inputminted[
             frame=none,
             bgcolor=gray!20,
@@ -95,15 +90,15 @@ int b[]  = {1, 2, 3};    // size inferred: 3
     \end{frame}
 
 
-    \begin{frame}[fragile]{Example: Reverse an Array}
-        \inputminted[
-            frame=none,
-            bgcolor=gray!20,
-            linenos, 
-            breaklines=true,
-            fontsize=\fontsize{12pt}{13pt}\selectfont,
-        ]{c}{../code-examples/07_10_array-reverse.c}
-    \end{frame}
+    % \begin{frame}[fragile]{Example: Reverse an Array}
+    %     \inputminted[
+    %         frame=none,
+    %         bgcolor=gray!20,
+    %         linenos, 
+    %         breaklines=true,
+    %         fontsize=\fontsize{12pt}{13pt}\selectfont,
+    %     ]{c}{../code-examples/07_10_array-reverse.c}
+    % \end{frame}
 
 
     \section{Multidimensional Arrays}
@@ -135,12 +130,15 @@ int mat3[2][3] = {1,2,3,4,5,6};
         \end{verbatim}
     \end{frame}
 
-    \begin{frame}[fragile]{Example: Accessing Values in 2D Arrays}
+
+    \begin{frame}{Accessing Values in 2D Arrays}
         \begin{itemize}
-            \item Access element at row r, column c by \texttt{mat[r][c]}.
-            \item Example: \texttt{mat[1][2]} refers to second row, third column.
+            \item Access element at row r, column c by \texttt{mat[r][c]}
+            \item Example: \texttt{mat[1][2]} refers to second row, third column
         \end{itemize}
 
+        \vspace{1em}
+        
         \textbf{Example: print a 2x3 matrix}
         \inputminted[
             frame=none,
@@ -152,7 +150,7 @@ int mat3[2][3] = {1,2,3,4,5,6};
     \end{frame}
 
 
-    \begin{frame}[fragile]{Example: Input and Print a 2D Array}
+    \begin{frame}{Example: Input and Print a 2D Array}
         \inputminted[
             frame=none,
             bgcolor=gray!20,
@@ -168,7 +166,7 @@ int mat3[2][3] = {1,2,3,4,5,6};
     \end{frame}
 
 
-    \begin{frame}[fragile]{Example: Input and Print a 2D Array (cont.)}
+    \begin{frame}{Example: Input and Print a 2D Array (cont.)}
         \inputminted[
             frame=none,
             bgcolor=gray!20,
@@ -193,7 +191,6 @@ int mat3[2][3] = {1,2,3,4,5,6};
 
     \section{Strings in C}
 
-
     \begin{frame}{What is a String in C?}
         \begin{itemize}
             \item In C, a \textbf{string} is an array of \texttt{char} terminated by the null character \texttt{'\textbackslash0'}
@@ -202,6 +199,7 @@ int mat3[2][3] = {1,2,3,4,5,6};
             \item You can access individual characters with \texttt{s[i]}
         \end{itemize}
     \end{frame}
+
 
     \begin{frame}[fragile]{Declare and Initialize Strings}
         \begin{verbatim}
@@ -269,7 +267,7 @@ char s3[6] = {'H','i','!','\0'}; // explicit
     \end{frame}
 
 
-    \begin{frame}[fragile]{Common String Functions (from <string.h>)}
+    \begin{frame}{Common String Functions (from <string.h>)}
         \begin{itemize}
             \item \texttt{strlen(s)} — length of string (not counting '\textbackslash0')
             \item \texttt{strcmp(s1, s2)} — compare strings (returns 0 if equal)
@@ -279,7 +277,7 @@ char s3[6] = {'H','i','!','\0'}; // explicit
     \end{frame}
 
     
-    \begin{frame}[fragile]{Example: Comparing Two Strings: \texttt{strcmp()}}
+    \begin{frame}{Example: Comparing Two Strings: \texttt{strcmp()}}
         \inputminted[
             frame=none,
             bgcolor=gray!20,
