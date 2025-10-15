@@ -73,7 +73,7 @@ int b[]  = {1, 2, 3};    // size inferred: 3
         \end{verbatim}
     \end{frame}
 
-    \begin{frame}[fragile]{Take User Input Into an Array}
+    \begin{frame}[fragile]{Example: Take User Input Into an Array}
         \inputminted[
             frame=none,
             bgcolor=gray!20,
@@ -84,7 +84,7 @@ int b[]  = {1, 2, 3};    // size inferred: 3
     \end{frame}
 
 
-    \begin{frame}[fragile]{Summing the Elements of an Array}
+    \begin{frame}[fragile]{Example: Summing the Elements of an Array}
         \inputminted[
             frame=none,
             bgcolor=gray!20,
@@ -92,6 +92,17 @@ int b[]  = {1, 2, 3};    // size inferred: 3
             breaklines=true,
             fontsize=\fontsize{12pt}{13pt}\selectfont,
         ]{c}{../code-examples/07_03_sum-array-values.c}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Example: Reverse an Array}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont,
+        ]{c}{../code-examples/07_10_array-reverse.c}
     \end{frame}
 
 
@@ -124,7 +135,7 @@ int mat3[2][3] = {1,2,3,4,5,6};
         \end{verbatim}
     \end{frame}
 
-    \begin{frame}[fragile]{Accessing Values in 2D Arrays}
+    \begin{frame}[fragile]{Example: Accessing Values in 2D Arrays}
         \begin{itemize}
             \item Access element at row r, column c by \texttt{mat[r][c]}.
             \item Example: \texttt{mat[1][2]} refers to second row, third column.
@@ -141,7 +152,7 @@ int mat3[2][3] = {1,2,3,4,5,6};
     \end{frame}
 
 
-    \begin{frame}[fragile]{Input and Print a 2D Array}
+    \begin{frame}[fragile]{Example: Input and Print a 2D Array}
         \inputminted[
             frame=none,
             bgcolor=gray!20,
@@ -157,7 +168,7 @@ int mat3[2][3] = {1,2,3,4,5,6};
     \end{frame}
 
 
-    \begin{frame}[fragile]{Input and Print a 2D Array (cont.)}
+    \begin{frame}[fragile]{Example: Input and Print a 2D Array (cont.)}
         \inputminted[
             frame=none,
             bgcolor=gray!20,
@@ -212,7 +223,7 @@ char s3[6] = {'H','i','!','\0'}; // explicit
     \end{frame}
 
 
-    \begin{frame}{String Input Using \texttt{scanf()}}
+    \begin{frame}{Example: String Input Using \texttt{scanf()}}
         \inputminted[
             frame=none,
             bgcolor=gray!20,
@@ -229,7 +240,7 @@ char s3[6] = {'H','i','!','\0'}; // explicit
     \end{frame}
 
 
-    \begin{frame}{String Input Using \texttt{fgets()}}
+    \begin{frame}{Example: String Input Using \texttt{fgets()}}
         \inputminted[
             frame=none,
             bgcolor=gray!20,
@@ -240,7 +251,7 @@ char s3[6] = {'H','i','!','\0'}; // explicit
     \end{frame}
 
 
-    \begin{frame}{String Input Using \texttt{fgets()} (cont.)}
+    \begin{frame}{Example: String Input Using \texttt{fgets()} (cont.)}
         \inputminted[
             frame=none,
             bgcolor=gray!20,
@@ -267,124 +278,87 @@ char s3[6] = {'H','i','!','\0'}; // explicit
         \end{itemize}
     \end{frame}
 
-    \begin{frame}[fragile]{Example: strcmp() and strcpy()}
-        \begin{verbatim}
-#include <stdio.h>
-#include <string.h>
+    
+    \begin{frame}[fragile]{Example: Comparing Two Strings: \texttt{strcmp()}}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/07_07_strcmp.c}
 
-int main() {
-    char a[20], b[20];
-    strcpy(a, "apple");
-    strcpy(b, "apple");
-    if (strcmp(a, b) == 0)
-        printf("Equal\n");
-    else
-        printf("Not equal\n");
-    return 0;
-}
-        \end{verbatim}
-
-        \textbf{Sample Output:}
-        \begin{verbatim}
-Equal
-        \end{verbatim}
+        \texttt{strcmp()} returns 0 if the two strings are same.
     \end{frame}
 
-    \begin{frame}[fragile]{Upper-case and Lower-case Conversion (Manual)}
-        \begin{verbatim}
-#include <stdio.h>
-#include <ctype.h>   // for toupper, tolower
 
-int main() {
-    char s[] = "Hello World!";
-    int i = 0;
-    // to upper
-    while (s[i]) {
-        s[i] = toupper((unsigned char)s[i]);
-        i++;
-    }
-    printf("\%s\n", s);  // HELLO WORLD!
-    return 0;
-}
-        \end{verbatim}
-
-        \textbf{Notes:} you can use \texttt{tolower()} similarly. If you prefer not to use \texttt{ctype.h}, you can convert by arithmetic on ASCII when appropriate.
+    \begin{frame}{Example: Copying a String: \texttt{strcpy()}}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/07_08_strcpy.c}
     \end{frame}
+
+
+%     \begin{frame}[fragile]{Example: Upper-case and Lower-case Conversion (Manual)}
+%         \begin{verbatim}
+% #include <stdio.h>
+% #include <ctype.h>   // for toupper, tolower
+
+% int main() {
+%     char s[] = "Hello World!";
+%     int i = 0;
+%     // to upper
+%     while (s[i]) {
+%         s[i] = toupper((unsigned char)s[i]);
+%         i++;
+%     }
+%     printf("\%s\n", s);  // HELLO WORLD!
+%     return 0;
+% }
+%         \end{verbatim}
+
+%         \textbf{Notes:} you can use \texttt{tolower()} similarly. If you prefer not to use \texttt{ctype.h}, you can convert by arithmetic on ASCII when appropriate.
+%     \end{frame}
+
+
+
+
+%     \begin{frame}[fragile]{Example: Count Vowels in a String}
+%         \begin{verbatim}
+% #include <stdio.h>
+% #include <ctype.h>
+
+% int main() {
+%     char s[100];
+%     fgets(s, sizeof(s), stdin);
+%     s[strcspn(s, "\n")] = '\0';
+%     int i = 0, count = 0;
+%     while (s[i]) {
+%         char ch = tolower((unsigned char)s[i]);
+%         if (ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'){
+%             count++;
+%         }
+%         i++;
+%     }
+%     printf("Vowels = %d\n", count);
+%     return 0;
+% }
+%         \end{verbatim}
+%     \end{frame}
+
 
     \begin{frame}[fragile]{Example: Concatenate Strings (strcat)}
-        \begin{verbatim}
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char a[50] = "Hello";
-    char b[] = " World";
-    strcat(a, b);
-    printf("\%s\n", a); // prints "Hello World"
-    return 0;
-}
-        \end{verbatim}
-
-        \textbf{Sample Output:}
-        \begin{verbatim}
-Hello World
-        \end{verbatim}
-    \end{frame}
-
-
-    \section{Examples}
-
-    \begin{frame}[fragile]{Example: Reverse an Array}
-        \begin{verbatim}
-#include <stdio.h>
-
-int main() {
-    int n = 5, i;
-    int a[] = {1,2,3,4,5};
-    for (i = 0; i < n/2; i++) {
-        int tmp = a[i];
-        a[i] = a[n-1-i];
-        a[n-1-i] = tmp;
-    }
-    for (i = 0; i < n; i++) printf("%d ", a[i]);
-    printf("\n");
-    return 0;
-}
-        \end{verbatim}
-
-        \textbf{Sample Output:}
-        \begin{verbatim}
-5 4 3 2 1
-        \end{verbatim}
-    \end{frame}
-
-    \begin{frame}[fragile]{Example: Count Vowels in a String}
-        \begin{verbatim}
-#include <stdio.h>
-#include <ctype.h>
-
-int main() {
-    char s[100];
-    fgets(s, sizeof(s), stdin);
-    s[strcspn(s, "\n")] = '\0';
-    int i = 0, count = 0;
-    while (s[i]) {
-        char ch = tolower((unsigned char)s[i]);
-        if (ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'){
-            count++;
-        }
-        i++;
-    }
-    printf("Vowels = %d\n", count);
-    return 0;
-}
-        \end{verbatim}
-
-        \textbf{Sample I/O:}
-        \begin{verbatim}
-Hello World
-Vowels = 3
-        \end{verbatim}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/07_09_strcat.c}
     \end{frame}
 
 
@@ -393,20 +367,19 @@ Vowels = 3
 
     \begin{frame}{Summary}
         \begin{itemize}
-            \item \textbf{Array:} contiguous collection of same-type elements, accessed by indices \texttt{arr[i]}.
-            \item \textbf{1D/2D/3D:} use \texttt{arr[i]}, \texttt{arr[i][j]}, \texttt{arr[i][j][k]} respectively.
-            \item \textbf{Strings:} arrays of \texttt{char} ending with \texttt{'\textbackslash0'}. Use \texttt{<string.h>} functions for convenience.
-            \item \textbf{Input:} \texttt{scanf} or \texttt{fgets} (preferred for whole lines).
-            \item \textbf{Memory:} array name often decays to pointer to the first element — but arrays are fixed-sized storage
+            \item \textbf{Array:} contiguous collection of same-type elements, accessed by indices \texttt{arr[i]}
+            \item \textbf{1D/2D/3D:} use \texttt{arr[i]}, \texttt{arr[i][j]}, \texttt{arr[i][j][k]} respectively
+            \item \textbf{Strings:} arrays of \texttt{char} ending with \texttt{'\textbackslash0'}. Use \texttt{<string.h>} functions for convenience
+            \item \textbf{Input:} \texttt{scanf} or \texttt{fgets} (preferred for whole lines)
         \end{itemize}
     \end{frame}
 
 
     \begin{frame}{Array Variable and Memory}
         \begin{itemize}
-            \item \textbf{Important note:} In many contexts the array name (e.g., \texttt{arr}) \emph{decays} to a pointer (details on pointers in upcoming lectures) to the first element. Example: when passed to a function
-            \item But \texttt{arr} itself is not a regular variable containing a value — you cannot reassign it (e.g., \texttt{arr = someOtherPointer;} is invalid)
-            \item Internally arrays point to contiguous chunk of memory starting at the first element
+            \item \textbf{Important note:} In many contexts (for example, when passing to a function), the array name (say, \texttt{arr}) is a pointer to the first element (details on pointers in upcoming lectures)
+            \item Meaning that, \texttt{arr} actually holds the memory address in which the first element of the array is stored
+            \item To summarize: the array name points to a contiguous block of memory starting at the first element of the array
         \end{itemize}
     \end{frame}
 
