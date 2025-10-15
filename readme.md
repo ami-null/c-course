@@ -1,1 +1,1 @@
-# CS191
+# An introductory C course
