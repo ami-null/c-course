@@ -31,8 +31,8 @@
         \begin{itemize}
             \item An \textbf{array} is a collection of elements of the \emph{same} type stored in contiguous memory.
             \item Each element is accessed by an \textbf{index} (zero-based in C, meaning that the first element is at index 0): \texttt{arr[0]}, \texttt{arr[1]}, \dots
-            \item Real-life analogy: a row of mailboxes, a list of student marks, or seats in a bus lined up.
-            \item Arrays let us group related values under one name.
+            \item Example: list of student marks
+            \item Arrays let us group related values under one name
         \end{itemize}
     \end{frame}
 
@@ -56,15 +56,16 @@ int b[]  = {1, 2, 3};    // size inferred: 3
         \end{itemize}
 
         \textbf{Example: print elements}
-        \begin{verbatim}
-#include <stdio.h>
-
-int main() {
-    int a[5] = {10, 20, 30, 40, 50};
-    printf("%d\n", a[2]);   // prints 30
-    return 0;
-}
-        \end{verbatim}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont,
+            % firstline=1,
+            % lastline=7,
+            % firstnumber=1
+        ]{c}{../code-examples/07_01_accessing-array-element.c}
 
         \textbf{Sample Output:}
         \begin{verbatim}
@@ -73,62 +74,24 @@ int main() {
     \end{frame}
 
     \begin{frame}[fragile]{Take User Input Into an Array}
-        \begin{verbatim}
-#include <stdio.h>
-
-int main() {
-    int n, i;
-    printf("How many numbers? ");
-    scanf("%d", &n);
-    int arr[100];    // assume max 100 for simplicity
-    for (i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
-    // print them
-    for (i = 0; i < n; i++) {
-        printf("arr[%d] = %d\n", i, arr[i]);
-    }
-    return 0;
-}
-        \end{verbatim}
-
-        \textbf{Sample Input/Output:}
-        \begin{verbatim}
-How many numbers? 3
-10 20 30
-arr[0] = 10
-arr[1] = 20
-arr[2] = 30
-        \end{verbatim}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont,
+        ]{c}{../code-examples/07_02_array-io.c}
     \end{frame}
 
+
     \begin{frame}[fragile]{Summing the Elements of an Array}
-        \begin{verbatim}
-#include <stdio.h>
-
-int main() {
-    int n, i, sum = 0;
-    printf("n: ");
-    scanf("%d", &n);
-    int arr[100];
-    for (i = 0; i < n; i++){
-        scanf("%d", &arr[i]);
-    }
-
-    for (i = 0; i < n; i++){
-        sum += arr[i];
-    }
-    printf("Sum = %d\n", sum);
-}
-        \end{verbatim}
-
-        \textbf{Sample I/O:}
-        \begin{verbatim}
-n: 4
-5 7 3 10
-Sum = 25
-Average = 6.25
-        \end{verbatim}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont,
+        ]{c}{../code-examples/07_03_sum-array-values.c}
     \end{frame}
 
 
