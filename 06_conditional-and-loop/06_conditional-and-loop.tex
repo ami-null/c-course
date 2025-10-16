@@ -108,6 +108,55 @@ if(marks >= 90){
     \end{frame}
 
 
+    \begin{frame}{Boolean Algebra in \texttt{if} Statements}
+        \begin{itemize}
+            \item There can be multiple conditions
+            \item Need to perform Boolean algebra on these conditions, because \texttt{if} statement expects only a single value
+            \item Boolean operations on multiple conditions evaluate to a single value (true or false)
+            \item Boolean operators:
+            \begin{itemize}
+                \item AND (\texttt{\&\&}): Code runs only if all conditions are true
+                \item OR  (\texttt{\vert\vert}): Code runs if at least one condition is true
+                \item NOT (\texttt{!}): Negates a condition (flips true to false, and vice-versa)
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Example: Loan Eligibility (AND operator)}
+        \begin{verbatim}
+if((age >= 18) && (income >= 20000)){
+    printf("Eligible for loan");
+} else{
+    printf("Ineligible for loan");
+}
+        \end{verbatim}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Example: Age Check (AND operator)}
+        \begin{verbatim}
+if((age >= 13) && (age <= 19)){
+    printf("The user is a teenager");
+} else{
+    printf("The user is not a teenager");
+}
+        \end{verbatim}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Example: Sports Eligibility (OR operator)}
+        \begin{verbatim}
+if((age >= 16) || (weight >= 60)){
+    printf("Eligible");
+} else{
+    printf("Not eligible");
+}
+        \end{verbatim}
+    \end{frame}
+
+
+
     \section{Nested \texttt{if} Statements}
 
     \begin{frame}[fragile]{Nested \texttt{if} Statements}
@@ -127,7 +176,7 @@ if(cond1){
     \end{frame}
 
 
-    \begin{frame}[fragile]{Example: Loan Eligibility}
+    \begin{frame}[fragile]{Example: Loan Eligibility (revisited)}
         \begin{verbatim}
 if (age >= 18) {
     if(income >= 20000){
