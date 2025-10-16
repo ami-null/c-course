@@ -108,6 +108,25 @@ if(marks >= 90){
     \end{frame}
 
 
+    \section{Nested \texttt{if} Statements}
+
+    \begin{frame}[fragile]{Nested \texttt{if} Statements}
+        Sometimes, it necessary to put an \texttt{if} statement inside another. This is called nested statements. Can have as many levels of nesting as necessary.
+
+        \begin{verbatim}
+if(cond1){
+    // code that gets executed if cond1 is true
+    if(cond2){
+        // executed if both cond1 and cond2 are true
+    } else{
+        // executed if both cond1 is true and cond2 is false
+    }
+    // code that gets executed if cond1 is true
+}
+        \end{verbatim}
+    \end{frame}
+
+
     \section{Loop}
 
     \begin{frame}{Loops in C}
@@ -291,9 +310,6 @@ printf("\nLoop finished.\n");
     \section{Nested Loops}
 
 
-    \section{Nested \texttt{if} Statements}
-
-
     \section{The \texttt{switch} Statement}
 
 
@@ -305,6 +321,7 @@ printf("\nLoop finished.\n");
             \item To check whether a number (user input) is positive or negative or zero
             \item To check whether a year (user input) is a leap year
             \item To check whether an integer is even or odd
+            \item To find the number of real-valued solution(s) to a quadratic equation, (\(ax^2+bx+c=0\)). Take \texttt{a}, \texttt{b} and \texttt{c} as user input. Then calculate the value of the discriminant, then show the appropriate output
             \item To print the first n (user input) natural numbers using a \texttt{for} loop. And another program to do the same using a \texttt{while} loop
             \item To compute the sum of numbers from 1 to n using a \texttt{for} loop. And another program to do the same using a \texttt{while} loop
             \item To find the factorial of an intger (user input)
