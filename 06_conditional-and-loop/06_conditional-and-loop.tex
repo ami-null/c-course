@@ -218,26 +218,24 @@ for(initialization; condition; update){
 
 
     \begin{frame}[fragile]{\texttt{for} Loop Example}
-        \begin{verbatim}
-for(int i = 1; i <= 5; i++){
-    printf("%d ", i);
-}
-        \end{verbatim}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/06_08_for_print-1-to-5.c}
     \end{frame}
 
 
-        \begin{frame}[fragile]{\texttt{for} Loop Example (cont.)}
-        \begin{verbatim}
-int i = 1;
-
-for(;;){
-    if(i > 5){
-        break;
-    }
-    printf("%d", i);
-    i++;
-}
-        \end{verbatim}
+    \begin{frame}[fragile]{\texttt{for} Loop Example (cont.)}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/06_09_for_empty-init.c}
     \end{frame}
 
 
@@ -250,20 +248,53 @@ while(condition){
         \end{verbatim}
 
         \textbf{Example:}
-        \begin{verbatim}
-int i = 1;
-while(i <= 5){
-    printf("%d ", i);
-    i++;
-}
-        \end{verbatim}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/06_10_while_print-1-to-5.c}
     \end{frame}
 
 
     \begin{frame}{Example: Greatest Common Divisor (GCD)}
-        The GCD of two integers $a$ and $b$ is $c$ if both $a$ and $b$ are divisible by $c$.
+        \begin{itemize}
+            \item The GCD of two integers $a$ and $b$ is $c$ if both $a$ and $b$ are divisible by $c$
+            \item First, assume that the smaller number is the GCD
+            \item Then check if both $a$ and $b$ are divisible by the assumed GCD. If not, then decrement the assumed value by 1
+            \item Keep repeating this process until both $a$ and $b$ are found to be divisible
+        \end{itemize}
+    \end{frame}
 
-        
+
+    \begin{frame}{Example: GCD (cont.)}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont,
+            firstline=1,
+            lastline=11,
+            firstnumber=1
+        ]{c}{../code-examples/06_11_while_gcd.c}
+
+        \textit{Continued in the next page}
+    \end{frame}
+
+
+    \begin{frame}{Example: GCD (cont.)}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont,
+            firstline=12,
+            % lastline=11,
+            firstnumber=12
+        ]{c}{../code-examples/06_11_while_gcd.c}
     \end{frame}
 
 
@@ -276,13 +307,13 @@ do{
         \end{verbatim}
 
         \textbf{Example:}
-        \begin{verbatim}
-int i = 1;
-do{
-    printf("%d ", i);
-    i++;
-} while(i <= 5);
-        \end{verbatim}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/06_12_do-while.c}
     \end{frame}
 
 
@@ -338,15 +369,13 @@ do{
 
 
     \begin{frame}[fragile]{\texttt{break} Example}
-        \begin{verbatim}
-for(int i = 1; i <= 10; i++){
-    if(i == 5){
-        break;    // Exit the loop when i is 5
-    }
-    printf("%d ", i);
-}
-printf("\nLoop terminated.\n");
-        \end{verbatim}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/06_13_break.c}
     \end{frame}
 
 
@@ -359,15 +388,13 @@ printf("\nLoop terminated.\n");
 
 
     \begin{frame}[fragile]{\texttt{continue} Example}
-        \begin{verbatim}
-for(int i = 1; i <= 5; i++){
-    if (i == 3){
-        continue;    // Skip printing when i is 3
-    }
-    printf("%d ", i);
-}
-printf("\nLoop finished.\n");
-        \end{verbatim}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/06_14_continue.c}
     \end{frame}
 
 
