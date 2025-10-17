@@ -45,13 +45,16 @@ if(condition){
         \end{verbatim}
 
         \textbf{Example:}
-        \begin{verbatim}
-int x = 10;
-if (x > 0) {
-    printf("Positive number\n");
-}
-        \end{verbatim}
-
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont,
+            % firstline=1,
+            % lastline=7,
+            % firstnumber=1
+        ]{c}{../code-examples/06_01_check-positive.c}
     \end{frame}
 
 
@@ -68,15 +71,13 @@ if(condition){
 
 
     \begin{frame}[fragile]{\texttt{if-else} Example}
-        \begin{verbatim}
-int age = 18;
-
-if(age >= 18){
-    printf("Eligible to vote\n");
-} else{
-    printf("Not eligible to vote\n");
-}
-        \end{verbatim}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/06_02_check-voter.c}
     \end{frame}
 
 
@@ -94,17 +95,13 @@ if(condition1){
 
 
     \begin{frame}[fragile]{\texttt{else if} Ladder Example}
-        \begin{verbatim}
-int marks = 75;
-
-if(marks >= 90){
-    printf("Grade A\n");
-} else if(marks >= 75){
-    printf("Grade B\n");
-} else{
-    printf("Grade C\n");
-}
-        \end{verbatim}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/06_03_letter-grade.c}
     \end{frame}
 
 
@@ -124,35 +121,35 @@ if(marks >= 90){
 
 
     \begin{frame}[fragile]{Example: Loan Eligibility (AND operator)}
-        \begin{verbatim}
-if((age >= 18) && (income >= 20000)){
-    printf("Eligible for loan");
-} else{
-    printf("Ineligible for loan");
-}
-        \end{verbatim}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/06_04_loan_and-operator.c}
     \end{frame}
 
 
     \begin{frame}[fragile]{Example: Age Check (AND operator)}
-        \begin{verbatim}
-if((age >= 13) && (age <= 19)){
-    printf("The user is a teenager");
-} else{
-    printf("The user is not a teenager");
-}
-        \end{verbatim}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/06_05_age_and-operator.c}
     \end{frame}
 
 
     \begin{frame}[fragile]{Example: Sports Eligibility (OR operator)}
-        \begin{verbatim}
-if((age >= 16) || (weight >= 60)){
-    printf("Eligible");
-} else{
-    printf("Not eligible");
-}
-        \end{verbatim}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/06_06_sports-eligibility_or-operator.c}
     \end{frame}
 
 
@@ -177,17 +174,13 @@ if(cond1){
 
 
     \begin{frame}[fragile]{Example: Loan Eligibility (revisited)}
-        \begin{verbatim}
-if (age >= 18) {
-    if(income >= 20000){
-        printf("Eligible for loan");
-    } else{
-        printf("Not eligible: income too low");
-    }
-} else{
-    printf("Not eligible: under 18");
-}
-        \end{verbatim}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/06_07_loan_nested-if.c}
     \end{frame}
 
 
@@ -251,7 +244,7 @@ for(;;){
     \begin{frame}[fragile]{\texttt{while} Loop}
         \textbf{Syntax:}
         \begin{verbatim}
-while (condition) {
+while(condition){
     // statements
 }
         \end{verbatim}
@@ -264,6 +257,13 @@ while(i <= 5){
     i++;
 }
         \end{verbatim}
+    \end{frame}
+
+
+    \begin{frame}{Example: Greatest Common Divisor (GCD)}
+        The GCD of two integers $a$ and $b$ is $c$ if both $a$ and $b$ are divisible by $c$.
+
+        
     \end{frame}
 
 
