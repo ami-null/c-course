@@ -1,7 +1,12 @@
 #include <stdio.h>
 
 int main(){
-    for(int i = 1; i <= 5; i++){
-        printf("%d ", i);
+    int i = 1;
+    for(;;){
+        if(i>5){
+            break;
+        }
+        printf("%d\n", i);
+        i++;
     }
 }
