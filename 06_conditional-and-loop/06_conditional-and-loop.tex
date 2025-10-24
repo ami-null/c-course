@@ -1,6 +1,7 @@
 \documentclass[12pt, aspectratio=169]{beamer}
 
 \input{../header}
+\input{../header_minted.tex}
 \input{../header_tikz}
 
 \title{Conditional Execution and Loops in C}
@@ -643,7 +644,7 @@ switch(x){
             \end{verbatim}
 
             \framebreak
-            
+
             \item To create a simple calculator using the \texttt{switch} statement. First, define a character variable (call it \texttt{op} for operator) using the \texttt{char} keyword, then use \texttt{scanf("\%c", \&op)}, the user shall input one of the following symbols: +, -, *, /. Then take two numbers (can be integers or floats) as user input. Finally, use the \texttt{switch} keyword to perform addition, subtraction, multiplication or division based on the input to \texttt{op}. If user inputs some unexpected character, the print \texttt{invalid input}
         \end{enumerate}
     \end{frame}
