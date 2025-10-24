@@ -522,6 +522,69 @@ for (initialization; condition; update) {
 
     \section{The \texttt{switch} Statement}
 
+    \begin{frame}{The \texttt{switch} Statement}
+        \begin{itemize}
+            \item The \texttt{switch} statement allows multi-way branching based on the value of an expression
+            \item It is an alternative to long chains of \texttt{if-else-if} statements
+            \item It compares the given expression against multiple constant values given by (\texttt{case} labels)
+            \item The \texttt{default} case handles unexpected or unmatched values
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{\texttt{switch} Statement General Syntax}
+        \begin{minted}{c}
+switch(expression){
+    case value1:
+        // statements
+        break;
+    case value2:
+        // statements
+        break;
+    // ...
+    // ...
+    default:
+        // statements (optional)
+}
+        \end{minted}
+    \end{frame}
+
+
+    \begin{frame}{Why is \texttt{break} Necessary?}
+        \begin{itemize}
+            \item Without \texttt{break}, execution "falls through" to the next \texttt{case}
+            \item This means all subsequent cases are executed until a \texttt{break} or the end of the switch
+            \item To prevent this, use \texttt{break} at the end of each case
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Example: Fall-Through Behavior of \texttt{switch}}
+        \begin{minted}{c}
+int x = 2;
+switch(x){
+    case 1: 
+        printf("A ");
+    case 2: 
+        printf("B ");
+    case 3: 
+        printf("C ");
+}
+// Output: B C
+        \end{minted}
+    \end{frame}
+
+
+    \begin{frame}{Example: Even-Odd}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/06_23_switch_even-odd.c}
+    \end{frame}
+
 
     \section{Exercise}
 
@@ -578,6 +641,10 @@ for (initialization; condition; update) {
 1 2
 1
             \end{verbatim}
+
+            \framebreak
+            
+            \item To create a simple calculator using the \texttt{switch} statement. First, define a character variable (call it \texttt{op} for operator) using the \texttt{char} keyword, then use \texttt{scanf("\%c", \&op)}, the user shall input one of the following symbols: +, -, *, /. Then take two numbers (can be integers or floats) as user input. Finally, use the \texttt{switch} keyword to perform addition, subtraction, multiplication or division based on the input to \texttt{op}. If user inputs some unexpected character, the print \texttt{invalid input}
         \end{enumerate}
     \end{frame}
 
