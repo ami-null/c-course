@@ -433,13 +433,100 @@ do{
 
     \section{Nested Loops}
 
+    \begin{frame}{Nested Loops}
+        \begin{itemize}
+            \item A \textbf{nested loop} means one loop inside another loop
+            \item The \textbf{inner loop} executes completely for every single iteration of the \textbf{outer loop}
+            \item Commonly used for:
+            \begin{itemize}
+                \item Working with 2D data (like matrices)
+                \item Generating patterns
+                \item Performing repeated comparisons or calculations
+            \end{itemize}
+            \item One can nest as many loops as necessary, but nesting more than two or three loops can lead to confusing or hard to understand codes
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Nested Loops: Basic Syntax}
+        \begin{verbatim}
+for (initialization; condition; update) {
+    for (initialization; condition; update) {
+        // inner loop body
+    }
+    // outer loop body
+}
+        \end{verbatim}
+
+        \begin{itemize}
+            \item You can nest \texttt{while} inside \texttt{for}, or any combination of loop types
+            \item Be careful with initialization and loop conditions to avoid infinite loops
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Example: (Non-nested, single loop) Multiplication table of 3}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/06_18_single-loop_multiplication-table.c}
+    \end{frame}
+
+
+    \begin{frame}{Example: (Nested loops) Multiplication tables of 1, 2 and 3}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/06_19_nested-loops_multiplication-table.c}
+    \end{frame}
+
+
+    \begin{frame}{Example: Triangle Pattern with *}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/06_20_nested-loops_triangle.c}
+    \end{frame}
+
+
+    \begin{frame}{Example: Number Triangle}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/06_21_number-triangle.c}
+    \end{frame}
+
+
+    \begin{frame}{Example: Number Pyramid}
+        \inputminted[
+            frame=none,
+            bgcolor=gray!20,
+            linenos, 
+            breaklines=true,
+            fontsize=\fontsize{12pt}{13pt}\selectfont
+        ]{c}{../code-examples/06_22_number-pyramid.c}
+    \end{frame}
+
 
     \section{The \texttt{switch} Statement}
 
 
     \section{Exercise}
 
-    \begin{frame}[allowframebreaks=0.75]{Exercise}
+    % \begin{frame}[fragile, allowframebreaks=0.75]{Exercise}
+    \begin{frame}[fragile, allowframebreaks]{Exercise}
         Write C programs:
         \begin{enumerate}
             \item To check whether a number (user input) is positive or negative or zero
@@ -455,6 +542,38 @@ do{
             \item To repeatedly take user input as exam marks and print the corresponding letter grade, until a negative number is entered (use \texttt{while} loop and \texttt{if} statement)
             \item To find the GCD of two integers using the Euclidean algorithm
             \item To find the LCM of two integers
+            \item To print a right aligned triangle pattern with *, sample output:
+            \begin{verbatim}
+        *
+      * *
+    * * *
+  * * * *
+* * * * *
+            \end{verbatim}
+
+            \framebreak
+
+            \item To generate a multiplication table up to 5×5 in grid format, sample output:
+            \begin{verbatim}
+  1   2   3   4   5
+  2   4   6   8  10
+  3   6   9  12  15
+  4   8  12  16  20
+  5  10  15  20  25
+            \end{verbatim}
+
+            \framebreak
+
+            \item To generate an inverted number triangle, sample output:
+            \begin{verbatim}
+1 2 3 4 5
+1 2 3 4
+1 2 3
+1 2
+1
+            \end{verbatim}
+
+            \item To find all the prime numbers within a given range. The start and end integers of the range shall be user input
         \end{enumerate}
     \end{frame}
 
