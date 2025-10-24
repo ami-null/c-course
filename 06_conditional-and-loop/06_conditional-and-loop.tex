@@ -39,11 +39,11 @@
 
     \begin{frame}[fragile]{\texttt{if} Statement}
         \textbf{Syntax:}
-        \begin{verbatim}
+        \begin{minted}{c}
 if(condition){
     // statements
 }
-        \end{verbatim}
+        \end{minted}
 
         \textbf{Example:}
         \inputminted[
@@ -56,13 +56,13 @@ if(condition){
 
 
     \begin{frame}[fragile]{\texttt{if-else} Statement}
-        \begin{verbatim}
+        \begin{minted}{c}
 if(condition){
     // commands to execute if true
 } else{
     // commands to execute if false
 }
-        \end{verbatim}
+        \end{minted}
 
     \end{frame}
 
@@ -75,7 +75,7 @@ if(condition){
 
 
     \begin{frame}[fragile]{\texttt{else if} Ladder}
-        \begin{verbatim}
+        \begin{minted}{c}
 if(condition1){
     ...
 } else if(condition2) {
@@ -83,7 +83,7 @@ if(condition1){
 } else{
     ...
 }
-        \end{verbatim}
+        \end{minted}
     \end{frame}
 
 
@@ -136,7 +136,7 @@ if(condition1){
     \begin{frame}[fragile]{Nested \texttt{if} Statements}
         Sometimes, it necessary to put an \texttt{if} statement inside another. This is called nested statements. Can have as many levels of nesting as necessary.
 
-        \begin{verbatim}
+        \begin{minted}{c}
 if(cond1){
     // code that gets executed if cond1 is true
     if(cond2){
@@ -146,7 +146,7 @@ if(cond1){
     }
     // code that gets executed if cond1 is true
 }
-        \end{verbatim}
+        \end{minted}
     \end{frame}
 
 
@@ -175,11 +175,11 @@ if(cond1){
 
 
     \begin{frame}[fragile]{\texttt{for} Loop}
-\begin{verbatim}
+        \begin{minted}{c}
 for(initialization; condition; update){
     // statements
 }
-        \end{verbatim}
+        \end{minted}
 
         The elements (initialization, condition and update) inside the for keyword, can be ommitted. For example,
         \begin{itemize}
@@ -220,11 +220,11 @@ for(initialization; condition; update){
 
     \begin{frame}[fragile]{\texttt{while} Loop}
         \textbf{Syntax:}
-        \begin{verbatim}
+        \begin{minted}{c}
 while(condition){
     // statements
 }
-        \end{verbatim}
+        \end{minted}
 
         \textbf{Example:}
         \inputminted[
@@ -267,11 +267,11 @@ while(condition){
 
     \begin{frame}[fragile]{\texttt{do-while} Loop}
         \textbf{Syntax:}
-        \begin{verbatim}
+        \begin{minted}{c}
 do{
     // statements
 } while(condition);    // don't forget this semicolon
-        \end{verbatim}
+        \end{minted}
 
         \textbf{Example:}
         \inputminted[
@@ -378,14 +378,14 @@ do{
 
 
     \begin{frame}[fragile]{Nested Loops: Basic Syntax}
-        \begin{verbatim}
+        \begin{minted}{c}
 for (initialization; condition; update) {
     for (initialization; condition; update) {
         // inner loop body
     }
     // outer loop body
 }
-        \end{verbatim}
+        \end{minted}
 
         \begin{itemize}
             \item You can nest \texttt{while} inside \texttt{for}, or any combination of loop types
