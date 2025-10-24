@@ -121,13 +121,19 @@
 
     \begin{frame}[fragile]{Comments}
         \begin{itemize}
-            \item Single-line: \texttt{// comment}
-            \item Multi-line (often discouraged):
+            \item Single-line, starts with double slashes (\texttt{//})
+            \item Multi-line, starts with \texttt{/*} and ends with \texttt{*/}, this syntax is often discouraged
+            \item Instead begin the lines with double slashes for multiline comments
         \end{itemize}
-        \begin{verbatim}
+        \begin{minted}[linenos]{c}
+// this is a single line comment
+
 /* this is
 a multiline comment */
-        \end{verbatim}
+
+// this is also
+// a multiline comment
+        \end{minted}
     \end{frame}
 
 
@@ -149,11 +155,11 @@ a multiline comment */
             \item Use a single tab or four spaces for one level of indentation
             \item Example:
         \end{itemize}
-        \begin{verbatim}
+        \begin{minted}{c}
 if(condition){
     statement;
 }
-        \end{verbatim}
+        \end{minted}
     \end{frame}
 
 
