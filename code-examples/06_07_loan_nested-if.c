@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 int main(){
     int age, income;
     scanf("%d %d", &age, &income);

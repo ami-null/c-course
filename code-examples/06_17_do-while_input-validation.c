@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-int main() {
+int main(){
     int input, pin = 12345;
 
-    do {
+    do{
         printf("Enter the pin: ");
         scanf("%d", &input);
     } while(input != pin);
