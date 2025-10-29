@@ -1,0 +1,190 @@
+\documentclass[12pt, aspectratio=169]{beamer}
+
+\input{../header}
+\input{../header_minted.tex}
+
+\title{Functions in C}
+\author{}
+\date{}
+
+\begin{document}
+
+    {
+		\setbeamertemplate{footline}{}    % NO FOOTLINE FOR THESE TWO FRAMES
+		\addtocounter{framenumber}{-2}    % not counting the title page and the outline in frame numbers
+
+		\begin{frame}
+			\titlepage
+		\end{frame}
+
+		\begin{frame}{Outline}
+            % \vfill
+            \small
+			\tableofcontents[subsectionstyle=hide]
+            % \vfill
+		\end{frame}
+	}
+
+    \begin{frame}{Introduction to Functions in C}
+    \begin{itemize}
+        \item A function is a \emph{reusable} block of code that performs a specific task
+        \item Functions help organize programs into smaller and manageable sections
+        \item The \texttt{main} function is the entry point of every C program
+    \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Why Use Functions}
+    \begin{itemize}
+        \item To avoid repeating the same code
+        \item To make programs easier to understand and maintain
+        \item To divide a large problem into smaller parts
+        \item To allow reusability of code
+    \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Advantages of Using Functions}
+    \begin{itemize}
+        \item Reduces code duplication
+        \item Enhances readability
+        \item Helps debugging and testing individual parts easily
+        \item Supports modular program design
+    \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Syntax of a Function}
+    \begin{minted}{c}
+return_type function_name(parameter_list) {
+    // body of the function
+    return the_return_value;  // optional
+}
+    \end{minted}
+
+    \begin{itemize}
+        \item Function declaration tells the compiler about the function
+        \item Function definition contains the actual code
+        \item Function call transfers control to the function
+    \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Example: Function with No Parameters}
+        \begin{minted}{c}
+void greet() {
+    printf("Hello, World!");
+}
+        \end{minted}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Example: Function with One Parameter}
+    \begin{minted}{c}
+void printNumber(int n) {
+    printf("The number is %d", n);
+}
+\end{minted}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Example: Function with Multiple Parameters}
+        \begin{minted}{c}
+int add(int a, int b) {
+    return a + b;
+}
+        \end{minted}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Calling Functions}
+        \begin{minted}{c}
+greet();             // no parameter
+printNumber(5);      // one parameter
+sum = add(4, 6);     // multiple parameters
+        \end{minted}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Return Type and Return Value}
+        \begin{minted}{c}
+int square(int n) {
+    return n * n;
+}
+        \end{minted}
+
+
+    \begin{itemize}
+        \item The return type defines the type of value a function returns
+        \item The return statement sends a value back to the calling code
+    \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Types of Functions}
+        \begin{itemize}
+            \item Library functions - predefined in header files like ``printf()'', ``scanf()'', ``sqrt()''
+            \item User-defined functions - created by the programmer
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Recursive Functions}
+        \begin{itemize}
+            \item A recursive function calls itself
+            \item Must have a base case to stop recursion
+        \end{itemize}
+
+        \begin{minted}[linenos]{c}
+int factorial(int n){
+    if(n == 0){
+        return 1;
+    } else{
+        return n * factorial(n - 1);
+    }
+}
+        \end{minted}
+    \end{frame}
+
+
+    \begin{frame}{Example: Function with No Parameters and No Return Value}
+        \inputminted[
+            linenos, 
+        ]{c}{../code-examples/08_01_greet.c}
+    \end{frame}
+
+
+    \begin{frame}{Example: Function with One Parameter and No Return Value}
+        \inputminted[
+            linenos, 
+        ]{c}{../code-examples/08_02_print-square.c}
+    \end{frame}
+
+
+    \begin{frame}{Example: Function with One Parameter and a Return Value}
+        \inputminted[
+            linenos, 
+        ]{c}{../code-examples/08_03_print-square-return.c}
+    \end{frame}
+
+
+    \begin{frame}{Example: Function with Multiple Parameters and Return Value}
+        \inputminted[
+            linenos, 
+        ]{c}{../code-examples/08_04_add-two-int.c}
+    \end{frame}
+
+
+    \begin{frame}{Exercises}
+        \begin{itemize}
+            \item Write a function to find the maximum of two numbers
+            \item Write a function that checks if an integer is even or odd
+            \item Write a function that takes three numbers and returns their average
+            \item Write a recursive function to calculate the sum of digits of an integer
+            \item Write a recursive function to calculate the GCD of two integers
+            \item Write a function that checks whether a given integer is prime
+            \item Write a function to print all prime numbers between 1 and 100
+        \end{itemize}
+    \end{frame}
+
+\end{document}
