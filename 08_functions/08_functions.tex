@@ -31,7 +31,7 @@
         \begin{itemize}
             \item A function is a \emph{reusable} block of code that performs a specific task
             \item Functions help organize programs into smaller and manageable sections
-            \item The \texttt{main} function is the entry point of every C program
+            \item The \texttt{main()} function is the entry point to every C program
         \end{itemize}
     \end{frame}
 
@@ -129,7 +129,7 @@ sum = add(4, 6);     // multiple parameters
 
     \begin{frame}{Types of Functions}
         \begin{itemize}
-            \item Library functions - predefined in header files like ``printf()'', ``scanf()'', ``sqrt()''
+            \item Library functions - predefined in header files like \texttt{printf()}, \texttt{scanf()}, \texttt{sqrt()}
             \item User-defined functions - created by the programmer
         \end{itemize}
     \end{frame}
@@ -173,6 +173,13 @@ sum = add(4, 6);     // multiple parameters
     \end{frame}
 
 
+    \begin{frame}{Example: Function That Calls Another Function}
+        \inputminted[
+            linenos, 
+        ]{c}{../code-examples/08_06_calls-another.c}
+    \end{frame}
+
+
     \begin{frame}[fragile]{Recursive Functions}
         \begin{itemize}
             \item A recursive function calls itself
@@ -184,11 +191,14 @@ int factorial(int n){
     if(n == 0){
         return 1;
     } else{
-        return n * factorial(n - 1);
+        return n*factorial(n-1);
     }
 }
         \end{minted}
     \end{frame}
+
+
+    \section{Function Prototyping}
 
 
     \section{Exercise}
