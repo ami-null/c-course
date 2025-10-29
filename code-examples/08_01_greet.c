@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-void greet() {
+void greet(){
     printf("Hello, World!\n");
 }
 
-int main() {
+int main(){
     greet();
     return 0;
 }
