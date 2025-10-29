@@ -4,8 +4,8 @@
 \input{../header_minted.tex}
 
 \title{Functions in C}
-\author{}
-\date{}
+\author{Md. Aminul Islam Shazid}
+\date{30 Oct 2025}
 
 \begin{document}
 
@@ -18,55 +18,60 @@
 		\end{frame}
 
 		\begin{frame}{Outline}
-            % \vfill
+            \vfill
             \small
 			\tableofcontents[subsectionstyle=hide]
-            % \vfill
+            \vfill
 		\end{frame}
 	}
 
+    \section{Introduction}
+
     \begin{frame}{Introduction to Functions in C}
-    \begin{itemize}
-        \item A function is a \emph{reusable} block of code that performs a specific task
-        \item Functions help organize programs into smaller and manageable sections
-        \item The \texttt{main} function is the entry point of every C program
-    \end{itemize}
+        \begin{itemize}
+            \item A function is a \emph{reusable} block of code that performs a specific task
+            \item Functions help organize programs into smaller and manageable sections
+            \item The \texttt{main} function is the entry point of every C program
+        \end{itemize}
     \end{frame}
 
 
     \begin{frame}{Why Use Functions}
-    \begin{itemize}
-        \item To avoid repeating the same code
-        \item To make programs easier to understand and maintain
-        \item To divide a large problem into smaller parts
-        \item To allow reusability of code
-    \end{itemize}
+        \begin{itemize}
+            \item To avoid repeating the same code
+            \item To make programs easier to understand and maintain
+            \item To divide a large problem into smaller parts
+            \item To allow reusability of code
+        \end{itemize}
     \end{frame}
 
 
     \begin{frame}{Advantages of Using Functions}
-    \begin{itemize}
-        \item Reduces code duplication
-        \item Enhances readability
-        \item Helps debugging and testing individual parts easily
-        \item Supports modular program design
-    \end{itemize}
+        \begin{itemize}
+            \item Reduces code duplication
+            \item Enhances readability
+            \item Helps debugging and testing individual parts easily
+            \item Supports modular program design
+        \end{itemize}
     \end{frame}
 
 
+    \section{Syntax}
+
+
     \begin{frame}[fragile]{Syntax of a Function}
-    \begin{minted}{c}
+        \begin{minted}{c}
 return_type function_name(parameter_list) {
     // body of the function
     return the_return_value;  // optional
 }
-    \end{minted}
+        \end{minted}
 
-    \begin{itemize}
-        \item Function declaration tells the compiler about the function
-        \item Function definition contains the actual code
-        \item Function call transfers control to the function
-    \end{itemize}
+        \begin{itemize}
+            \item Function declaration tells the compiler about the function
+            \item Function definition contains the actual code
+            \item Function call transfers control to the function
+        \end{itemize}
     \end{frame}
 
 
@@ -80,11 +85,26 @@ void greet() {
 
 
     \begin{frame}[fragile]{Example: Function with One Parameter}
-    \begin{minted}{c}
+        \begin{minted}{c}
 void printNumber(int n) {
     printf("The number is %d", n);
 }
-\end{minted}
+        \end{minted}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Return Type and Return Value}
+        \begin{minted}{c}
+int square(int n) {
+    return n * n;
+}
+        \end{minted}
+
+
+        \begin{itemize}
+            \item The return type defines the type of value a function returns
+            \item The return statement sends a value back to the calling code
+        \end{itemize}
     \end{frame}
 
 
@@ -106,20 +126,6 @@ sum = add(4, 6);     // multiple parameters
     \end{frame}
 
 
-    \begin{frame}[fragile]{Return Type and Return Value}
-        \begin{minted}{c}
-int square(int n) {
-    return n * n;
-}
-        \end{minted}
-
-
-    \begin{itemize}
-        \item The return type defines the type of value a function returns
-        \item The return statement sends a value back to the calling code
-    \end{itemize}
-    \end{frame}
-
 
     \begin{frame}{Types of Functions}
         \begin{itemize}
@@ -129,22 +135,7 @@ int square(int n) {
     \end{frame}
 
 
-    \begin{frame}[fragile]{Recursive Functions}
-        \begin{itemize}
-            \item A recursive function calls itself
-            \item Must have a base case to stop recursion
-        \end{itemize}
-
-        \begin{minted}[linenos]{c}
-int factorial(int n){
-    if(n == 0){
-        return 1;
-    } else{
-        return n * factorial(n - 1);
-    }
-}
-        \end{minted}
-    \end{frame}
+    \section{Examples}
 
 
     \begin{frame}{Example: Function with No Parameters and No Return Value}
@@ -175,8 +166,35 @@ int factorial(int n){
     \end{frame}
 
 
-    \begin{frame}{Exercises}
+    \begin{frame}{Example: Function Returning a Value Without Parameters}
+        \inputminted[
+            linenos, 
+        ]{c}{../code-examples/08_05_meaning-of-life.c}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Recursive Functions}
         \begin{itemize}
+            \item A recursive function calls itself
+            \item Must have a base case to stop recursion
+        \end{itemize}
+
+        \begin{minted}[linenos]{c}
+int factorial(int n){
+    if(n == 0){
+        return 1;
+    } else{
+        return n * factorial(n - 1);
+    }
+}
+        \end{minted}
+    \end{frame}
+
+
+    \section{Exercise}
+
+    \begin{frame}{Exercises}
+        \begin{enumerate}
             \item Write a function to find the maximum of two numbers
             \item Write a function that checks if an integer is even or odd
             \item Write a function that takes three numbers and returns their average
@@ -184,7 +202,7 @@ int factorial(int n){
             \item Write a recursive function to calculate the GCD of two integers
             \item Write a function that checks whether a given integer is prime
             \item Write a function to print all prime numbers between 1 and 100
-        \end{itemize}
+        \end{enumerate}
     \end{frame}
 
 \end{document}
