@@ -1,6 +1,7 @@
 \documentclass[12pt, aspectratio=169]{beamer}
 
 \input{../header}
+\input{../header_minted.tex}
 
 \title{Arrays and Strings in C}
 \author{Md. Aminul Islam Shazid}
@@ -38,15 +39,15 @@
 
     \begin{frame}[fragile]{1D Array: Declaration and Initialization}
         \textbf{Declaration:}
-        \begin{verbatim}
-int arr[5];              // declares an array of 5 integers
-        \end{verbatim}
+        \begin{minted}{c}
+int arr[5];    // declares an array of 5 integers
+        \end{minted}
 
         \textbf{Declaration and Initialization:}
-        \begin{verbatim}
+        \begin{minted}{c}
 int a[5] = {10, 20, 30, 40, 50};
 int b[]  = {1, 2, 3};    // size inferred: 3
-        \end{verbatim}
+        \end{minted}
     \end{frame}
 
     \begin{frame}{Accessing Individual Elements}
@@ -57,11 +58,7 @@ int b[]  = {1, 2, 3};    // size inferred: 3
 
         \textbf{Example: print elements}
         \inputminted[
-            frame=none,
-            bgcolor=gray!20,
             linenos, 
-            breaklines=true,
-            fontsize=\fontsize{12pt}{13pt}\selectfont,
             % firstline=1,
             % lastline=7,
             % firstnumber=1
@@ -70,22 +67,14 @@ int b[]  = {1, 2, 3};    // size inferred: 3
 
     \begin{frame}{Example: Take User Input Into an Array}
         \inputminted[
-            frame=none,
-            bgcolor=gray!20,
             linenos, 
-            breaklines=true,
-            fontsize=\fontsize{12pt}{13pt}\selectfont,
         ]{c}{../code-examples/07_02_array-io.c}
     \end{frame}
 
 
     \begin{frame}{Example: Summing the Elements of an Array}
         \inputminted[
-            frame=none,
-            bgcolor=gray!20,
             linenos, 
-            breaklines=true,
-            fontsize=\fontsize{12pt}{13pt}\selectfont,
         ]{c}{../code-examples/07_03_sum-array-values.c}
     \end{frame}
 
@@ -117,7 +106,7 @@ int b[]  = {1, 2, 3};    // size inferred: 3
     \end{frame}
 
     \begin{frame}[fragile]{2D Array: Declaration and Initialization}
-        \begin{verbatim}
+        \begin{minted}{c}
 int mat[3][4];               // 3 rows, 4 columns
 
 int mat2[2][3] = {
@@ -127,7 +116,7 @@ int mat2[2][3] = {
 
 // or flattened initialization:
 int mat3[2][3] = {1,2,3,4,5,6};
-        \end{verbatim}
+        \end{minted}
     \end{frame}
 
 
@@ -141,22 +130,14 @@ int mat3[2][3] = {1,2,3,4,5,6};
         
         \textbf{Example: print a 2x3 matrix}
         \inputminted[
-            frame=none,
-            bgcolor=gray!20,
             linenos, 
-            breaklines=true,
-            fontsize=\fontsize{12pt}{13pt}\selectfont,
         ]{c}{../code-examples/07_04_accessing-2d-array-element.c}
     \end{frame}
 
 
     \begin{frame}{Example: Input and Print a 2D Array}
         \inputminted[
-            frame=none,
-            bgcolor=gray!20,
             linenos, 
-            breaklines=true,
-            fontsize=\fontsize{12pt}{13pt}\selectfont,
             firstline=1,
             lastline=14,
             firstnumber=1
@@ -168,11 +149,7 @@ int mat3[2][3] = {1,2,3,4,5,6};
 
     \begin{frame}{Example: Input and Print a 2D Array (cont.)}
         \inputminted[
-            frame=none,
-            bgcolor=gray!20,
             linenos, 
-            breaklines=true,
-            fontsize=\fontsize{12pt}{13pt}\selectfont,
             firstline=14,
             lastline=24,
             firstnumber=14
@@ -202,11 +179,11 @@ int mat3[2][3] = {1,2,3,4,5,6};
 
 
     \begin{frame}[fragile]{Declare and Initialize Strings}
-        \begin{verbatim}
+        \begin{minted}{c}
 char s1[] = "Hello";
 char s2[10] = "Hi";    // remaining bytes unused
 char s3[6] = {'H','i','!','\0'};    // explicit
-        \end{verbatim}
+        \end{minted}
     \end{frame}
 
 
@@ -223,11 +200,7 @@ char s3[6] = {'H','i','!','\0'};    // explicit
 
     \begin{frame}{Example: String Input Using \texttt{scanf()}}
         \inputminted[
-            frame=none,
-            bgcolor=gray!20,
             linenos, 
-            breaklines=true,
-            fontsize=\fontsize{12pt}{13pt}\selectfont
         ]{c}{../code-examples/04_01_greetings.c}
 
         Note that in \texttt{scanf()}, we provided \texttt{username} as the second argument and not \texttt{\&username}.
@@ -240,33 +213,21 @@ char s3[6] = {'H','i','!','\0'};    // explicit
 
     \begin{frame}{Example: String Input Using \texttt{fgets()}}
         \inputminted[
-            frame=none,
-            bgcolor=gray!20,
             linenos, 
-            breaklines=true,
-            fontsize=\fontsize{12pt}{13pt}\selectfont
         ]{c}{../code-examples/07_11_fgets-string_no-trim.c}
     \end{frame}
 
 
     \begin{frame}{Example: String Input Using \texttt{fgets()} (cont.)}
         \inputminted[
-            frame=none,
-            bgcolor=gray!20,
             linenos, 
-            breaklines=true,
-            fontsize=\fontsize{12pt}{13pt}\selectfont
         ]{c}{../code-examples/07_06_fgets-string.c}
     \end{frame}
 
 
     \begin{frame}{Example: String Input Using \texttt{fgets()} (cont.)}
         \inputminted[
-            frame=none,
-            bgcolor=gray!20,
             linenos, 
-            breaklines=true,
-            fontsize=\fontsize{12pt}{13pt}\selectfont,
             firstline=9,
             lastline=11,
             firstnumber=9
@@ -290,11 +251,7 @@ char s3[6] = {'H','i','!','\0'};    // explicit
     
     \begin{frame}{Example: Comparing Two Strings: \texttt{strcmp()}}
         \inputminted[
-            frame=none,
-            bgcolor=gray!20,
             linenos, 
-            breaklines=true,
-            fontsize=\fontsize{12pt}{13pt}\selectfont
         ]{c}{../code-examples/07_07_strcmp.c}
 
         \texttt{strcmp()} returns 0 if the two strings are same.
@@ -303,11 +260,7 @@ char s3[6] = {'H','i','!','\0'};    // explicit
 
     \begin{frame}{Example: Copying a String: \texttt{strcpy()}}
         \inputminted[
-            frame=none,
-            bgcolor=gray!20,
             linenos, 
-            breaklines=true,
-            fontsize=\fontsize{12pt}{13pt}\selectfont
         ]{c}{../code-examples/07_08_strcpy.c}
     \end{frame}
 
@@ -362,11 +315,7 @@ char s3[6] = {'H','i','!','\0'};    // explicit
 
     \begin{frame}[fragile]{Example: Concatenate Strings (strcat)}
         \inputminted[
-            frame=none,
-            bgcolor=gray!20,
             linenos, 
-            breaklines=true,
-            fontsize=\fontsize{12pt}{13pt}\selectfont
         ]{c}{../code-examples/07_09_strcat.c}
     \end{frame}
 
