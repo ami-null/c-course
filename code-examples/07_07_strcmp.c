@@ -6,8 +6,8 @@ int main() {
     scanf("%s", a);
     scanf("%s", b);
     if (strcmp(a, b) == 0)
-        printf("Same\n");
+        printf("Same");
     else
-        printf("Not same\n");
+        printf("Not same");
     return 0;
 }
