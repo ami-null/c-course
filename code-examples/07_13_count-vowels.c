@@ -4,7 +4,6 @@
 int main(){
     char s[100];
     fgets(s, sizeof(s), stdin);
-    
     int count = 0;
     for(int i = 0; i < strlen(s); i++){
         char ch = tolower((unsigned char)s[i]);
