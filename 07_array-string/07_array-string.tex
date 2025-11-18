@@ -270,52 +270,18 @@ Note: individual characters denoted by single quotes, whereas strings are denote
     \end{frame}
 
 
-%     \begin{frame}[fragile]{Example: Upper-case and Lower-case Conversion (Manual)}
-%         \begin{verbatim}
-% #include <stdio.h>
-% #include <ctype.h>   // for toupper, tolower
-
-% int main() {
-%     char s[] = "Hello World!";
-%     int i = 0;
-%     // to upper
-%     while (s[i]) {
-%         s[i] = toupper((unsigned char)s[i]);
-%         i++;
-%     }
-%     printf("\%s\n", s);  // HELLO WORLD!
-%     return 0;
-% }
-%         \end{verbatim}
-
-%         \textbf{Notes:} you can use \texttt{tolower()} similarly. If you prefer not to use \texttt{ctype.h}, you can convert by arithmetic on ASCII when appropriate.
-%     \end{frame}
+    \begin{frame}{Example: Upper-case and Lower-case Conversion (Manual)}
+        \inputminted[
+            linenos, 
+        ]{c}{../code-examples/07_12_strings-toupper.c}
+    \end{frame}
 
 
-
-
-%     \begin{frame}[fragile]{Example: Count Vowels in a String}
-%         \begin{verbatim}
-% #include <stdio.h>
-% #include <ctype.h>
-
-% int main() {
-%     char s[100];
-%     fgets(s, sizeof(s), stdin);
-%     s[strcspn(s, "\n")] = '\0';
-%     int i = 0, count = 0;
-%     while (s[i]) {
-%         char ch = tolower((unsigned char)s[i]);
-%         if (ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'){
-%             count++;
-%         }
-%         i++;
-%     }
-%     printf("Vowels = %d\n", count);
-%     return 0;
-% }
-%         \end{verbatim}
-%     \end{frame}
+    \begin{frame}{Example: Count Vowels in a String}
+        \inputminted[
+            linenos, 
+        ]{c}{../code-examples/07_13_count-vowels.c}
+    \end{frame}
 
 
     \begin{frame}[fragile]{Example: Concatenate Strings (strcat)}
