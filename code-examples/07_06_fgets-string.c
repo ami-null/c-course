@@ -9,6 +9,6 @@ int main() {
     // remove trailing newline
     // search for "\n" and replace with "\0"
     s[strcspn(s, "\n")] = '\0';
-    printf("You wrote: \%s\n", s);
+    printf("You wrote: %s", s);
     return 0;
 }
