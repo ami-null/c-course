@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-
 int main(){
     char s[100];
     fgets(s, sizeof(s), stdin);
@@ -14,5 +13,4 @@ int main(){
         }
     }
     printf("Vowels = %d", count);
-    return 0;
 }
