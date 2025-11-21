@@ -5,7 +5,7 @@
 
 \title{Functions in C}
 \author{Md. Aminul Islam Shazid}
-\date{30 Oct 2025}
+\date{22 Nov 2025}
 
 \begin{document}
 
@@ -255,6 +255,20 @@ int add(int, int);
             \item Header files (files with \texttt{.h} extension) help reuse function/constant definition across multiple C files
             \item Header files have no \texttt{main()} function
         \end{itemize}
+    \end{frame}
+
+    
+    \begin{frame}{Example Header File}
+        \inputminted[
+            linenos, 
+        ]{c}{../code-examples/utils.h}
+    \end{frame}
+
+
+    \begin{frame}{Using User-Created File}
+        \inputminted[
+            linenos, 
+        ]{c}{../code-examples/08_08_using-header-file.c}
     \end{frame}
 
 
