@@ -1,0 +1,122 @@
+\documentclass[12pt, aspectratio=169]{beamer}
+
+\input{../header}
+\input{../header_minted.tex}
+
+\title{Pointers in C}
+\author{Md. Aminul Islam Shazid}
+\date{24 Nov 2025}
+
+\begin{document}
+
+    {
+		\setbeamertemplate{footline}{}    % NO FOOTLINE FOR THESE TWO FRAMES
+		\addtocounter{framenumber}{-2}    % not counting the title page and the outline in frame numbers
+
+		\begin{frame}
+			\titlepage
+		\end{frame}
+
+		\begin{frame}{Outline}
+            \vfill
+            \small
+			\tableofcontents[subsectionstyle=hide]
+            \vfill
+		\end{frame}
+	}
+
+    \section{Introduction}
+
+
+    \begin{frame}[fragile]{What is a Pointer?}
+        A pointer stores the memory address of another variable.
+
+        \begin{minted}{c}
+int x = 10;
+int *p = &x;    // p stores address of x
+        \end{minted}
+    \end{frame}
+
+    \begin{frame}[fragile]{Pointer Declaration}
+        \begin{minted}{c}
+int *p;     // pointer to int
+char *c;    // pointer to char
+float *f;   // pointer to float
+        \end{minted}
+    \end{frame}
+
+
+
+    \begin{frame}[fragile]{Dereferencing a Pointer}
+        Accessing the value stored at an address:
+    \begin{minted}{c}
+int x = 10;
+int *p = &x;
+
+printf("%d", *p);  // prints 10
+        \end{minted}
+    \end{frame}
+
+    \begin{frame}{Example: Pointer Basics}
+        \inputminted[linenos]{C}{../code-examples/09_01_pointer-basics.c}
+    \end{frame}
+
+
+    \section{Pointer Arithmetic}
+
+
+    \begin{frame}[fragile]{Pointer Arithmetic}
+        Adding or subtracting integers moves a pointer by multiples of the pointed type's size.
+
+        \inputminted[linenos]{C}{../code-examples/09_02_pointer-arithmetic-basic.c}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Array Name as Pointer}
+        \inputminted[linenos]{C}{../code-examples/09_03_arrays-and-pointers.c}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Pointer Difference}
+        \begin{minted}{c}
+int a[5];
+int *p = &a[0];
+int *q = &a[3];
+
+int diff = q - p;   // diff = 3
+        \end{minted}
+    \end{frame}
+
+
+\section{Pointers with Function}
+
+
+    \begin{frame}[fragile]{Example: Pointer as Function Parameter}
+        \inputminted[linenos]{C}{../code-examples/09_04_pointer-function-increment.c}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Example: Swap Using Pointers}
+        \inputminted[linenos]{C}{../code-examples/09_05_pointer-function-swap.c}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Example: Array Passed to Function}
+        \inputminted[linenos]{C}{../code-examples/09_06_passing-array-to-function.c}
+    \end{frame}
+
+
+    \begin{frame}{Example: Modify Array in Function}
+        \inputminted[linenos]{C}{../code-examples/09_07_function-modify-array.c}
+    \end{frame}
+
+
+    % \section{Exercise}
+
+    % \begin{frame}{Exercises}
+    %     \begin{enumerate}
+    %         \item 
+    %     \end{enumerate}
+    % \end{frame}
+
+\end{document}
