@@ -197,7 +197,7 @@ Note: individual characters denoted by single quotes, whereas strings are denote
             \item Avoid \texttt{gets()} (unsafe). Use \texttt{fgets()} or \texttt{scanf("\%s", ...)}
             \item \texttt{scanf("\%s", s);} reads until whitespace, does not read spaces
             \item \texttt{fgets(s, size, stdin);} reads a whole line (including spaces)
-            \item However, the string from \texttt{fgets()} includes newline (\verb|\n|)
+            \item However, the string from \texttt{fgets()} includes newline (\verb|'\n'|)
             \item May want to trim this newline (trimming it, is often not required, depends on use case)
         \end{itemize}
     \end{frame}
@@ -246,7 +246,7 @@ Note: individual characters denoted by single quotes, whereas strings are denote
 
     \begin{frame}{Common String Functions (from <string.h>)}
         \begin{itemize}
-            \item \texttt{strlen(s)} — length of string (not counting '\textbackslash0')
+            \item \texttt{strlen(s)} — length of string (not counting \texttt{'\textbackslash0'})
             \item \texttt{strcmp(s1, s2)} — compare strings (returns 0 if equal)
             \item \texttt{strcpy(dest, src)} — copy string
             \item \texttt{strcat(dest, src)} — concatenate
