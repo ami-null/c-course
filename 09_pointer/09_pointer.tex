@@ -30,16 +30,24 @@
 
 
     \begin{frame}[fragile]{What is a Pointer?}
-        A pointer stores the memory address of another variable.
+        \begin{itemize}
+            \item Every variable has an address in memory
+            \item A pointer stores the memory address of another variable
+            \item A pointer itself is a variable and has its own memory address
+        \end{itemize}
+    \end{frame}
 
+
+    \begin{frame}[fragile]{Defining a Pointer}
+        Pointers are defined by putting a \texttt{*} before the variable name:
         \begin{minted}{c}
 int x = 10;
-int *p = &x;    // p stores address of x
+int *p = &x;    // p stores the address of x
         \end{minted}
     \end{frame}
 
 
-    \begin{frame}[fragile]{Pointer Declaration}
+    \begin{frame}[fragile]{Different Types of Pointers}
         \begin{minted}{c}
 int *p;     // pointer to int
 char *c;    // pointer to char
@@ -49,7 +57,7 @@ float *f;   // pointer to float
 
 
     \begin{frame}[fragile]{Dereferencing a Pointer}
-        Accessing the value stored at an address:
+        Dereferencing means accessing the value stored at an address:
     \begin{minted}{c}
 int x = 10;
 int *p = &x;
@@ -75,6 +83,7 @@ printf("%d", *p);  // prints 10
 
 
     \begin{frame}[fragile]{Array Name as Pointer}
+        The name of an array holds the memory address to the first element of that array:
         \inputminted[linenos]{C}{../code-examples/09_03_arrays-and-pointers.c}
     \end{frame}
 
