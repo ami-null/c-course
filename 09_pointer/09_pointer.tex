@@ -62,8 +62,35 @@ float *f;   // pointer to float
 int x = 10;
 int *p = &x;
 
-printf("%d", *p);  // prints 10
+printf("%d", *p);    // prints 10
+scanf("%d", p);    // takes user input into x
         \end{minted}
+
+        In the last line, the \texttt{\&} sign is not needed because \texttt{p} holds the memory address of \texttt{x}.
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Pointers and Memory Addresses}
+        \begin{minted}{c}
+int x = 10, *px = &x;
+        \end{minted}
+
+        \vspace{1em}
+        The following are equivalent:
+        \begin{minted}{c}
+scanf("%d", &x);
+scanf("%d", px);
+        \end{minted}
+
+        \vspace{1em}
+        The following are equivalent:
+        \begin{minted}{c}
+printf("%d", x);
+printf("%d", *px);
+        \end{minted}
+
+        \vspace{1em}
+        This is due to \texttt{px} holding the memory address of \texttt{x}.
     \end{frame}
 
 
@@ -76,7 +103,7 @@ printf("%d", *p);  // prints 10
 
 
     \begin{frame}[fragile]{Pointer Arithmetic}
-        Adding or subtracting integers moves a pointer by multiples of the pointed type's size.
+        Adding or subtracting integers moves a pointer by multiples of the pointed type's size. For example, in the case of integers, it moves by 4.
 
         \inputminted[linenos]{C}{../code-examples/09_02_pointer-arithmetic-basic.c}
     \end{frame}
@@ -85,6 +112,30 @@ printf("%d", *p);  // prints 10
     \begin{frame}[fragile]{Array Name as Pointer}
         The name of an array holds the memory address to the first element of that array:
         \inputminted[linenos]{C}{../code-examples/09_03_arrays-and-pointers.c}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Printing an Array}
+        \begin{minted}{c}
+int arr[] = {1, 2, 3, 4, 5}
+        \end{minted}
+
+        \vspace{1em}
+        The following two snippets of code are equivalent:
+
+        \begin{minted}{c}
+for(int i=0; i<5; i++){
+    printf("%d", arr[i]);
+}
+        \end{minted}
+
+        \vspace{1em}
+        \begin{minted}{c}
+for(int i=0; i<5; i++){
+    printf("%d", *(arr+i));
+}
+        \end{minted}
+        
     \end{frame}
 
 
@@ -119,6 +170,11 @@ int diff = q - p;   // diff = 3
 
     \begin{frame}{Example: Modify Array in Function}
         \inputminted[linenos]{C}{../code-examples/09_07_function-modify-array.c}
+    \end{frame}
+
+
+    \begin{frame}{Example: Modify Array in Function (revisited)}
+        \inputminted[linenos]{C}{../code-examples/09_07_function-modify-array_2.c}
     \end{frame}
 
 
