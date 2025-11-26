@@ -1,0 +1,298 @@
+\documentclass[12pt, aspectratio=169]{beamer}
+
+\input{../header}
+\input{../header_minted.tex}
+
+\title{Structs in C}
+\author{Md. Aminul Islam Shazid}
+\date{26 Nov 2025}
+
+\begin{document}
+
+    {
+		\setbeamertemplate{footline}{}    % NO FOOTLINE FOR THESE TWO FRAMES
+		\addtocounter{framenumber}{-2}    % not counting the title page and the outline in frame numbers
+
+		\begin{frame}
+			\titlepage
+		\end{frame}
+
+		\begin{frame}{Outline}
+            \vfill
+            \small
+			\tableofcontents[subsectionstyle=hide]
+            \vfill
+		\end{frame}
+	}
+
+    
+    \section{Introduction}
+
+
+
+    \begin{frame}{Motivation}
+    Many real-world things involve multiple pieces of information of different types.  
+    Examples:
+    \begin{itemize}
+        \item A student has a name, ID, and CGPA
+        \item A point has x and y coordinates
+        \item A book has a title, author, and price
+    \end{itemize}
+
+    Arrays cannot store such heterogeneous data, so C provides structures to group diverse data elements.
+    \end{frame}
+
+
+    \begin{frame}{Introduction}
+        \begin{itemize}
+            \item A structure (also known as struct) is a user-defined composite data type
+            \item It bundles several variables (called members) into a single logical unit
+            \item A structure definition:
+            \begin{itemize}
+                \item Specifies the names and types of fields
+                \item Describes a layout template
+                \item Does not allocate memory by itself
+                \item Memory is allocated only when structure variables are declared
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Defining a Structure}
+    \begin{minted}{c}
+struct Student {
+    char name[50];
+    int id;
+    float cgpa;
+};
+    \end{minted}
+
+    This creates a new type layout called \texttt{struct Student}.
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Declaring Structure Variables}
+    Declaring structure variables allocates memory.
+
+    Examples:  
+    \begin{minted}{c}
+struct Student s;
+struct Student t, class_monitor;
+    \end{minted}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Accessing Members (Dot Operator)}
+    \begin{minted}{c}
+s.id = 101;
+s.cgpa = 3.8;
+    \end{minted}
+
+    The dot operator accesses fields inside a structure variable.
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Initialization Examples}
+        \begin{minted}{c}
+struct Student a = { "Alice", 1001, 3.90 };
+
+struct Student b = {
+    .name = "Bob",
+    .id = 1002,
+    .cgpa = 3.75
+};
+        \end{minted}
+
+    \vspace{1em}
+    Can also keep one or more fields uninitialzied:
+    
+        \begin{minted}{c}
+struct Student c = {
+    .id = 1003,
+    .cgpa = 3.80
+};
+        \end{minted}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Arrays of Structs}
+        \begin{minted}{c}
+struct Student class[50];
+
+class[0].name = "Alice";
+class[0].id = 1001;
+class[0].cgpa = 3.90;
+        \end{minted}
+
+        Useful for records, lists, and tables.
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Nested Structures}
+        A structure may contain another structure as a member:
+        
+        \begin{minted}{c}
+struct Address {
+    char city[30];
+    int zip;
+};
+
+struct Person {
+    char name[50];
+    struct Address home;
+};
+        \end{minted}
+    \end{frame}
+
+
+    \section{Defining Types with \texttt{typedef}}
+
+    \begin{frame}{The \texttt{typedef} Keyword}
+        \begin{itemize}
+            \item A structure type name often becomes long and repetitive
+            \item Using \texttt{typedef} helps create cleaner and shorter type names
+            \item Without typedef: \texttt{struct Student s;}
+            \item With typedef: \texttt{Student s;}
+        \end{itemize}
+
+    This improves readability, especially in function prototypes and pointer-heavy code.
+    \end{frame}
+
+
+    \begin{frame}[fragile]{typedef Example}
+    \begin{minted}{c}
+typedef struct {
+    int day;
+    int month;
+    int year;
+} Date;
+
+Date today;
+today.day = 18;
+    \end{minted}
+    \end{frame}
+
+
+    \begin{frame}{When typedef is Helpful}
+        \begin{itemize}
+            \item When the struct type is used frequently
+            \item When building abstract data types
+            \item When designing libraries or APIs
+            \item When working with pointers to structs
+        \end{itemize}
+        \vspace{1em}
+        When not mandatory:
+        \begin{itemize}
+            \item Very simple, rarely used struct types
+            \item When emphasizing that a type is a struct (some coding styles prefer this)
+        \end{itemize}
+    \end{frame}
+
+
+    \section{Pointers to Structs}\
+
+
+    \begin{frame}{Struct Pointers}
+        A pointer to a struct is used when:
+        \begin{itemize}
+            \item Passing to functions efficiently
+            \item Modifying the original struct
+            \item Allocating structs dynamically
+            \item Implementing dynamic data structures (linked lists, trees)
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Pointer to a Struct}
+    \begin{minted}{c}
+struct Student s, *p;
+
+p = &s;
+p->cgpa = 3.70;    // pointer access
+    \end{minted}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Dot vs Arrow}
+        \begin{itemize}
+            \item Dot: use with actual struct variables
+            \item Arrow: use with struct pointers
+        \end{itemize}
+
+        \begin{minted}{c}
+(*p).id = 20;
+p->id = 20;   // preferred form when using with pointers
+        \end{minted}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Passing Structs to Functions}
+        Pass by value:
+        \begin{minted}{c}
+void show(struct Student s);
+        \end{minted}
+
+        Pass by pointer (preferred for modification):
+        \begin{minted}{c}
+void update(struct Student *s) {
+    s->cgpa += 0.1;
+}
+        \end{minted}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Returning a Struct}
+        \begin{minted}{c}
+typedef struct { int x, y; } Point;
+
+Point make_point(int a, int b) {
+    Point p = {a, b};
+    return p;
+}
+        \end{minted}
+
+        Useful for small structures like coordinates, dates, and configuration options.
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Using const with Struct Pointers}
+        \begin{minted}{c}
+void print_student(const struct Student *s);
+        \end{minted}
+
+        Declares that the function will not modify the struct.  
+        Good practice for safety and clear intent.
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Example: Basic Student Struct}
+    \end{frame}
+
+    \begin{frame}[fragile]{Example: Pointer to Struct}
+    \end{frame}
+
+    \begin{frame}[fragile]{Example: Array of Structs}
+    \end{frame}
+
+    \begin{frame}[fragile]{Example: Nested Struct Example}
+    \end{frame}
+
+    \begin{frame}[fragile]{Example: Passing Struct by Pointer}
+    \end{frame}
+
+    \begin{frame}[fragile]{Example: Returning a Struct}
+    \end{frame}
+
+    \begin{frame}[fragile]{Example: Using typedef with Struct}
+    \end{frame}
+
+
+    % \section{Exercise}
+
+    % \begin{frame}{Exercises}
+    %     \begin{enumerate}
+    %         \item 
+    %     \end{enumerate}
+    % \end{frame}
+
+\end{document}
