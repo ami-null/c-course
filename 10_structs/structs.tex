@@ -72,27 +72,15 @@ struct Student {
 
 
     \begin{frame}[fragile]{Declaring Structure Variables}
-    Declaring structure variables allocates memory.
-
-    Examples:  
-    \begin{minted}{c}
+        Three variable of the type \texttt{sturct Student} have been defined below:
+        \begin{minted}{c}
 struct Student s;
 struct Student t, class_monitor;
-    \end{minted}
+        \end{minted}
     \end{frame}
 
 
-    \begin{frame}[fragile]{Accessing Members (Dot Operator)}
-    \begin{minted}{c}
-s.id = 101;
-s.cgpa = 3.8;
-    \end{minted}
-
-    The dot operator accesses fields inside a structure variable.
-    \end{frame}
-
-
-    \begin{frame}[fragile]{Initialization Examples}
+        \begin{frame}[fragile]{Initializing Structs}
         \begin{minted}{c}
 struct Student a = { "Alice", 1001, 3.90 };
 
@@ -112,6 +100,16 @@ struct Student c = {
     .cgpa = 3.80
 };
         \end{minted}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Accessing Members (Dot Operator)}
+        \begin{minted}{c}
+s.id = 101;
+s.cgpa = 3.8;
+        \end{minted}
+
+    The dot operator accesses fields inside a structure variable.
     \end{frame}
 
 
@@ -189,7 +187,7 @@ today.day = 18;
     \end{frame}
 
 
-    \section{Pointers to Structs}\
+    \section{Pointers to Structs}
 
 
     \begin{frame}{Struct Pointers}
@@ -204,12 +202,13 @@ today.day = 18;
 
 
     \begin{frame}[fragile]{Pointer to a Struct}
-    \begin{minted}{c}
+        \begin{minted}{c}
 struct Student s, *p;
 
 p = &s;
 p->cgpa = 3.70;    // pointer access
-    \end{minted}
+        \end{minted}
+        In the last line, we are setting the \texttt{cgpa} field to 3.70. This \texttt{cgpa} field belongs to the struct whose memory address is stored in \texttt{p}.
     \end{frame}
 
 
@@ -232,7 +231,8 @@ p->id = 20;   // preferred form when using with pointers
 void show(struct Student s);
         \end{minted}
 
-        Pass by pointer (preferred for modification):
+        \vspace{1em}
+        Pass by pointer/reference (preferred for modification):
         \begin{minted}{c}
 void update(struct Student *s) {
     s->cgpa += 0.1;
@@ -260,39 +260,43 @@ Point make_point(int a, int b) {
 void print_student(const struct Student *s);
         \end{minted}
 
-        Declares that the function will not modify the struct.  
-        Good practice for safety and clear intent.
+        \begin{itemize}
+            \item Declares that the function will not modify the struct
+            \item Good practice for safety and clear intent
+        \end{itemize}
     \end{frame}
 
 
-    \begin{frame}[fragile]{Example: Basic Student Struct}
-    \end{frame}
-
-    \begin{frame}[fragile]{Example: Pointer to Struct}
-    \end{frame}
-
-    \begin{frame}[fragile]{Example: Array of Structs}
-    \end{frame}
-
-    \begin{frame}[fragile]{Example: Nested Struct Example}
-    \end{frame}
-
-    \begin{frame}[fragile]{Example: Passing Struct by Pointer}
-    \end{frame}
-
-    \begin{frame}[fragile]{Example: Returning a Struct}
-    \end{frame}
-
-    \begin{frame}[fragile]{Example: Using typedef with Struct}
-    \end{frame}
-
-
-    % \section{Exercise}
-
-    % \begin{frame}{Exercises}
-    %     \begin{enumerate}
-    %         \item 
-    %     \end{enumerate}
+    % \begin{frame}[fragile]{Example: Basic Student Struct}
     % \end{frame}
+
+    % \begin{frame}[fragile]{Example: Pointer to Struct}
+    % \end{frame}
+
+    % \begin{frame}[fragile]{Example: Array of Structs}
+    % \end{frame}
+
+    % \begin{frame}[fragile]{Example: Nested Struct Example}
+    % \end{frame}
+
+    % \begin{frame}[fragile]{Example: Passing Struct by Pointer}
+    % \end{frame}
+
+    % \begin{frame}[fragile]{Example: Returning a Struct}
+    % \end{frame}
+
+    % \begin{frame}[fragile]{Example: Using typedef with Struct}
+    % \end{frame}
+
+
+    \section{Exercise}
+
+    \begin{frame}{Exercises}
+        \begin{enumerate}
+            \item Define a struct to hold the different parts (city, road name, house number etc.) of the address address of a person. Declare a variable of this struct type, set values to its elements by taking user input, then print the values
+            \item Create a struct to hold some information on students including students' home address as defined in the last exercise. Declare a variable of this struct type, set values to its elements by taking user input, then print the values
+            \item Create an array of the address struct. Using a loop, take user input into this array and then print the contents of the array
+        \end{enumerate}
+    \end{frame}
 
 \end{document}
