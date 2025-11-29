@@ -19,7 +19,7 @@
 
 		\begin{frame}{Outline}
             \vfill
-            \small
+            % \small
 			\tableofcontents[subsectionstyle=hide]
             \vfill
 		\end{frame}
@@ -59,24 +59,32 @@
 
 
     \begin{frame}[fragile]{Defining a Structure}
-    \begin{minted}{c}
+        Below a new type layout called \texttt{struct Student} is created:
+        \begin{minted}{c}
 struct Student {
     char name[50];
     int id;
     float cgpa;
 };
-    \end{minted}
+        \end{minted}
 
-    This creates a new type layout called \texttt{struct Student}.
+        \begin{itemize}
+            \item Structs are usually created outside and above the main function, so that all functions inside the \texttt{C} file can access the struct
+            \item If a struct is created inside a function, then it behaves like a local variable and other functions can not use it
+            \item One can also put a struct inside a header file for convenience
+        \end{itemize}
     \end{frame}
 
 
     \begin{frame}[fragile]{Declaring Structure Variables}
-        Three variable of the type \texttt{sturct Student} have been defined below:
+        Three variable of the type \texttt{struct Student} have been defined below:
         \begin{minted}{c}
 struct Student s;
 struct Student t, class_monitor;
         \end{minted}
+
+        \vspace{1em}
+        NOTE: While structures are defined outside functions, structure variables are defined \emph{inside} functions.
     \end{frame}
 
 
@@ -172,6 +180,7 @@ today.day = 18;
 
 
     \begin{frame}{When typedef is Helpful}
+        When it is useful:
         \begin{itemize}
             \item When the struct type is used frequently
             \item When building abstract data types
