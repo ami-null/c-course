@@ -1,0 +1,191 @@
+\documentclass[12pt, aspectratio=169]{beamer}
+
+\input{../header}
+\input{../header_minted.tex}
+
+\title{File I/O in C}
+\author{Md. Aminul Islam Shazid}
+\date{06 Dec 2025}
+
+\begin{document}
+
+    {
+		\setbeamertemplate{footline}{}    % NO FOOTLINE FOR THESE TWO FRAMES
+		\addtocounter{framenumber}{-2}    % not counting the title page and the outline in frame numbers
+
+		\begin{frame}
+			\titlepage
+		\end{frame}
+
+		\begin{frame}{Outline}
+            \vfill
+            % \small
+			\tableofcontents[subsectionstyle=hide]
+            \vfill
+		\end{frame}
+	}
+
+    \section{Introduction}
+
+
+    \begin{frame}{File Input-Output (I/O)}
+        Basic reasons we use files:
+        \begin{itemize}
+            \item Store results permanently
+            \item Process large datasets that cannot be typed in manually
+            \item Exchange data with other programs
+        \end{itemize}
+
+        Two broad file categories:
+        \begin{itemize}
+            \item Text files: store data as human-readable characters
+            \item Binary files: store raw bytes (we will not cover details here)
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{FILE Pointer}
+        \begin{itemize}
+            \item Files are accessed using file pointers: \texttt{FILE *}
+            \item A \texttt{FILE *} variable does not hold actual file content
+            \item It holds information about the connection: current position, status, buffering, mode, etc.
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Life Cycle of using a File}
+        \begin{enumerate}
+            \item Open the file using \texttt{fopen()}
+            \item Read from or write to the file
+            \item Close the file using \texttt{fclose()}
+        \end{enumerate}
+
+        Failing to close a file may lead to:
+        \begin{itemize}
+            \item Data not being fully written (due to buffering)
+            \item Running out of available file descriptors
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Opening Files}
+        To work with files, we must first open them using \texttt{fopen()}.
+
+        \begin{minted}{C}
+FILE *fp = fopen("filename.txt", "mode");
+        \end{minted}
+
+        Basic modes:
+        \begin{itemize}
+            \item \texttt{"r"}: open for reading; fails if file does not exist
+            \item \texttt{"w"}: open for writing; creates new file or overwrites existing file
+            \item \texttt{"a"}: open for appending (adding new contents to existing file); creates file if needed
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Opening Files (cont.)}
+        Always check if opening succeeded:
+        \begin{minted}{C}
+if(fp == NULL){
+    // error
+}
+        \end{minted}
+
+        Common reasons for failure include:
+        \begin{itemize}
+            \item File does not exist (when using \texttt{"r"})
+            \item Insufficient permissions
+            \item Incorrect path/file name
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Closing Files}
+        Closing files is done using \texttt{fclose(fp);}.
+
+        Reasons to close files:
+        \begin{itemize}
+            \item Ensures buffered output is actually written to disk
+            \item Frees system resources
+            \item Prevents file corruption
+        \end{itemize}
+
+        If a program ends without closing files, the OS usually closes them, but:
+        \begin{itemize}
+            \item This is unreliable
+            \item Buffered content may be lost
+            \item Considered bad programming practice
+        \end{itemize}
+    \end{frame}
+
+
+    \section{Example}
+
+    \begin{frame}[fragile]{Writing to a File}
+        Writing must come first so the next example can read the file.
+
+        Common functions:
+        \begin{itemize}
+            \item \texttt{fprintf()}: write formatted text.
+            \item \texttt{fputs()}: write a string.
+            \item \texttt{fputc()}: write a single character.
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Example: Writing to a File}
+        \inputminted[linenos]{C}{../code-examples/11_01_writing-file.c}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Reading from a File}
+        Now we read the file created by the previous program.
+
+        Functions:
+        \begin{itemize}
+            \item \texttt{fscanf()}: formatted reading
+            \item \texttt{fgets()}: read a line
+            \item \texttt{fgetc()}: read a single character
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Example: Reading from a File}
+        \inputminted[linenos]{C}{../code-examples/11_02_reading-file.c}
+    \end{frame}
+
+
+    \section{Summary}
+
+
+    \begin{frame}{Basic Error Handling}
+        Important situations to detect:
+        \begin{itemize}
+            \item \textbf{Failed fopen}: always check if pointer returned is \texttt{NULL}
+            \item \textbf{Reaching EOF}: functions return special values (e.g., \texttt{NULL} for \texttt{fgets}, \texttt{EOF} for \texttt{fgetc})
+            \item \textbf{Read errors}: typically uncommon in small programs but detectable using \texttt{ferror()}
+        \end{itemize}
+
+        EOF vs Error:
+        \begin{itemize}
+            \item EOF means the file ended normally
+            \item Errors indicate issues such as hardware failure or file being removed during reading
+        \end{itemize}
+
+        In basic programs, it is usually enough to check for \texttt{NULL} or \texttt{EOF}
+    \end{frame}
+
+
+    \begin{frame}{Summary}
+        \begin{itemize}
+            \item Use \texttt{fopen()} to open files with the correct mode
+            \item Perform reading or writing using \texttt{fprintf()}, \texttt{fputs()}, \texttt{fgetc()}, \texttt{fgets()}, or \texttt{fscanf()}
+            \item Always close files using \texttt{fclose()}
+            \item Always check if opening a file failed
+        \end{itemize}
+
+        These are the essential basics required before moving to advanced topics like binary files and random access.
+    \end{frame}
+
+\end{document}
