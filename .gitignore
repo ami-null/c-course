@@ -13,3 +13,4 @@ _minted/*
 */_minted/
 .vscode/
 code-examples/*.exe
+code-examples/data.txt
