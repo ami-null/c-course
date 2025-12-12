@@ -31,7 +31,7 @@
         \begin{itemize}
             \item A function is a \emph{reusable} block of code that performs a specific task
             \item Functions help organize programs into smaller and manageable sections
-            \item The \texttt{main()} function is the entry point to every C program
+            \item The \textttbg{main()} function is the entry point to every C program
         \end{itemize}
     \end{frame}
 
@@ -129,7 +129,7 @@ sum = add(4, 6);     // multiple parameters
 
     \begin{frame}{Types of Functions}
         \begin{itemize}
-            \item Library functions - predefined in header files like \texttt{printf()}, \texttt{scanf()}, \texttt{sqrt()}
+            \item Library functions - predefined in header files like \textttbg{printf()}, \textttbg{scanf()}, \textttbg{sqrt()}
             \item User-defined functions - created by the programmer
         \end{itemize}
     \end{frame}
@@ -142,7 +142,7 @@ sum = add(4, 6);     // multiple parameters
         \inputminted[
             linenos, 
         ]{c}{../code-examples/08_01_greet.c}
-        When a function returns no value, its return type is \texttt{void}.
+        When a function returns no value, its return type is \textttbg{void}.
     \end{frame}
 
 
@@ -157,7 +157,7 @@ sum = add(4, 6);     // multiple parameters
         \inputminted[
             linenos, 
         ]{c}{../code-examples/08_03_print-square-return.c}
-        Since this function returns an integer value, its return type is \texttt{int}.
+        Since this function returns an integer value, its return type is \textttbg{int}.
     \end{frame}
 
 
@@ -224,7 +224,7 @@ int add(int, int);
         \begin{itemize}
             \item The compiler reads code top to bottom
             \item A function must be known before it is called
-            \item If \texttt{main()} calls a function defined later, the compiler has no information about that function
+            \item If \textttbg{main()} calls a function defined later, the compiler has no information about that function
             \item A prototype supplies the missing information: return type, function name, and parameter types
             \item Prototypes enable type checking at compile time
         \end{itemize}
@@ -254,8 +254,8 @@ int add(int, int);
         \begin{itemize}
             \item Sometimes it may be necessary to use the same functions/constants across multiple C files in a project
             \item In such cases, it is infeasible to define the functions/constants in each C file
-            \item Header files (files with \texttt{.h} extension) help reuse function/constant definition across multiple C files
-            \item Header files have no \texttt{main()} function
+            \item Header files (files with \textttbg{.h} extension) help reuse function/constant definition across multiple C files
+            \item Header files have no \textttbg{main()} function
         \end{itemize}
     \end{frame}
 
@@ -264,7 +264,7 @@ int add(int, int);
         \inputminted[
             linenos, 
         ]{c}{../code-examples/utils.h}
-        Save this file as \texttt{utils.h} (you can use any name you want).
+        Save this file as \textttbg{utils.h} (you can use any name you want).
     \end{frame}
 
 
