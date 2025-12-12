@@ -31,8 +31,8 @@
     \begin{frame}{Conditional Execution in C}
         \begin{itemize}
             \item \textbf{Conditional execution} allows a program to take different actions based on certain conditions
-            \item Conditions are expressed using \texttt{if}, \texttt{else}, and \texttt{else if} statements
-            \item Condition expressions must evaluate to \texttt{true (non-zero)} or \texttt{false (zero)}
+            \item Conditions are expressed using \textttbg{if}, \textttbg{else}, and \textttbg{else if} statements
+            \item Condition expressions must evaluate to \textttbg{true (non-zero)} or \textttbg{false (zero)}
         \end{itemize}
     \end{frame}
 
@@ -97,13 +97,13 @@ if(condition1){
     \begin{frame}{Boolean Algebra in \texttt{if} Statements}
         \begin{itemize}
             \item There can be multiple conditions
-            \item Need to perform Boolean algebra on these conditions, because \texttt{if} statement expects only a single value
+            \item Need to perform Boolean algebra on these conditions, because \textttbg{if} statement expects only a single value
             \item Boolean operations on multiple conditions evaluate to a single value (true or false)
             \item Boolean operators:
             \begin{itemize}
-                \item AND (\texttt{\&\&}): Code runs only if all conditions are true
-                \item OR  (\texttt{\vert\vert}): Code runs if at least one condition is true
-                \item NOT (\texttt{!}): Negates a condition (flips true to false, and vice-versa)
+                \item AND, \textttbg{\&\&}: Code runs only if all conditions are true
+                \item OR \textttbg{||}: Code runs if at least one condition is true
+                \item NOT \textttbg{!}: Negates a condition (flips true to false, and vice-versa)
             \end{itemize}
         \end{itemize}
     \end{frame}
@@ -131,10 +131,10 @@ if(condition1){
 
 
 
-    \section{Nested \texttt{if} Statements}
+    \section{Nested \textttbg{if} Statements}
 
     \begin{frame}[fragile]{Nested \texttt{if} Statements}
-        Sometimes, it necessary to put an \texttt{if} statement inside another. This is called nested statements. Can have as many levels of nesting as necessary.
+        Sometimes, it necessary to put an \textttbg{if} statement inside another. This is called nested statements. Can have as many levels of nesting as necessary.
 
         \begin{minted}{c}
 if(cond1){
@@ -164,9 +164,9 @@ if(cond1){
             \item Loops are used to execute a block of code repeatedly.
             \item Types of loops in C:
             \begin{itemize}
-                \item \texttt{for} loop: when number of iterations is known
-                \item \texttt{while} loop: when condition is checked before each iteration
-                \item \texttt{do-while} loop: condition checked \textit{after} executing loop body
+                \item \textttbg{for} loop: when number of iterations is known
+                \item \textttbg{while} loop: when condition is checked before each iteration
+                \item \textttbg{do-while} loop: condition checked \textit{after} executing loop body
             \end{itemize}
         \end{itemize}
 
@@ -183,9 +183,9 @@ for(initialization; condition; update){
 
         The elements (initialization, condition and update) inside the for keyword, can be ommitted. For example,
         \begin{itemize}
-            \item Initialization can be performed before the \texttt{for} keyword
+            \item Initialization can be performed before the \textttbg{for} keyword
             \item Condition and update can moved inside the loop body
-            \item \texttt{for(;;)\{...\}} creates an infinite loop
+            \item \textttbg{for(;;)\{...\}} creates an infinite loop
         \end{itemize}
     \end{frame}
 
@@ -282,8 +282,8 @@ do{
 
     \begin{frame}{\texttt{while} vs \texttt{do-while} Loop}
         \begin{itemize}
-            \item \texttt{while}: condition checked \textit{before} loop body
-            \item \texttt{do-while}: condition checked \textit{after} running the first iteration of the loop, so the loop runs at least once
+            \item \textttbg{while}: condition checked \textit{before} loop body
+            \item \textttbg{do-while}: condition checked \textit{after} running the first iteration of the loop, so the loop runs at least once
         \end{itemize}
     \end{frame}
 
@@ -388,7 +388,7 @@ for(initialization; condition; update){
         \end{minted}
 
         \begin{itemize}
-            \item You can nest \texttt{while} inside \texttt{for}, or any combination of loop types
+            \item You can nest \textttbg{while} inside \textttbg{for}, or any combination of loop types
             \item Be careful with initialization and loop conditions to avoid infinite loops
         \end{itemize}
     \end{frame}
@@ -429,14 +429,14 @@ for(initialization; condition; update){
     \end{frame}
 
 
-    \section{The \texttt{switch} Statement}
+    \section{The \textttbg{switch} Statement}
 
     \begin{frame}{The \texttt{switch} Statement}
         \begin{itemize}
-            \item The \texttt{switch} statement allows multi-way branching based on the value of an expression
-            \item It is an alternative to long chains of \texttt{if-else-if} statements
-            \item It compares the given expression against multiple constant values given by (\texttt{case} labels)
-            \item The \texttt{default} case handles unexpected or unmatched values
+            \item The \textttbg{switch} statement allows multi-way branching based on the value of an expression
+            \item It is an alternative to long chains of \textttbg{if-else-if} statements
+            \item It compares the given expression against multiple constant values given by (\textttbg{case} labels)
+            \item The \textttbg{default} case handles unexpected or unmatched values
         \end{itemize}
     \end{frame}
 
@@ -461,9 +461,9 @@ switch(expression){
 
     \begin{frame}{Why \texttt{break} is Necessary}
         \begin{itemize}
-            \item Without \texttt{break}, execution ``falls through" to the next \texttt{case}
-            \item This means all subsequent cases are executed until a \texttt{break} or the end of the switch
-            \item To prevent this, use \texttt{break} at the end of each case
+            \item Without \textttbg{break}, execution ``falls through" to the next \textttbg{case}
+            \item This means all subsequent cases are executed until a \textttbg{break} or the end of the switch
+            \item To prevent this, use \textttbg{break} at the end of each case
         \end{itemize}
     \end{frame}
 
@@ -500,18 +500,18 @@ switch(x){
             \item To check whether a number (user input) is positive or negative or zero
             \item To check whether a year (user input) is a leap year
             \item To check whether an integer is even or odd
-            \item To find the number of real-valued solution(s) to a quadratic equation, (\(ax^2+bx+c=0\)). Take \texttt{a}, \texttt{b} and \texttt{c} as user inputs. Then calculate the value of the discriminant, then show the appropriate output
-            \item To print the first n (user input) natural numbers using a \texttt{for} loop. And another program to do the same using a \texttt{while} loop
-            \item To compute the sum of numbers from 1 to n using a \texttt{for} loop. And another program to do the same using a \texttt{while} loop
+            \item To find the number of real-valued solution(s) to a quadratic equation, (\(ax^2+bx+c=0\)). Take \textttbg{a}, \textttbg{b} and \textttbg{c} as user inputs. Then calculate the value of the discriminant, then show the appropriate output
+            \item To print the first n (user input) natural numbers using a \textttbg{for} loop. And another program to do the same using a \textttbg{while} loop
+            \item To compute the sum of numbers from 1 to n using a \textttbg{for} loop. And another program to do the same using a \textttbg{while} loop
             \item To find the factorial of an intger (user input)
             \item To print the first n (user input) terms of the fibonacci series
             \item To print the first n (user input) terms of the following arithmetic progression sequence: 1, 4, 7, 10, 13\dots
             \item To repeatedly take user input and print its square, until a negative number is entered (use while loop)
-            \item To repeatedly take user input as exam marks and print the corresponding letter grade, until a negative number is entered (use \texttt{while} loop and \texttt{if} statement)
+            \item To repeatedly take user input as exam marks and print the corresponding letter grade, until a negative number is entered (use \textttbg{while} loop and \textttbg{if} statement)
             \item To find the GCD of two integers using the Euclidean algorithm
             \item To find the LCM of two integers
-            \item To repeatedly take user input and print its square, until a negative number is entered (use \texttt{do-while} loop)
-            \item To repeatedly take user input as exam marks and print the corresponding letter grade, until a negative number is entered (use \texttt{do-while} loop)
+            \item To repeatedly take user input and print its square, until a negative number is entered (use \textttbg{do-while} loop)
+            \item To repeatedly take user input as exam marks and print the corresponding letter grade, until a negative number is entered (use \textttbg{do-while} loop)
             \item To print the sum of the first n (user input) terms of the following arithmetic progression sequence: 1 + 4 + 7 + 10 + 13\dots
             \item To print the first n (user input) terms of the following sequence: 1, 2, 4, 7, 11, 16\dots
             \item To print the sum of the first n (user input) terms of the following series: 1 + 2 + 4 + 7 + 11 + 16\dots
@@ -549,7 +549,7 @@ switch(x){
 
             \framebreak
 
-            \item To create a simple calculator using the \texttt{switch} statement. First, define a character variable (call it \texttt{op} for operator) using the \texttt{char} keyword, then use \texttt{scanf("\%c", \&op)}, the user shall input one of the following symbols: +, -, *, /. Then take two numbers (can be integers or floats) as user input. Finally, use the \texttt{switch} keyword to perform addition, subtraction, multiplication or division based on the input to \texttt{op}. If user inputs some unexpected character, then print \texttt{invalid input}
+            \item To create a simple calculator using the \textttbg{switch} statement. First, define a character variable (call it \textttbg{op} for operator) using the \textttbg{char} keyword, then use \textttbg{scanf("\%c", \&op)}, the user shall input one of the following symbols: +, -, *, /. Then take two numbers (can be integers or floats) as user input. Finally, use the \textttbg{switch} keyword to perform addition, subtraction, multiplication or division based on the input to \textttbg{op}. If user inputs some unexpected character, then print \textttbg{invalid input}
         \end{enumerate}
     \end{frame}
 
