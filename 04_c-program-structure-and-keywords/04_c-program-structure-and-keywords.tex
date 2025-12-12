@@ -49,10 +49,10 @@
 
     \begin{frame}{Preprocessor Macros}
     \begin{itemize}
-        \item \texttt{\#include}: include header files
-        \item \texttt{\#define}: define constants/macros
-        \item Conditional macros: \texttt{\#if}, \texttt{\#ifdef}, \texttt{\#ifndef}, \texttt{\#else}, \texttt{\#elif}, \texttt{\#endif}: compile conditionally
-        \item \texttt{\#undef}: remove macro definitions
+        \item \textttbg{\#include}: include header files
+        \item \textttbg{\#define}: define constants/macros
+        \item Conditional macros: \textttbg{\#if}, \textttbg{\#ifdef}, \textttbg{\#ifndef}, \textttbg{\#else}, \textttbg{\#elif}, \textttbg{\#endif}: compile conditionally
+        \item \textttbg{\#undef}: remove macro definitions
     \end{itemize}
     \end{frame}
 
@@ -60,8 +60,8 @@
     \begin{frame}{The \texttt{main} Function}
         \begin{itemize}
             \item Entry point of C programs
-            \item Return type (\texttt{int}) indicates exit status
-            \item Function name: \texttt{main}
+            \item Return type (\textttbg{int}) indicates exit status
+            \item Function name: \textttbg{main}
             \item Parentheses for parameters (empty for now)
             \item Curly braces \{\} define the body
         \end{itemize}
@@ -70,8 +70,8 @@
 
     \begin{frame}{Defining Variables}
         \begin{itemize}
-            \item Syntax: \texttt{data\_type variable\_name;}
-            \item Must end with semicolon \texttt{;}
+            \item Syntax: \mintinline{C}|data_type variable_name;|
+            \item Must end with semicolon \textttbg{;}
             \item Variables must be declared before use
             \item Can assign values at declaration
         \end{itemize}
@@ -82,7 +82,7 @@
         \begin{itemize}
             \item Semicolon ends a statement. Two statements in one line:
             \begin{itemize}
-                \item \texttt{int x = 10; y = x + 5;}
+                \item \mintinline{C}|int x = 10; y = x + 5;|
                 \item Discouraged in practice
             \end{itemize}
             \item Multiple statements form the body of functions
@@ -93,7 +93,7 @@
 
     \begin{frame}{Calling Functions}
         \begin{itemize}
-            \item Syntax: \texttt{functionName(arguments);}
+            \item Syntax: \mintinline{C}|functionName(arguments);|
             \item Parentheses hold arguments (can be empty)
             \item Must match function definition/prototype
         \end{itemize}
@@ -103,8 +103,8 @@
     \begin{frame}{Return Values}
         \begin{itemize}
             \item Functions can return a value to the caller
-            \item Syntax: \texttt{return expression;}
-            \item In \texttt{main()}, \texttt{return 0;} indicates successful execution
+            \item Syntax: \mintinline{C}|return expression;|
+            \item In \mintinline{C}|main()|, \mintinline{C}|return 0;| indicates successful execution
             \item Non-zero return values often indicate an error
         \end{itemize}
     \end{frame}
@@ -112,17 +112,17 @@
 
     \begin{frame}{Brackets in C}
         \begin{itemize}
-            \item Parentheses \texttt{()}: grouping expressions and function calls
-            \item Curly braces \texttt{\{\}}: define a block of code
-            \item Square brackets \texttt{[]}: array indexing
+            \item Parentheses \textttbg{()}: grouping expressions and function calls
+            \item Curly braces \textttbg{\{\}}: define a block of code
+            \item Square brackets \textttbg{[]}: array indexing
         \end{itemize}
     \end{frame}
 
 
     \begin{frame}[fragile]{Comments}
         \begin{itemize}
-            \item Single-line, starts with double slashes (\texttt{//})
-            \item Multi-line, starts with \texttt{/*} and ends with \texttt{*/}, this syntax is often discouraged
+            \item Single-line, starts with double slashes (\textttbg{//})
+            \item Multi-line, starts with \textttbg{/*} and ends with \textttbg{*/}, this syntax is often discouraged
             \item Instead begin the lines with double slashes for multiline comments
         \end{itemize}
         \begin{minted}[linenos]{c}
@@ -139,11 +139,11 @@ a multiline comment */
 
     \begin{frame}{Escape Sequences}
         \begin{itemize}
-            \item \texttt{\textbackslash n}: newline
-            \item \texttt{\textbackslash t}: tab
-            \item \texttt{\textbackslash\textbackslash}: backslash
-            \item \texttt{\textbackslash"}: double quote
-            \item \texttt{\textbackslash'}: single quote
+            \item \textttbg{\textbackslash n}: newline
+            \item \textttbg{\textbackslash t}: tab
+            \item \textttbg{\textbackslash\textbackslash}: backslash
+            \item \textttbg{\textbackslash"}: double quote
+            \item \textttbg{\textbackslash'}: single quote
         \end{itemize}
     \end{frame}
 
@@ -167,7 +167,7 @@ if(condition){
         \begin{itemize}
             \item Meaningful variable names
             \item Consistent indentation
-            \item Opening brace \texttt{\{} on the same line as keyword
+            \item Opening brace \textttbg{\{} on the same line as keyword
             \item Use comments for clarity
         \end{itemize}
     \end{frame}
@@ -177,45 +177,45 @@ if(condition){
 
     \begin{frame}{Data Types and Values}
         \begin{itemize}
-            \item \texttt{int}: integer type
-            \item \texttt{float}: single precision floating-point
-            \item \texttt{double}: double precision floating-point
-            \item \texttt{char}: single character
-            \item \texttt{void}: no return value / no data
-            \item \texttt{signed}, \texttt{unsigned}: signed/unsigned integers
-            \item \texttt{short}, \texttt{long}: specify integer size
+            \item \textttbg{int}: integer type
+            \item \textttbg{float}: single precision floating-point
+            \item \textttbg{double}: double precision floating-point
+            \item \textttbg{char}: single character
+            \item \textttbg{void}: no return value / no data
+            \item \textttbg{signed}, \textttbg{unsigned}: signed/unsigned integers
+            \item \textttbg{short}, \textttbg{long}: specify integer size
         \end{itemize}
     \end{frame}
 
 
     \begin{frame}{Control Flow}
         \begin{itemize}
-            \item \texttt{if}, \texttt{else}: conditional branching
-            \item \texttt{switch}, \texttt{case}, \texttt{default}: multi-way branching
-            \item \texttt{for}, \texttt{while}, \texttt{do}: loops
-            \item \texttt{break}: exit loop or switch
-            \item \texttt{continue}: skip current iteration
-            \item \texttt{goto}: jump to label (use sparingly)
-            \item \texttt{return}: exit function, optionally returning value
+            \item \textttbg{if}, \textttbg{else}: conditional branching
+            \item \textttbg{switch}, \textttbg{case}, \textttbg{default}: multi-way branching
+            \item \textttbg{for}, \textttbg{while}, \textttbg{do}: loops
+            \item \textttbg{break}: exit loop or switch
+            \item \textttbg{continue}: skip current iteration
+            \item \textttbg{goto}: jump to label (use sparingly)
+            \item \textttbg{return}: exit function, optionally returning value
         \end{itemize}
     \end{frame}
 
 
     \begin{frame}{Structuring}
         \begin{itemize}
-            \item \texttt{struct}: group related variables
-            \item \texttt{union}: store different types in same memory
-            \item \texttt{enum}: named integer constants
-            \item \texttt{typedef}: define a type alias
+            \item \textttbg{struct}: group related variables
+            \item \textttbg{union}: store different types in same memory
+            \item \textttbg{enum}: named integer constants
+            \item \textttbg{typedef}: define a type alias
         \end{itemize}
     \end{frame}
 
 
     \begin{frame}{Pointer and Address-of Operators}
         \begin{itemize}
-            \item \texttt{\textit{datatype *varname}}: declares a pointer
-            \item \texttt{\textit{*varname}}: dereferences a pointer to access the value
-            \item \texttt{\textit{\&varname}}: gives the memory address of a variable
+            \item \textttbg{\textit{datatype *varname}}: declares a pointer
+            \item \textttbg{\textit{*varname}}: dereferences a pointer to access the value
+            \item \textttbg{\textit{\&varname}}: gives the memory address of a variable
             \item Example:
         \end{itemize}
         \inputminted[
@@ -226,43 +226,43 @@ if(condition){
 
     \begin{frame}{Storage Classes}
         \begin{itemize}
-            \item \texttt{auto}: default local variable storage
-            \item \texttt{register}: hint to store variable in CPU register
-            \item \texttt{static}: preserve value between function calls
-            \item \texttt{extern}: variable defined elsewhere
+            \item \textttbg{auto}: default local variable storage
+            \item \textttbg{register}: hint to store variable in CPU register
+            \item \textttbg{static}: preserve value between function calls
+            \item \textttbg{extern}: variable defined elsewhere
         \end{itemize}
     \end{frame}
 
 
     \begin{frame}{Memory and Miscellaneous}
         \begin{itemize}
-            \item \texttt{const}: read-only variable
-            \item \texttt{volatile}: variable may change unexpectedly
-            \item \texttt{restrict}: pointer optimization hint
-            \item \texttt{inline}: suggest inline function expansion
-            \item \texttt{\_Atomic}: atomic variable access
-            \item \texttt{\_Thread\_local}: thread-local storage
-            \item \texttt{\_Noreturn}: function does not return
-            \item \texttt{sizeof}: size of object or type
-            \item \texttt{\_Alignas}, \texttt{\_Alignof}: memory alignment
-            \item \texttt{\_Generic}: type-generic selection (C11)
+            \item \textttbg{const}: read-only variable
+            \item \textttbg{volatile}: variable may change unexpectedly
+            \item \textttbg{restrict}: pointer optimization hint
+            \item \textttbg{inline}: suggest inline function expansion
+            \item \textttbg{\_Atomic}: atomic variable access
+            \item \textttbg{\_Thread\_local}: thread-local storage
+            \item \textttbg{\_Noreturn}: function does not return
+            \item \textttbg{sizeof}: size of object or type
+            \item \textttbg{\_Alignas}, \textttbg{\_Alignof}: memory alignment
+            \item \textttbg{\_Generic}: type-generic selection (C11)
         \end{itemize}
     \end{frame}
 
 
     \begin{frame}{Preprocessor Keywords}
         \begin{itemize}
-            \item \texttt{\#define}: define macro or constant
-            \item \texttt{\#include}: include header file
-            \item \texttt{\#if}: conditional compilation
-            \item \texttt{\#ifdef}: compile if macro defined
-            \item \texttt{\#ifndef}: compile if macro not defined
-            \item \texttt{\#else}, \texttt{\#elif}: alternative conditions
-            \item \texttt{\#endif}: end conditional
-            \item \texttt{\#undef}: undefine macro
-            \item \texttt{\#line}: set line number for compiler messages
-            \item \texttt{\#error}: generate compilation error
-            \item \texttt{\#pragma}: compiler-specific instruction
+            \item \textttbg{\#define}: define macro or constant
+            \item \textttbg{\#include}: include header file
+            \item \textttbg{\#if}: conditional compilation
+            \item \textttbg{\#ifdef}: compile if macro defined
+            \item \textttbg{\#ifndef}: compile if macro not defined
+            \item \textttbg{\#else}, \textttbg{\#elif}: alternative conditions
+            \item \textttbg{\#endif}: end conditional
+            \item \textttbg{\#undef}: undefine macro
+            \item \textttbg{\#line}: set line number for compiler messages
+            \item \textttbg{\#error}: generate compilation error
+            \item \textttbg{\#pragma}: compiler-specific instruction
         \end{itemize}
     \end{frame}
 
