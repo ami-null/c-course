@@ -31,7 +31,7 @@
     \begin{frame}{What is an Array?}
         \begin{itemize}
             \item An \textbf{array} is a collection of elements of the \emph{same} type stored in contiguous memory
-            \item Each element is accessed by an \textbf{index} (zero-based in C, meaning that the first element is at index 0): \texttt{arr[0]}, \texttt{arr[1]}, \dots
+            \item Each element is accessed by an \textbf{index} (zero-based in C, meaning that the first element is at index 0): \textttbg{arr[0]}, \textttbg{arr[1]}, \dots
             \item Example: list of student marks
             \item Arrays let us group related values under one name
         \end{itemize}
@@ -52,8 +52,8 @@ int b[]  = {1, 2, 3};    // size inferred: 3
 
     \begin{frame}{Accessing Individual Elements}
         \begin{itemize}
-            \item Use square brackets with index: \texttt{arr[index]}
-            \item Example: \texttt{arr[2]} accesses the third element
+            \item Use square brackets with index: \textttbg{arr[index]}
+            \item Example: \textttbg{arr[2]} accesses the third element
         \end{itemize}
 
         \textbf{Example: print elements}
@@ -98,7 +98,7 @@ int b[]  = {1, 2, 3};    // size inferred: 3
             \item An array with more than one dimension
             \item Real-life analogies:
                 \begin{itemize}
-                    \item 2D: matrix or spreadsheet (rows and columns), indices are written as \texttt{arr[row][col]}
+                    \item 2D: matrix or spreadsheet (rows and columns), indices are written as \textttbg{arr[row][col]}
                     \item 3D: a stack of matrices
                 \end{itemize}
             \item C supports arrays with any number of dimensions
@@ -122,8 +122,8 @@ int mat3[2][3] = {1,2,3,4,5,6};
 
     \begin{frame}{Accessing Values in 2D Arrays}
         \begin{itemize}
-            \item Access element at row r, column c by \texttt{mat[r][c]}
-            \item Example: \texttt{mat[1][2]} refers to second row, third column
+            \item Access element at row r, column c by \textttbg{mat[r][c]}
+            \item Example: \textttbg{mat[1][2]} refers to second row, third column
         \end{itemize}
 
         \vspace{1em}
@@ -159,9 +159,9 @@ int mat3[2][3] = {1,2,3,4,5,6};
 
     \begin{frame}{3D and Higher Dimensions}
         \begin{itemize}
-            \item A 3D array \texttt{int arr[2][3][4];} can be thought of as 2 blocks, each block is a 3x4 matrix
+            \item A 3D array \textttbg{int arr[2][3][4];} can be thought of as 2 blocks, each block is a 3x4 matrix
             \item Real-life: for example, \textbf{block × row × column} measurements (temperature map over multiple days)
-            \item Indexing: \texttt{a[block][row][col]}
+            \item Indexing: \textttbg{a[block][row][col]}
         \end{itemize}
     \end{frame}
 
@@ -170,10 +170,10 @@ int mat3[2][3] = {1,2,3,4,5,6};
 
     \begin{frame}{What is a String in C?}
         \begin{itemize}
-            \item In C, a \textbf{string} is an array of \texttt{char} terminated by the null character \texttt{'\textbackslash0'}
-            \item Example: \texttt{char s[] = "hello";} actually creates 6 chars: \texttt{'h','e','l','l','o','\textbackslash0'}
-            \item Strings are manipulated through arrays and standard library functions in \texttt{<string.h>}
-            \item You can access individual characters with \texttt{s[i]}
+            \item In C, a \textbf{string} is an array of \textttbg{char} terminated by the null character \textttbg{'\textbackslash0'}
+            \item Example: \textttbg{char s[] = "hello";} actually creates 6 chars: \textttbg{'h','e','l','l','o','\textbackslash0'}
+            \item Strings are manipulated through arrays and standard library functions in \textttbg{<string.h>}
+            \item You can access individual characters with \textttbg{s[i]}
         \end{itemize}
     \end{frame}
 
@@ -194,10 +194,10 @@ Note: individual characters denoted by single quotes, whereas strings are denote
 
     \begin{frame}[fragile]{Reading Strings from User}
         \begin{itemize}
-            \item Avoid \texttt{gets()} (unsafe). Use \texttt{fgets()} or \texttt{scanf("\%s", ...)}
-            \item \texttt{scanf("\%s", s);} reads until whitespace, does not read spaces
-            \item \texttt{fgets(s, size, stdin);} reads a whole line (including spaces)
-            \item However, the string from \texttt{fgets()} includes newline (\verb|'\n'|)
+            \item Avoid \textttbg{gets()} (unsafe). Use \textttbg{fgets()} or \textttbg{scanf("\%s", ...)}
+            \item \textttbg{scanf("\%s", s);} reads until whitespace, does not read spaces
+            \item \textttbg{fgets(s, size, stdin);} reads a whole line (including spaces)
+            \item However, the string from \textttbg{fgets()} includes newline (\verb|'\n'|)
             \item May want to trim this newline (trimming it, is often not required, depends on use case)
         \end{itemize}
     \end{frame}
@@ -208,11 +208,11 @@ Note: individual characters denoted by single quotes, whereas strings are denote
             linenos, 
         ]{c}{../code-examples/04_01_greetings.c}
 
-        Note that in \texttt{scanf()}, we provided \texttt{username} as the second argument and not \texttt{\&username}.
+        Note that in \textttbg{scanf()}, we provided \textttbg{username} as the second argument and not \textttbg{\&username}.
         
-        This is because \texttt{username} itself holds the memory address of the character array.
+        This is because \textttbg{username} itself holds the memory address of the character array.
 
-        Recall that the \texttt{\&var} returns the memory address of the variable named \texttt{var}.
+        Recall that the \textttbg{\&var} returns the memory address of the variable named \textttbg{var}.
     \end{frame}
 
 
@@ -238,18 +238,18 @@ Note: individual characters denoted by single quotes, whereas strings are denote
             firstnumber=9
         ]{c}{../code-examples/07_06_fgets-string.c}
 
-        In the above code, \texttt{strcspn(s, "\textbackslash n")} searches for and returns the index of the newline character (\texttt{"\textbackslash n"}) in the string named \texttt{s}.\\
+        In the above code, \textttbg{strcspn(s, "\textbackslash n")} searches for and returns the index of the newline character (\textttbg{"\textbackslash n"}) in the string named \textttbg{s}.\\
 
-        \texttt{s[strcspn(s, "\textbackslash n")] = '\textbackslash 0';} replaces the newline character with the null terminator character (\texttt{'\textbackslash 0'}).
+        \textttbg{s[strcspn(s, "\textbackslash n")] = '\textbackslash 0';} replaces the newline character with the null terminator character (\textttbg{'\textbackslash 0'}).
     \end{frame}
 
 
     \begin{frame}{Common String Functions (from <string.h>)}
         \begin{itemize}
-            \item \texttt{strlen(s)} — length of string (not counting \texttt{'\textbackslash0'})
-            \item \texttt{strcmp(s1, s2)} — compare strings (returns 0 if equal)
-            \item \texttt{strcpy(dest, src)} — copy string
-            \item \texttt{strcat(dest, src)} — concatenate
+            \item \textttbg{strlen(s)} — length of string (not counting \textttbg{'\textbackslash0'})
+            \item \textttbg{strcmp(s1, s2)} — compare strings (returns 0 if equal)
+            \item \textttbg{strcpy(dest, src)} — copy string
+            \item \textttbg{strcat(dest, src)} — concatenate
         \end{itemize}
     \end{frame}
 
@@ -259,7 +259,7 @@ Note: individual characters denoted by single quotes, whereas strings are denote
             linenos, 
         ]{c}{../code-examples/07_07_strcmp.c}
 
-        \texttt{strcmp()} returns 0 if the two strings are same.
+        \textttbg{strcmp()} returns 0 if the two strings are same.
     \end{frame}
 
 
@@ -296,19 +296,19 @@ Note: individual characters denoted by single quotes, whereas strings are denote
 
     \begin{frame}{Summary}
         \begin{itemize}
-            \item \textbf{Array:} contiguous collection of same-type elements, accessed by indices \texttt{arr[i]}
-            \item \textbf{1D/2D/3D:} use \texttt{arr[i]}, \texttt{arr[i][j]}, \texttt{arr[i][j][k]} respectively
-            \item \textbf{Strings:} arrays of \texttt{char} ending with \texttt{'\textbackslash0'}
-            \item \texttt{<string.h>} contains functions that operate on strings
-            \item \textbf{Input:} \texttt{scanf} or \texttt{fgets} (preferred for whole lines)
+            \item \textbf{Array:} contiguous collection of same-type elements, accessed by indices \textttbg{arr[i]}
+            \item \textbf{1D/2D/3D:} use \textttbg{arr[i]}, \textttbg{arr[i][j]}, \textttbg{arr[i][j][k]} respectively
+            \item \textbf{Strings:} arrays of \textttbg{char} ending with \textttbg{'\textbackslash0'}
+            \item \textttbg{<string.h>} contains functions that operate on strings
+            \item \textbf{Input:} \textttbg{scanf} or \textttbg{fgets} (preferred for whole lines)
         \end{itemize}
     \end{frame}
 
 
     \begin{frame}{Array Variable and Memory}
         \begin{itemize}
-            \item \textbf{Important note:} In many contexts (for example, when passing to a function), the array name (say, \texttt{arr}) is a pointer to the first element (details on pointers in upcoming lectures)
-            \item Meaning that, \texttt{arr} actually holds the memory address in which the first element of the array is stored
+            \item \textbf{Important note:} In many contexts (for example, when passing to a function), the array name (say, \textttbg{arr}) is a pointer to the first element (details on pointers in upcoming lectures)
+            \item Meaning that, \textttbg{arr} actually holds the memory address in which the first element of the array is stored
             \item To summarize: the array name points to a contiguous block of memory starting at the first element of the array
         \end{itemize}
     \end{frame}
@@ -320,14 +320,14 @@ Note: individual characters denoted by single quotes, whereas strings are denote
 
     \begin{frame}[allowframebreaks=0.75]{Exercises}
         \begin{enumerate}
-            \item Write a program to read \texttt{n} integers into an array and print them in reverse order
+            \item Write a program to read \textttbg{n} integers into an array and print them in reverse order
             \item Write a program to find the maximum and minimum values in an integer array
             \item Write a program to remove duplicate elements from a small integer array (keep first occurrences)
             \item Write a program to count frequency of each digit (0-9) in an array of integers
             \item Write a program to multiply two 2x2 matrices and print the result
-            \item Write a program to rotate the elements of an array to the right by \texttt{k} positions
-            \item Write a program to read a line of text and print its length (without using \texttt{strlen})
-            \item Write a program to concatenate two strings without using \texttt{strcat}
+            \item Write a program to rotate the elements of an array to the right by \textttbg{k} positions
+            \item Write a program to read a line of text and print its length (without using \textttbg{strlen})
+            \item Write a program to concatenate two strings without using \textttbg{strcat}
             \item Write a program to check if a given string is a palindrome (ignore case and spaces)
         \end{enumerate}
     \end{frame}
