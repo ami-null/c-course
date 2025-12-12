@@ -137,6 +137,8 @@
                 Combine conditions: \textttbg{\&\&} (AND), \textttbg{||} (OR), \textttbg{!} (NOT)
             \item \textbf{Assignment:} \textttbg{=}, \textttbg{+=}, \textttbg{-=}, \textttbg{*=}, \textttbg{/=} \\
                 Store values in variables or update them with shorthand forms
+            \item \textbf{Increment or decrement:} \textttbg{++}, \textttbg{--}
+                \textttbg{++} increseases the value of a variable by 1, \textttbg{--} decreases the value of a variable by 1
         \end{itemize}
     \end{frame}
 
@@ -209,7 +211,9 @@
 
 
     \begin{frame}{Order of Evaluation and Precedence}
-        Operators in C follow a precedence hierarchy.\\
+        Operators in C follow a precedence hierarchy.
+
+        \vspace{0.5em}
 
         Examples (highest to lowest):
             \begin{itemize}
@@ -222,9 +226,11 @@
                 \item \textttbg{||}: Logical OR
                 \item \textttbg{=}: Assignment (lowest)
             \end{itemize}
-        Use parentheses \textttbg{()} to make evaluation explicit.\\
+        Use parentheses \textttbg{()} to make evaluation explicit.
 
-        Example: \textttbg{int x = 2 + 3 * 4;} → result is 14, not 20.
+        \vspace{0.5em}
+
+        Example: \mintinline{C}|int x = 2 + 3 * 4;| → result is 14, not 20.
     \end{frame}
 
 
