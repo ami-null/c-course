@@ -59,7 +59,7 @@
 
 
     \begin{frame}[fragile]{Defining a Structure}
-        Below a new type layout called \texttt{struct Student} is created:
+        Below a new type layout called \textttbg{struct Student} is created:
         \begin{minted}{c}
 struct Student {
     char name[50];
@@ -69,7 +69,7 @@ struct Student {
         \end{minted}
 
         \begin{itemize}
-            \item Structs are usually created outside and above the main function, so that all functions inside the \texttt{C} file can access the struct
+            \item Structs are usually created outside and above the main function, so that all functions inside the \textttbg{C} file can access the struct
             \item If a struct is created inside a function, then it behaves like a local variable and other functions can not use it
             \item One can also put a struct inside a header file for convenience
         \end{itemize}
@@ -77,7 +77,7 @@ struct Student {
 
 
     \begin{frame}[fragile]{Declaring Structure Variables}
-        Three variable of the type \texttt{struct Student} have been defined below:
+        Three variable of the type \textttbg{struct Student} have been defined below:
         \begin{minted}{c}
 struct Student s;
 struct Student t, class_monitor;
@@ -156,14 +156,14 @@ struct Person {
     \end{frame}
 
 
-    \section{Defining Types with \texttt{typedef}}
+    \section{Defining Types with \textttbg{typedef}}
 
     \begin{frame}{The \texttt{typedef} Keyword}
         \begin{itemize}
             \item A structure type name often becomes long and repetitive
-            \item Using \texttt{typedef} helps create cleaner and shorter type names
-            \item Without typedef: \texttt{struct Student s;}
-            \item With typedef: \texttt{Student s;}
+            \item Using \textttbg{typedef} helps create cleaner and shorter type names
+            \item Without typedef: \textttbg{struct Student s;}
+            \item With typedef: \textttbg{Student s;}
         \end{itemize}
 
     This improves readability, especially in function prototypes and pointer-heavy code.
@@ -222,7 +222,7 @@ struct Student s, *p;
 p = &s;
 p->cgpa = 3.70;    // pointer access
         \end{minted}
-        In the last line, we are setting the \texttt{cgpa} field to 3.70. This \texttt{cgpa} field belongs to the struct whose memory address is stored in \texttt{p}.
+        In the last line, we are setting the \textttbg{cgpa} field to 3.70. This \textttbg{cgpa} field belongs to the struct whose memory address is stored in \textttbg{p}.
     \end{frame}
 
 
