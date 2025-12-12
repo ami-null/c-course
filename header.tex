@@ -14,6 +14,12 @@
 % ss04: for disambiguation (without zero) in places like "Ill" etc
 % ss03: round comma, quation marks
 
+\usepackage{xcolor}
+
+\let\oldtexttt\texttt
+\renewcommand{\texttt}[1]{\colorbox{gray!30}{\oldtexttt{#1}}}
+
+
 \usepackage{sourcecodepro}
 
 \usepackage{upquote}
