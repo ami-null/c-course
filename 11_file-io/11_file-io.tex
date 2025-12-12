@@ -46,8 +46,8 @@
 
     \begin{frame}{FILE Pointer}
         \begin{itemize}
-            \item Files are accessed using file pointers: \texttt{FILE *}
-            \item A \texttt{FILE *} variable does not hold actual file content
+            \item Files are accessed using file pointers: \textttbg{FILE *}
+            \item A \textttbg{FILE *} variable does not hold actual file content
             \item It holds information about the connection: current position, status, buffering, mode, etc.
         \end{itemize}
     \end{frame}
@@ -55,9 +55,9 @@
 
     \begin{frame}{Life Cycle of using a File}
         \begin{enumerate}
-            \item Open the file using \texttt{fopen()}
+            \item Open the file using \textttbg{fopen()}
             \item Read from or write to the file
-            \item Close the file using \texttt{fclose()}
+            \item Close the file using \textttbg{fclose()}
         \end{enumerate}
 
         Failing to close a file may lead to:
@@ -69,7 +69,7 @@
 
 
     \begin{frame}[fragile]{Opening Files}
-        To work with files, we must first open them using \texttt{fopen()}.
+        To work with files, we must first open them using \textttbg{fopen()}.
 
         \begin{minted}{C}
 FILE *fp = fopen("filename.txt", "mode");
@@ -77,9 +77,9 @@ FILE *fp = fopen("filename.txt", "mode");
 
         Basic modes:
         \begin{itemize}
-            \item \texttt{"r"}: open for reading; fails if file does not exist
-            \item \texttt{"w"}: open for writing; creates new file or overwrites existing file
-            \item \texttt{"a"}: open for appending (adding new contents to existing file); creates file if needed
+            \item \textttbg{"r"}: open for reading; fails if file does not exist
+            \item \textttbg{"w"}: open for writing; creates new file or overwrites existing file
+            \item \textttbg{"a"}: open for appending (adding new contents to existing file); creates file if needed
         \end{itemize}
     \end{frame}
 
@@ -94,7 +94,7 @@ if(fp == NULL){
 
         Common reasons for failure include:
         \begin{itemize}
-            \item File does not exist (when using \texttt{"r"})
+            \item File does not exist (when using \textttbg{"r"})
             \item Insufficient permissions
             \item Incorrect path/file name
         \end{itemize}
@@ -102,7 +102,7 @@ if(fp == NULL){
 
 
     \begin{frame}{Closing Files}
-        Closing files is done using \texttt{fclose(fp);}.
+        Closing files is done using \textttbg{fclose(fp);}.
 
         Reasons to close files:
         \begin{itemize}
@@ -127,9 +127,9 @@ if(fp == NULL){
 
         Common functions:
         \begin{itemize}
-            \item \texttt{fprintf()}: write formatted text.
-            \item \texttt{fputs()}: write a string.
-            \item \texttt{fputc()}: write a single character.
+            \item \textttbg{fprintf()}: write formatted text.
+            \item \textttbg{fputs()}: write a string.
+            \item \textttbg{fputc()}: write a single character.
         \end{itemize}
     \end{frame}
 
@@ -144,9 +144,9 @@ if(fp == NULL){
 
         Functions:
         \begin{itemize}
-            \item \texttt{fscanf()}: formatted reading
-            \item \texttt{fgets()}: read a line
-            \item \texttt{fgetc()}: read a single character
+            \item \textttbg{fscanf()}: formatted reading
+            \item \textttbg{fgets()}: read a line
+            \item \textttbg{fgetc()}: read a single character
         \end{itemize}
     \end{frame}
 
@@ -162,9 +162,9 @@ if(fp == NULL){
     \begin{frame}{Basic Error Handling}
         Important situations to detect:
         \begin{itemize}
-            \item \textbf{Failed fopen}: always check if pointer returned is \texttt{NULL}
-            \item \textbf{Reaching EOF}: functions return special values (e.g., \texttt{NULL} for \texttt{fgets}, \texttt{EOF} for \texttt{fgetc})
-            \item \textbf{Read errors}: typically uncommon in small programs but detectable using \texttt{ferror()}
+            \item \textbf{Failed \textttbg{fopen()}}: always check if pointer returned is \textttbg{NULL}
+            \item \textbf{Reaching \textttbg{EOF}}: functions return special values (e.g., \textttbg{NULL} for \textttbg{fgets}, \textttbg{EOF} for \textttbg{fgetc})
+            \item \textbf{Read errors}: typically uncommon in small programs but detectable using \textttbg{ferror()}
         \end{itemize}
 
         EOF vs Error:
@@ -173,15 +173,15 @@ if(fp == NULL){
             \item Errors indicate issues such as hardware failure or file being removed during reading
         \end{itemize}
 
-        In basic programs, it is usually enough to check for \texttt{NULL} or \texttt{EOF}
+        In basic programs, it is usually enough to check for \textttbg{NULL} or \textttbg{EOF}
     \end{frame}
 
 
     \begin{frame}{Summary}
         \begin{itemize}
-            \item Use \texttt{fopen()} to open files with the correct mode
-            \item Perform reading or writing using \texttt{fprintf()}, \texttt{fputs()}, \texttt{fgetc()}, \texttt{fgets()}, or \texttt{fscanf()}
-            \item Always close files using \texttt{fclose()}
+            \item Use \textttbg{fopen()} to open files with the correct mode
+            \item Perform reading or writing using \textttbg{fprintf()}, \textttbg{fputs()}, \textttbg{fgetc()}, \textttbg{fgets()}, or \textttbg{fscanf()}
+            \item Always close files using \textttbg{fclose()}
             \item Always check if opening a file failed
         \end{itemize}
 
