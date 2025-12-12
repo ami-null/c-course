@@ -39,7 +39,7 @@
 
 
     \begin{frame}[fragile]{Defining a Pointer}
-        Pointers are defined by putting a \texttt{*} before the pointer's name:
+        Pointers are defined by putting a \textttbg{*} before the pointer's name:
         \begin{minted}{c}
 int x = 10;
 int *p = &x;    // p stores the address of x
@@ -66,7 +66,7 @@ printf("%d", *p);    // prints 10
 scanf("%d", p);    // takes user input into x
         \end{minted}
 
-        In the last line, the \texttt{\&} sign is not needed because \texttt{p} holds the memory address of \texttt{x}.
+        In the last line, the \textttbg{\&} sign is not needed because \textttbg{p} holds the memory address of \textttbg{x}.
     \end{frame}
 
 
@@ -90,7 +90,7 @@ printf("%d", *px);
         \end{minted}
 
         \vspace{1em}
-        This is due to \texttt{px} holding the memory address of \texttt{x}.
+        This is due to \textttbg{px} holding the memory address of \textttbg{x}.
     \end{frame}
 
 
@@ -166,7 +166,7 @@ int diff = q - p;   // diff = 3
     \begin{frame}[fragile]{Example: Array Passed to Function}
         \inputminted[linenos]{C}{../code-examples/09_06_passing-array-to-function.c}
 
-        In line 3, \texttt{int arr[]} can be replaced with \texttt{int *arr}. They are equivalent.
+        In line 3, \textttbg{int arr[]} can be replaced with \textttbg{int *arr}. They are equivalent.
     \end{frame}
 
 
