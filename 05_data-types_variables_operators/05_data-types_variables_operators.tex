@@ -239,8 +239,9 @@
     \begin{frame}{Formatted Output: printf()}
         \begin{itemize}
             \item Used to display output to the screen
-            \item General form: \textttbg{printf("format string", values);}
-            \item Format specifiers:
+            \item Can display literal text as well as values of variables
+            \item General form: \textttbg{printf("text to display", values);}
+            \item To display values of variables, format specifiers are needed:
                 \begin{itemize}
                     \item \textttbg{\%d} → integer
                     \item \textttbg{\%f} → float/double
@@ -248,6 +249,7 @@
                     \item \textttbg{\%s} → string
                 \end{itemize}
             \item Example: \textttbg{printf("Sum = \%d", x);}
+            \item In the above, the value of \textttbg{x} is printed in place of \textttbg{\%d}
         \end{itemize}
     \end{frame}
 
@@ -258,6 +260,8 @@
             \item General form: \textttbg{scanf("format string", \&variables);}
             \item Format specifiers are the same as for \textttbg{printf()}
             \item Example: \textttbg{scanf("\%d", \&x);}
+            \item In the above, the computer expects an integer value to be given as input by the user, then stores it in the variable \textttbg{x}
+            \item Inputting multiple values: \textttbg{scanf("\%d \%d", \&x, \&y);}
         \end{itemize}
     \end{frame}
 
