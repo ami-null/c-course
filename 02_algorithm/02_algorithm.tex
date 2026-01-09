@@ -189,6 +189,24 @@
     \end{frame}
 
 
+    \begin{frame}{Before Designing an Algorithm}
+        Before writing an algorithm, think carefully about the following:
+
+        \begin{itemize}
+            \item \textbf{Inputs}: What data is required to solve the problem?
+            \item \textbf{Outputs}: What results should be produced, and in what form?
+            \item \textbf{Variables}: What values need to be stored and updated during execution?
+            \item \textbf{Processing steps}: What operations or calculations are required?
+            \item \textbf{Formulas}: What mathematical or logical formulas are needed?
+            \item \textbf{Decision making}: Are conditional checks (IF / ELSE) required?
+            \item \textbf{Repetition}: Are loops required, and should the output be produced once or repeatedly?
+            \item \textbf{Loop control}: What condition starts and stops each loop?
+            \item \textbf{Recursion}: If recursion is used, what is the base case and how does the problem reduce?
+        \end{itemize}
+    \end{frame}
+
+
+
     \begin{frame}{Example Algorithm: Factorial of a Number}
         \begin{enumerate}
             \item Input an integer, n
@@ -283,9 +301,12 @@
 
     \begin{frame}{Conventions}
         \begin{itemize}
-            \item Indentation to show structure
-            \item Keywords like IF, WHILE, FOR
             \item Use natural language mixed with structured logic
+            \item Keywords like Input, If, While, For, Output
+            \item Variable names should be consistent and meaningful
+            \item Indentation to show structure
+            \item Colons indicate the beginning of a block
+            \item Pseudocode should be language-independent
         \end{itemize}
     \end{frame}
 
@@ -368,7 +389,6 @@ EndFunction
         \item Set sum = 0, i = 1
         \item While i <= n:
             \begin{enumerate}[i]
-                % \renewcommand{\theenumi}{\alph{enumi}}
                 \item If i is even:
                 \begin{itemize}
                     \item add i to sum
