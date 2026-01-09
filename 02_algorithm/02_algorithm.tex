@@ -46,8 +46,8 @@
             \item Control flow or control structure can be divided into a few types:
             \begin{itemize}
                 \item Sequence: step by step execution of commands from top to bottom
-                \item Selection: exceuting a codeblock if certain conditions are met (if-else statement)
-                \item Iteration: repeatedly executing a codeblock while a certain condition is true, stop the loop if the codition is no longer true
+                \item Selection or conditional execution: exceuting a codeblock if certain conditions are met (if-else statement)
+                \item Iteration or loop: repeatedly executing a block of code or commands while a certain condition is true, stop the loop if the codition is no longer true
             \end{itemize}
             \item Every program can be built using the three structures
         \end{itemize}
@@ -61,26 +61,29 @@
     \begin{frame}{Sequence}
         \begin{itemize}
             \item Default mode of execution: step by step
-            \item Example: Read number, calculate square, print result
+            \item Example: Input a number, then calculate its square, then print the result
         \end{itemize}
     \end{frame}
 
 
-    \begin{frame}{Selection}
+    \begin{frame}{Selection or Conditional Execution}
         \begin{itemize}
             \item \textbf{IF}: execute a block if condition is true
             \item \textbf{IF-ELSE}: choose between two alternatives
             \item \textbf{ELSE IF ladder}: multiple conditions
+            \item Can have an \textbf{IF} statement inside another, this is called nested \textbf{IF} statements
         \end{itemize}
     \end{frame}
 
 
-    \begin{frame}{Iteration}
+    \begin{frame}{Iteration or Loops}
         \begin{itemize}
-            \item \textbf{FOR loop} – fixed number of iterations (repeatedly execute commands for a fixed number of times)
-            \item \textbf{WHILE loop} – repeatedly execute while condition is true
-            \item \textbf{DO-WHILE loop} – run the commands at least once, then repeat if condition holds
+            \item \textbf{FOR loop}: fixed number of iterations (repeatedly execute commands for a fixed number of times)
+            \item \textbf{WHILE loop}: repeatedly execute while condition is true. Usually, the number of iteration required until the condition becomes false, is not in known advanced
+            \item \textbf{DO-WHILE loop}: run the commands at least once, then repeat if condition holds
+            \item Can have a loop inside another loop, it is known as nested looping
         \end{itemize}
+        For the purpose of this slide, only \textbf{WHILE} loop shall be used to keep things simple for now.
     \end{frame}
 
 
@@ -118,8 +121,8 @@
 
     \begin{frame}{Break and Continue}
         \begin{itemize}
-            \item \textbf{BREAK}: exit the nearest loop immediately (\texttt{exit} in Fortran)
-            \item \textbf{CONTINUE}: skip rest of current iteration, proceed to next (\texttt{cycle} in Fortran)
+            \item \textbf{BREAK}: exit a loop immediately without ant further iteration. When inside nested loops, it exits out of the loop in which the \textbf{BREAK} statement is called
+            \item \textbf{CONTINUE}: skip the rest of current iteration, proceed to the next iteration
         \end{itemize}
     \end{frame}
 
@@ -128,7 +131,8 @@
         \begin{itemize}
             \item Collection of commands that perform a specific task
             \item Usually given a name
-            \item Can have zero or more inputs
+            \item Can have zero or more inputs. These inputs are known as parameter or arguments
+            \item Can call a function with its name followed by its parameters in brackets
         \end{itemize}
     \end{frame}
 
@@ -138,6 +142,8 @@
             \item Function calling itself to solve smaller subproblems
             \item Example: factorial, Fibonacci
             \item Must have a base case to terminate
+            \item A base case is a condition which when true, the function stops calling itself and returns the final result
+            \item The function must be able to reach its base case, otherwise it will turn into an infinite loop
         \end{itemize}
     \end{frame}
 
@@ -361,10 +367,14 @@ EndFunction
         \item Read n
         \item Set sum = 0, i = 1
         \item While i <= n:
-            \begin{itemize}
-                \item If i is even, add i to sum, else do nothing
+            \begin{enumerate}[i]
+                % \renewcommand{\theenumi}{\alph{enumi}}
+                \item If i is even:
+                \begin{itemize}
+                    \item add i to sum
+                \end{itemize}
                 \item Add 1 to i
-            \end{itemize}
+            \end{enumerate}
         \item Print sum
     \end{enumerate}
     \end{frame}
