@@ -104,6 +104,9 @@ int square(int n) {
         \begin{itemize}
             \item The return type defines the type of value a function returns
             \item The return statement sends a value back to the calling code
+            \item The return value can be assigned to a variable: \mintinline{c}|int s = square(5);|
+            \item The return value can also be passed as an argument to another function: \mintinline{c}|printf("%d", square(10));|
+            \item Without return values, the above two line would not be possible
         \end{itemize}
     \end{frame}
 
