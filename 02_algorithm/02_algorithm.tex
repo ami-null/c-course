@@ -45,9 +45,9 @@
             \item Need to be familiar with control structure to be able to write algorithms
             \item Control flow or control structure can be divided into a few types:
             \begin{itemize}
-                \item Sequence: step by step execution of commands from top to bottom
-                \item Selection or conditional execution: exceuting a codeblock if certain conditions are met (if-else statement)
-                \item Iteration or loop: repeatedly executing a block of code or commands while a certain condition is true, stop the loop if the codition is no longer true
+                \item \textbf{Sequence}: step by step execution of commands from top to bottom
+                \item \textbf{Selection} or \textbf{conditional execution}: exceuting a codeblock if certain conditions are met (if-else statement)
+                \item \textbf{Iteration} or \textbf{loop}: repeatedly executing a block of code or commands while a certain condition is true, stop the loop if the codition is no longer true
             \end{itemize}
             \item Every program can be built using the three structures
         \end{itemize}
@@ -60,7 +60,7 @@
 
     \begin{frame}{Sequence}
         \begin{itemize}
-            \item Default mode of execution: step by step
+            \item Code or commands are executed step by step, or sequentially
             \item Example: Input a number, then calculate its square, then print the result
         \end{itemize}
     \end{frame}
@@ -78,8 +78,8 @@
 
     \begin{frame}{Iteration or Loops}
         \begin{itemize}
-            \item \textbf{FOR loop}: fixed number of iterations (repeatedly execute commands for a fixed number of times)
-            \item \textbf{WHILE loop}: repeatedly execute while condition is true. Usually, the number of iteration required until the condition becomes false, is not in known advanced
+            \item \textbf{FOR loop}: repeatedly execute commands for a fixed number of times
+            \item \textbf{WHILE loop}: repeatedly execute a block of code while a condition is true. Usually, the number of iteration required until the condition becomes false, is not in known advanced
             \item \textbf{DO-WHILE loop}: run the commands at least once, then repeat if condition holds
             \item Can have a loop inside another loop, it is known as nested looping
         \end{itemize}
@@ -121,8 +121,8 @@
 
     \begin{frame}{Break and Continue}
         \begin{itemize}
-            \item \textbf{BREAK}: exit a loop immediately without ant further iteration. When inside nested loops, it exits out of the loop in which the \textbf{BREAK} statement is called
-            \item \textbf{CONTINUE}: skip the rest of current iteration, proceed to the next iteration
+            \item \textbf{BREAK}: exit a loop immediately without any further iteration. When inside nested loops, it exits out of the loop in which the \textbf{BREAK} statement is called
+            \item \textbf{CONTINUE}: skip the rest of the current iteration, proceed to the next iteration
         \end{itemize}
     \end{frame}
 
@@ -130,9 +130,11 @@
     \begin{frame}{Functions}
         \begin{itemize}
             \item Collection of commands that perform a specific task
+            \item Groups together logic or commands that needs to be written across multiple places in a program
             \item Usually given a name
-            \item Can have zero or more inputs. These inputs are known as parameter or arguments
             \item Can call a function with its name followed by its parameters in brackets
+            \item Can have zero or more inputs. These inputs are known as parameter or arguments
+            \item Since a function is only defined once and subsequently called only using its name, this reduces code duplication leading to better readability and maintainability of code
         \end{itemize}
     \end{frame}
 
@@ -194,12 +196,12 @@
 
         \begin{itemize}
             \item \textbf{Inputs}: What data is required to solve the problem?
-            \item \textbf{Outputs}: What results should be produced, and in what form?
+            \item \textbf{Outputs}: What results should be shown?
             \item \textbf{Variables}: What values need to be stored and updated during execution?
             \item \textbf{Processing steps}: What operations or calculations are required?
             \item \textbf{Formulas}: What mathematical or logical formulas are needed?
-            \item \textbf{Decision making}: Are conditional checks (IF / ELSE) required?
-            \item \textbf{Repetition}: Are loops required, and should the output be produced once or repeatedly?
+            \item \textbf{Decision making}: Are conditional checks (IF-ELSE) required?
+            \item \textbf{Repetition}: Are loops required, and should the output be shown once or repeatedly?
             \item \textbf{Loop control}: What condition starts and stops each loop?
             \item \textbf{Recursion}: If recursion is used, what is the base case and how does the problem reduce?
         \end{itemize}
@@ -212,10 +214,10 @@
             \item Input an integer, n
             \item Set result = 1
             \item While n is larger than 1, repeat the following:
-            \begin{itemize}
+            \begin{enumerate}[i]
                 \item result = result × n
                 \item n = n - 1
-            \end{itemize}
+            \end{enumerate}
             \item Output the result
         \end{enumerate}
         
@@ -302,10 +304,11 @@
     \begin{frame}{Conventions}
         \begin{itemize}
             \item Use natural language mixed with structured logic
-            \item Keywords like Input, If, While, For, Output
             \item Variable names should be consistent and meaningful
-            \item Indentation to show structure
+            \item Keywords like Input, If, While, For, Output, Function
+            \item Indentation to show block structure
             \item Colons indicate the beginning of a block
+            \item Keywords like EndIf, EndWhile, EndFor, EndFunction to indicate the end of a code block
             \item Pseudocode should be language-independent
         \end{itemize}
     \end{frame}
@@ -334,6 +337,21 @@ EndWhile
 Output result
 End
         \end{verbatim}
+    \end{frame}
+
+
+    \begin{frame}[fragile]{Example Pseudocode: Function for Finding Factorial}
+        The following defines a function named \texttt{Factorial()} with a single input \texttt{n}.
+        \begin{verbatim}
+Function Factorial(n):
+    While n>1:
+        result = result * n
+        n = n - 1
+    EndWhile
+    Return result
+EndFunction
+        \end{verbatim}
+        The \texttt{Return} keyword indicates which value to return to the caller of the function. It also marks the end of execution of a function. 
     \end{frame}
 
 
