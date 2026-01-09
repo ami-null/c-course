@@ -172,7 +172,7 @@
     \begin{frame}{Truth Tables for Logical Operators}
         \begin{columns}
 
-        \column{0.33\textwidth}
+        \column{0.25\textwidth}
             \textbf{AND (\&\&)} \vspace{1em}
 
             \begin{tabular}{ccc}
@@ -184,11 +184,11 @@
                 1 & 1 & 1 \\
             \end{tabular}
 
-        \column{0.33\textwidth}
+        \column{0.25\textwidth}
             \textbf{OR (||)} \vspace{1em}
 
             \begin{tabular}{ccc}
-                A & B & A || B \\
+                A & B & A\textbar \textbar B \\
                 \hline
                 0 & 0 & 0 \\
                 0 & 1 & 1 \\
@@ -196,7 +196,7 @@
                 1 & 1 & 1 \\
             \end{tabular}
 
-        \column{0.33\textwidth}
+        \column{0.25\textwidth}
             \textbf{NOT (!)} \vspace{1em}
 
             \begin{tabular}{cc}
@@ -205,7 +205,7 @@
                 0 & 1 \\
                 1 & 0 \\
             \end{tabular}
-
+            \vspace{2em}
         \end{columns}
     \end{frame}
 
@@ -236,7 +236,7 @@
 
     \section{Input, Output (IO)}
 
-    \begin{frame}{Formatted Output: printf()}
+    \begin{frame}{Formatted Output: \texttt{printf()}}
         \begin{itemize}
             \item Used to display output to the screen
             \item Can display literal text as well as values of variables
@@ -250,11 +250,12 @@
                 \end{itemize}
             \item Example: \textttbg{printf("Sum = \%d", x);}
             \item In the above, the value of \textttbg{x} is printed in place of \textttbg{\%d}
+            \item A single \textttbg{printf()} call can have multiple format specifiers to print the values of multiple variables: \textttbg{printf("\%d \%d", x, y);}
         \end{itemize}
     \end{frame}
 
 
-    \begin{frame}{Formatted Input: scanf()}
+    \begin{frame}{Formatted Input: \texttt{scanf()}}
         \begin{itemize}
             \item Used to take input from the user
             \item General form: \textttbg{scanf("format string", \&variables);}
@@ -266,10 +267,10 @@
     \end{frame}
 
 
-    \begin{frame}{Why use the ampersand sign (\&) in scanf()?}
+    \begin{frame}{Why use the ampersand sign (\&) in \texttt{scanf()}?}
         \begin{itemize}
             \item \textttbg{scanf()} needs the \textbf{address of a variable} to store the input value
-            \item The operator \textttbg{\&} (“address-of”) provides that memory location
+            \item The operator \textttbg{\&} (``address-of") provides that memory location
             \item Example:
                 \begin{itemize}
                     \item \textttbg{int x;}
