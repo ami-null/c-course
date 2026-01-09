@@ -38,6 +38,47 @@
     \end{frame}
 
 
+    \section{Algorithms}
+
+
+    \begin{frame}{What is an Algorithm?}
+        \begin{itemize}
+            \item A step-by-step procedure to solve a problem
+            \item Unambiguous and finite sequence of instructions
+            \item Example: A recipe for cooking is an algorithm in real life
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Characteristics of a Good Algorithm}
+        \begin{itemize}
+            \item Finiteness: must terminate after finite steps
+            \item Definiteness: each step is clearly defined
+            \item Input: specified set of inputs
+            \item Output: specified set of outputs
+            \item Effectiveness: steps can be performed with available resources
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Examples of Simple Algorithms}
+        \begin{itemize}
+            \item Finding the maximum of three numbers
+            \item Calculating factorial of a number
+            \item Linear search in an array
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Example Algorithm: Finding the Area of a Triangle}
+        \begin{enumerate}
+            \item Input base, $b$ and height, $h$
+            \item Let area, $a = bh/2$
+            \item Output $a$
+        \end{enumerate}
+    \end{frame}
+
+
     \section{Control Structures}
 
     \begin{frame}{Control Flow and Structure of a Program}
@@ -66,6 +107,16 @@
     \end{frame}
 
 
+    \begin{frame}{Example Algorithm: Showing the Square of a Number}
+        \begin{enumerate}
+            \item Input a number, $a$
+            \item Let square, $s = a^2$
+            \item Output $s$
+        \end{enumerate}
+        In the above, the commands are executed from top to bottom sequentially.
+    \end{frame}
+
+
     \begin{frame}{Selection or Conditional Execution}
         \begin{itemize}
             \item \textbf{IF}: execute a block if condition is true
@@ -73,6 +124,18 @@
             \item \textbf{ELSE IF ladder}: multiple conditions
             \item Can have an \textbf{IF} statement inside another, this is called nested \textbf{IF} statements
         \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Example Algorithm: Finding the Larger of Two Numbers}
+        \begin{enumerate}
+            \item Input two numbers, $a$ and $b$
+            \item If $a$ is larger than b:
+            \begin{enumerate}[i]
+                \item Then, output a
+                \item Else, output b
+            \end{enumerate}
+        \end{enumerate}
     \end{frame}
 
 
@@ -84,6 +147,19 @@
             \item Can have a loop inside another loop, it is known as nested looping
         \end{itemize}
         For the purpose of this slide, only \textbf{WHILE} loop shall be used to keep things simple for now.
+    \end{frame}
+
+
+    \begin{frame}{Example Algorithm: Outputting the First $n$ Integers}
+        \begin{enumerate}
+            \item Input $n$
+            \item Set $i=1$
+            \item While $i<=n$:
+            \begin{enumerate}
+                \item Output $i$
+                \item $i=i+1$
+            \end{enumerate}
+        \end{enumerate}
     \end{frame}
 
 
@@ -147,47 +223,6 @@
             \item A base case is a condition which when true, the function stops calling itself and returns the final result
             \item The function must be able to reach its base case, otherwise it will turn into an infinite loop
         \end{itemize}
-    \end{frame}
-
-
-    \section{Algorithms}
-
-
-    \begin{frame}{What is an Algorithm?}
-        \begin{itemize}
-            \item A step-by-step procedure to solve a problem
-            \item Unambiguous and finite sequence of instructions
-            \item Example: A recipe for cooking is an algorithm in real life
-        \end{itemize}
-    \end{frame}
-
-
-    \begin{frame}{Characteristics of a Good Algorithm}
-        \begin{itemize}
-            \item Finiteness: must terminate after finite steps
-            \item Definiteness: each step is clearly defined
-            \item Input: specified set of inputs
-            \item Output: specified set of outputs
-            \item Effectiveness: steps can be performed with available resources
-        \end{itemize}
-    \end{frame}
-
-
-    \begin{frame}{Examples of Simple Algorithms}
-        \begin{itemize}
-            \item Finding the maximum of three numbers
-            \item Calculating factorial of a number
-            \item Linear search in an array
-        \end{itemize}
-    \end{frame}
-
-
-    \begin{frame}{Example Algorithm: Finding the Area of a Triangle}
-        \begin{enumerate}
-            \item Input base, $b$ and height, $h$
-            \item Let area, $a = bh/2$
-            \item Output $a$
-        \end{enumerate}
     \end{frame}
 
 
