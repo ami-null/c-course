@@ -163,38 +163,6 @@
     \end{frame}
 
 
-    % \begin{frame}{While vs Do-While}
-    %     \begin{columns}
-    %     \begin{column}{0.5\textwidth}
-    %         \begin{tikzpicture}
-    %             \node (start) [startstop] {Start};
-    %             \node (cond) [decision, below of=start, yshift=-1cm] {Condition};
-    %             \node (command) [process, below of=cond, yshift=-1cm] {Perform commands};
-    %             \node (stop) [startstop, below of=command, yshift=-1cm] {Stop};
-
-    %             \draw [arrow] (start) -- (cond);
-    %             \draw [arrow] (cond) -- (command) node[midway, right] {True};
-    %             \draw [arrow] (command.west) -- ++(-1, 0) |- (cond);
-    %             \draw [arrow] (cond.east) -- node[midway, above] {False} ++(1.5, 0) |- (stop);
-    %         \end{tikzpicture}
-    %     \end{column}
-    %     \begin{column}{0.5\textwidth}
-    %         \begin{tikzpicture}
-    %             \node (start) [startstop] {Start};
-    %             \node (command) [process, below of=start, yshift=-1cm] {Perform commands};
-    %             \node (cond) [decision, below of=command, yshift=-1cm] {Condition};
-    %             \node (stop) [startstop, below of=cond, yshift=-2cm] {Stop};
-
-    %             \draw [arrow] (start) -- (command);
-    %             \draw [arrow] (command) -- (cond);
-    %             \draw [arrow] (cond.east) -- ++(1.5, 0) node[midway, above] {True} |- (command.east);
-    %             \draw [arrow] (cond) -- (stop) node[midway, right] {False};
-    %         \end{tikzpicture}
-    %     \end{column}
-    %     \end{columns}
-    % \end{frame}
-
-
     \begin{frame}{Break and Continue}
         \begin{itemize}
             \item \textbf{BREAK}: exit a loop immediately without any further iteration. When inside nested loops, it exits out of the loop in which the \textbf{BREAK} statement is called
