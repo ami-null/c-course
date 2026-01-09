@@ -5,7 +5,7 @@
 
 \title{Functions in C}
 \author{Md. Aminul Islam Shazid}
-\date{22 Nov 2025}
+\date{}
 
 \begin{document}
 
@@ -200,52 +200,52 @@ int factorial(int n){
     \end{frame}
 
 
-    \section{Function Prototype}
+%     \section{Function Prototype}
 
-    \begin{frame}[fragile]{What Is a Function Prototype?}
-        A function prototype is a declaration of a function without its body.
+%     \begin{frame}[fragile]{What Is a Function Prototype?}
+%         A function prototype is a declaration of a function without its body.
 
-        \begin{minted}{c}
-int add(int a, int b);     // prototype only
-        \end{minted}
+%         \begin{minted}{c}
+% int add(int a, int b);     // prototype only
+%         \end{minted}
 
-        \begin{itemize}
-            \item Ends with a semicolon.
-            \item Parameter names are optional:
-            \begin{minted}{c}
-int add(int, int);
-            \end{minted}
-            \item Must match the definition exactly: return type, name, and parameter types.
-        \end{itemize}
-    \end{frame}
-
-
-    \begin{frame}{Why Function Prototypes?}
-        \begin{itemize}
-            \item The compiler reads code top to bottom
-            \item A function must be known before it is called
-            \item If \textttbg{main()} calls a function defined later, the compiler has no information about that function
-            \item A prototype supplies the missing information: return type, function name, and parameter types
-            \item Prototypes enable type checking at compile time
-        \end{itemize}
-    \end{frame}
+%         \begin{itemize}
+%             \item Ends with a semicolon.
+%             \item Parameter names are optional:
+%             \begin{minted}{c}
+% int add(int, int);
+%             \end{minted}
+%             \item Must match the definition exactly: return type, name, and parameter types.
+%         \end{itemize}
+%     \end{frame}
 
 
-    \begin{frame}{Compiler Perspective}
-        The compiler must know:
-        \begin{itemize}
-            \item How many arguments a function takes
-            \item What their types are
-            \item What return type to expect
-        \end{itemize}
-    \end{frame}
+%     \begin{frame}{Why Function Prototypes?}
+%         \begin{itemize}
+%             \item The compiler reads code top to bottom
+%             \item A function must be known before it is called
+%             \item If \textttbg{main()} calls a function defined later, the compiler has no information about that function
+%             \item A prototype supplies the missing information: return type, function name, and parameter types
+%             \item Prototypes enable type checking at compile time
+%         \end{itemize}
+%     \end{frame}
 
 
-    \begin{frame}{Example: Prototypes in a Single C File}
-        \inputminted[
-            linenos, 
-        ]{c}{../code-examples/08_07_function-prototype_single-file.c}
-    \end{frame}
+%     \begin{frame}{Compiler Perspective}
+%         The compiler must know:
+%         \begin{itemize}
+%             \item How many arguments a function takes
+%             \item What their types are
+%             \item What return type to expect
+%         \end{itemize}
+%     \end{frame}
+
+
+%     \begin{frame}{Example: Prototypes in a Single C File}
+%         \inputminted[
+%             linenos, 
+%         ]{c}{../code-examples/08_07_function-prototype_single-file.c}
+%     \end{frame}
 
 
     \section{Header Files}
