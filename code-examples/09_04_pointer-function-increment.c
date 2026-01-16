@@ -9,5 +9,4 @@ int main(){
     increment(&x);
 
     printf("x = %d\n", x);    // 11
-    return 0;
 }
