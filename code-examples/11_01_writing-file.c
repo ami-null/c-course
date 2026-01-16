@@ -11,5 +11,4 @@ int main(){
     fputc('X', fp);    // single character
 
     fclose(fp);
-    return 0;
 }
