@@ -11,5 +11,4 @@ int main(){
         }
         printf("\n"); // newline after printing each row
     }
-    return 0;
 }

@@ -11,5 +11,4 @@ int main(){
             printf("odd\n");
             break;
     }
-    return 0;
 }

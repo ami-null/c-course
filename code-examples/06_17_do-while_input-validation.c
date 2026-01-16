@@ -9,5 +9,4 @@ int main(){
     } while(input != pin);
 
     printf("Access granted!\n");
-    return 0;
 }
