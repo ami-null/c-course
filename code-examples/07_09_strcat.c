@@ -6,5 +6,4 @@ int main() {
     char b[] = " World";
     strcat(a, b);
     printf("\%s", a); // prints "Hello World"
-    return 0;
 }

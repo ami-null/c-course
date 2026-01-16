@@ -9,5 +9,4 @@ int main() {
         printf("Same");
     else
         printf("Not same");
-    return 0;
 }

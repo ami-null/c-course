@@ -8,5 +8,4 @@ int main(){
         s[i] = toupper((unsigned char)s[i]);
     }
     printf("%s", s);    // HELLO WORLD!
-    return 0;
 }

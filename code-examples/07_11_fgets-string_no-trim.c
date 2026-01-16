@@ -8,5 +8,4 @@ int main() {
     fgets(s, sizeof(s), stdin);
 
     printf("You wrote: \%s", s);
-    return 0;
 }
