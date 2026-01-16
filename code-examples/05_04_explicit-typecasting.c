@@ -9,6 +9,4 @@ int main() {
 
     printf("Value of d (double): %lf\n", d);
     printf("Value of i (int after explicit cast): %d\n", i);
-
-    return 0;
 }

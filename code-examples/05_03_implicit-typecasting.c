@@ -11,5 +11,4 @@ int main() {
     // implicit typecasting (float -> int):
     j = e;
     printf("Value of j (int): %d", j);
-    return 0;
 }
