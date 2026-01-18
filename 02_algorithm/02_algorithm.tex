@@ -172,29 +172,6 @@
     \end{frame}
 
 
-    \begin{frame}{Functions}
-        \begin{itemize}
-            \item Collection of commands that perform a specific task
-            \item Groups together logic or commands that needs to be written across multiple places in a program
-            \item Usually given a name
-            \item Can call a function with its name followed by its parameters in brackets
-            \item Can have zero or more inputs. These inputs are known as parameter or arguments
-            \item Since a function is only defined once and subsequently called only using its name, this reduces code duplication leading to better readability and maintainability of code
-        \end{itemize}
-    \end{frame}
-
-
-    \begin{frame}{Recursion}
-        \begin{itemize}
-            \item Function calling itself to solve smaller subproblems
-            \item Example: factorial, Fibonacci
-            \item Must have a base case to terminate
-            \item A base case is a condition which when true, the function stops calling itself and returns the final result
-            \item The function must be able to reach its base case, otherwise it will turn into an infinite loop
-        \end{itemize}
-    \end{frame}
-
-
     \begin{frame}{Before Designing an Algorithm}
         Before writing an algorithm, think carefully about the following:
 
@@ -344,6 +321,18 @@ End
     \end{frame}
 
 
+    \begin{frame}{Functions}
+        \begin{itemize}
+            \item Collection of commands that perform a specific task
+            \item Groups together logic or commands that needs to be written across multiple places in a program
+            \item Usually given a name
+            \item Can call a function with its name followed by its parameters in brackets
+            \item Can have zero or more inputs. These inputs are known as parameter or arguments
+            \item Since a function is defined only once and subsequently called only using its name, this reduces code duplication leading to better readability and maintainability of code
+        \end{itemize}
+    \end{frame}
+
+
     \begin{frame}[fragile]{Example Pseudocode: Function for Finding Factorial}
         The following defines a function named \texttt{Factorial()} with a single input \texttt{n}.
         \begin{verbatim}
@@ -355,7 +344,18 @@ Function Factorial(n):
     Return result
 EndFunction
         \end{verbatim}
-        The \texttt{Return} keyword indicates which value to return to the caller of the function. It also marks the end of execution of a function. 
+        The \texttt{Return} keyword indicates which value to return to the caller of the function. It also marks the end of execution of a function.
+    \end{frame}
+
+
+    \begin{frame}{Recursion}
+        \begin{itemize}
+            \item Function calling itself to solve smaller subproblems
+            \item Example: factorial, Fibonacci
+            \item Must have a base case to terminate
+            \item A base case is a condition which when true, the function stops calling itself and returns the final result
+            \item The function must be able to reach its base case, otherwise it will turn into an infinite loop
+        \end{itemize}
     \end{frame}
 
 
@@ -372,7 +372,9 @@ Function Factorial(n):
 EndFunction
         \end{verbatim}
 
-        Note: ``a==b" checks whether a is equal to b, returns True if they are equal, otherwise, returns False.
+        Note: ``a==b" checks whether a is equal to b, returns True if they are equal, otherwise, returns False.\\[0.5em]
+
+        Here, \texttt{Factorial(0)} returns \texttt{1}, it is the base case.
     \end{frame}
 
 
