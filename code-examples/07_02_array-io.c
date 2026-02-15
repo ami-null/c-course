@@ -4,7 +4,7 @@ int main() {
     int n, i;
     printf("How many numbers? ");
     scanf("%d", &n);
-    int arr[100];    // assume max 100 for simplicity
+    int arr[n];    // define an integer array of size n
     for(i = 0; i < n; i++){
         scanf("%d", &arr[i]);
     }
